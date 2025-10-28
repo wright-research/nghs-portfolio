@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>NGHS Portfolio</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="Assets/pin-drop.png">
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
+
+    <!-- mapbox -->
+    <link href="https://api.mapbox.com/mapbox-gl-js/v3.10.0/mapbox-gl.css" rel="stylesheet" />
+    <script src="https://api.mapbox.com/mapbox-gl-js/v3.10.0/mapbox-gl.js"></script>
+    <link rel="stylesheet" href="style.css">
+    </style>
+
+    <!-- geocoder -->
+    <script
+        src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.3/mapbox-gl-geocoder.min.js"></script>
+    <link rel="stylesheet"
+        href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.3/mapbox-gl-geocoder.css"
+        type="text/css">
+
+    <!-- google font -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+
+    <!-- Google Material Icons -->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=map_search" />
+
+    <!-- Web Awesome for UI components -->
+    <link rel="stylesheet" href="https://early.webawesome.com/webawesome@3.0.0-beta.6/dist/styles/webawesome.css" />
+    <script type="module" src="https://early.webawesome.com/webawesome@3.0.0-beta.6/dist/webawesome.loader.js"></script>
+
+</head>
+
+<body>
+
+    <!-- container for the geocoder search -->
+    <div id="geocoder-container"></div>
+
+    <!-- Map container that will the main map -->
+    <div id="map-container" style="position: relative; width: 100%; height: 100%;"></div>
+
+    <!-- header -->
+    <header class="site-header">
+        <span class="site-title">NGHS Real Estate Portfolio</span>
+        <a href="https://www.nghs.org/" target="_blank" class="nghs-logo-link">
+            <img src="assets/nghs_logo.png" alt="NGHS logo" class="nghs-logo">
+        </a>
+    </header>
+
+    <!-- shoelace drawer for filters -->
+    <wa-drawer label="" placement="start" class="drawer-placement" >
+
+        <span style="font-size: 20px;">Portfolio Filters</span>
+        <hr/>
+        <!-- Ownership Type Filter -->
+        <span style="font-size: 15px; color: #737373;">Ownership Type:</span>
+        <wa-radio-group
+            label=""
+            hint=""
+            orientation="horizontal"
+            name="ownership-filter"
+            value="all"
+            id="ownership-filter"
+        >
+            <wa-radio appearance="button" value="all">All</wa-radio>
+            <wa-radio appearance="button" value="Owned">Owned</wa-radio>
+            <wa-radio appearance="button" value="Leased">Leased</wa-radio>
+        </wa-radio-group>
+
+        <!-- Property Type Filter -->
+        <span style="font-size: 15px; color: #737373;">Property Type:</span>
+        <wa-select
+            label=""
+            hint=""
+            id="property-type-filter"
+            value="All"
+        >
+            <wa-option value="All">All</wa-option>
+            <wa-option value="Medical Office">Medical Office</wa-option>
+            <wa-option value="Hospital">Hospital</wa-option>
+            <wa-option value="Land">Land</wa-option>
+            <wa-option value="Office">Office</wa-option>
+            <wa-option value="Vacant Building">Vacant Building</wa-option>
+            <wa-option value="Other">Other</wa-option>
+        </wa-select>
+
+        <!-- Service Area Filter -->
+        <br/>
+        <span style="font-size: 15px; color: #737373;">Service Area:</span>
+        <wa-select 
+            label="" 
+            id="service-area-filter"
+            max-options-visible=2
+            multiple 
+            with-clear
+        >
+            <wa-option value="Habersham">Habersham</wa-option>
+            <wa-option value="Lumpkin">Lumpkin</wa-option>
+            <wa-option value="Gainesville">Gainesville</wa-option>
+            <wa-option value="Braselton">Braselton</wa-option>
+            <wa-option value="Barrow">Barrow</wa-option>
+        </wa-select>
+
+        <!-- Hide Longstreet Properties Filter -->
+        <br/>
+        <wa-switch id="longstreet-toggle" checked>Show Longstreet Properties</wa-switch>
+
+        <!-- close button -->
+        <wa-button slot="footer" class="close-button" variant="primary">
+            <wa-icon name="chevron-left" style="margin-right: 5px;"></wa-icon>Close
+        </wa-button>
+    </wa-drawer>
+
+    <!-- open map filter -->
+    <wa-button class="openDrawerBtn openDrawer" id="openDrawerBtn" variant="plain">
+        <span style="font-size: 15px;">
+            Map Filters
+            <wa-icon name="chevron-right" style="margin-right: 5px;"></wa-icon>
+        </span>
+    </wa-button>
+
+    
+
+    <!-- bottom-center currency banner -->
+    <div class="data-currency">Portfolio last updated <span id="last-updated"></span></div>
+
+    <!-- Reference the main application JavaScript module -->
+    <script type="module" src="js/main.js"></script>
+</body>
+
+</html>

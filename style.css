@@ -1,0 +1,367 @@
+:root {
+    --opacity-value: 0.9;
+}
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    overflow: hidden;
+}
+
+/* laurel-leaf green: #939200  */
+
+header.site-header {
+    background-color: #ffffff;
+    color: #343a40;
+    padding: 8px 14px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    opacity: 0.85;
+    border-bottom: 1px solid #343a40;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.site-title {
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.nghs-logo-link {
+    display: inline-flex;
+    align-items: center;
+}
+
+.nghs-logo {
+    height: 36px;
+    width: auto;
+}
+
+/* Common positioning for the button - applies in both modes */
+wa-button.openDrawerBtn {
+    position: fixed;
+    top: 85px;
+    left: 15px;
+}
+
+/* Explicit styling for the options button */
+/* TODO: flip the background-color and text color for the button on hover */
+/* The #343a40 should be #efefef and the white should be #343a40 */
+wa-button.openDrawerBtn::part(base) {
+    background-color: #efefef; 
+    color: #343a40;
+    border-radius: 10px;
+    border: 2px solid #343a40;
+    padding: 10px 15px;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+wa-button.openDrawerBtn::part(base):hover {
+    background-color: #343a40;
+    color: #efefef;
+    border: 2px solid #efefef;
+}
+
+.auth-logout-button {
+    position: absolute;
+    bottom: 20px;
+    left: 18px;
+    z-index: 99;
+}
+
+#geocoder-container {
+    position: absolute;
+    top: 0.5px;
+    right: 0px !important;
+    z-index: 99 !important;
+    display: none;
+}
+
+#geocoder-container:hover {
+    opacity: 1 !important;
+}
+
+#geocoder-container .mapboxgl-ctrl-geocoder input {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+/* place the geocoder at the top left of the screen */
+.mapboxgl-ctrl-geocoder {
+    width: 80px !important;
+    transition: width 0.3s ease !important;
+    margin-top: 6px !important;
+    margin-right: 20px !important;
+    opacity: var(--opacity-value);
+    z-index: 10 !important;
+    border: 2px solid #343a40;
+}
+
+/* Expanded state on focus */
+.mapboxgl-ctrl-geocoder:focus-within {
+    width: 300px !important;
+}
+
+.mapboxgl-popup-content {
+    font-family: "Segoe UI", sans-serif;
+    border-radius: 12px;
+    border: 2px solid #343a40;
+    background-color: #d3d3d3;
+    opacity: 0.9;
+    padding: 10px;
+}
+
+.mapboxgl-popup.custom-popup h3 {
+    font-size: 16px;
+    color: #343a40;
+}
+
+.mapboxgl-popup-anchor-bottom .mapboxgl-popup-tip {
+    display: none;
+}
+
+.mapboxgl-popup-close-button:focus {
+    outline: none;
+}
+
+/* Custom popup content styling */
+.custom-popup .popup-content {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+.custom-popup .popup-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: #343a40;
+}
+.custom-popup .popup-subtitle {
+    font-size: 13px;
+    color: #4d4d4d;
+}
+
+/* Map container */
+#map-container {
+    z-index: 0;
+}
+
+/* Bottom-center currency banner */
+.data-currency {
+    position: fixed;
+    left: 50%;
+    bottom: 18px;
+    transform: translateX(-50%);
+    z-index: 3;
+    background: transparent;
+    color: #ffffff;
+    border: none;
+    border-radius: 0;
+    padding: 0;
+    font-size: 18px;
+    font-weight: 700;
+    /* italicize the last updated date */
+    font-style: italic;
+    text-shadow:
+        0 0 2px #000,
+        0 0 4px #000,
+        1px 0 0 #000,
+        -1px 0 0 #000,
+        0 1px 0 #000,
+        0 -1px 0 #000;
+}
+
+/* Stats panel */
+.stats-panel {
+    position: absolute;
+    top: 90px;
+    right: 15px;
+    background: rgba(255, 255, 255, 0.85);
+    border: 2px solid #343a40;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    z-index: 3;
+    min-width: 220px;
+    max-width: 250px;
+    backdrop-filter: saturate(140%) blur(2px);
+}
+
+.stats-panel-inner {
+    padding: 10px 12px;
+}
+
+.stats-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: #343a40;
+    margin-bottom: 6px;
+}
+
+.stats-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin: 0;
+}
+
+.stats-table thead th {
+    font-size: 14px;
+    font-weight: 600;
+    color: #737373;
+    text-align: left;
+    border-bottom: 1px solid #e0e0e0;
+    padding: 2px 0 2px 0;
+}
+
+.stats-table tbody td {
+    font-size: 14px;
+    padding: 2px 0;
+}
+
+.stats-table td.num, .stats-table th.num {
+    text-align: right;
+}
+
+/* Make numeric values bold across stats tables */
+.stats-table tbody td.num {
+    font-weight: 700;
+}
+
+/* Underline used for totals; keeps underline tight to the number width */
+.sum-underline {
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+/* Center the single header that spans both columns */
+.stats-table thead th {
+    text-align: center;
+}
+
+
+.stats-table td.empty {
+    text-align: center;
+    color: #999999;
+    padding: 10px 0;
+}
+
+.stats-row .sa-name {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.stats-row .sa-name .sa-name-text {
+    font-weight: 700;
+}
+
+.stats-row .dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+/* Divider under the stats table for future metrics */
+.stats-divider {
+    border: none;
+    border-top: 1px solid #9a9a9a;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    height: 0;
+    line-height: 0;
+}
+.stats-size-table thead th {
+    font-size: 14px; /* inherit consistent heading size */
+    font-weight: 600;
+    color: #737373;
+    text-align: center;
+    border-bottom: 1px solid #e0e0e0;
+    padding: 2px 0 2px 0;
+}
+
+.stats-size-table tbody td {
+    font-size: 14px;
+    padding: 2px 0;
+}
+
+/* Normalize line-height for tighter vertical rhythm */
+.stats-table td, .stats-table th {
+    line-height: 1.2;
+    border: none !important;
+    background-clip: padding-box;
+}
+
+/* Acres table shares same compact styles */
+.stats-acres-table thead th {
+    font-size: 14px;
+    font-weight: 600;
+    color: #737373;
+    text-align: center;
+    border-bottom: 1px solid #e0e0e0;
+    padding: 2px 0 2px 0;
+}
+
+.stats-acres-table tbody td {
+    font-size: 14px;
+    padding: 2px 0;
+}
+
+/* Total row styles (only shown when > 2 service areas selected) */
+.stats-total-row .total-label {
+    color: #343a40;
+    font-weight: 700;
+    font-style: italic;
+}
+
+.stats-total-row .total-num {
+    color: #343a40;
+    font-weight: 700;
+    font-style: italic;
+}
+
+/* Shared class for section titles to control font and color uniformly */
+.stats-section-title {
+    font-size: 14px;
+    color: #737373;
+}
+
+/* Drawer content styling */
+wa-drawer::part(body) {
+    padding: 20px;
+}
+
+wa-radio-group {
+    margin-bottom: 20px;
+}
+
+/* Drawer size */
+wa-drawer.drawer-placement {
+    --size: 420px;
+}
+
+/* Map comparison styles */
+.map {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+}
+
+/* hide the Mapbox logo */
+.mapboxgl-ctrl-logo {
+    display: none !important;
+}
