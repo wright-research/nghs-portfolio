@@ -423,17 +423,21 @@ function initializeDrawer() {
 
 // Start the application when the DOM is ready, but gate behind authentication
 function startAfterAuth() {
-    // Only initialize once
-    if (window.__appInitialized) return;
+    // Initialize once and return a readiness promise for callers to await
+    if (window.__appInitialized) {
+        return window.__appReadyPromise || Promise.resolve();
+    }
     window.__appInitialized = true;
     console.log('[Auth] Login successful, booting application...');
-    initApp();
+    window.__appReadyPromise = initApp();
+    return window.__appReadyPromise;
 }
 
 function boot() {
     authenticationManager.init({
         onLogin() {
-            startAfterAuth();
+            // Return a promise so the authentication flow can wait for readiness
+            return startAfterAuth();
         },
         onLogout() {
             // Optional: future cleanup

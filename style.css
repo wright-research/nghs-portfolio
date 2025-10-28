@@ -349,6 +349,11 @@ wa-drawer::part(body) {
     padding: 20px;
 }
 
+/* Italicize the drawer header label (welcome message) */
+wa-drawer.drawer-placement::part(title) {
+    font-style: italic;
+}
+
 wa-radio-group {
     margin-bottom: 20px;
 }
@@ -356,6 +361,13 @@ wa-radio-group {
 /* Drawer size */
 wa-drawer.drawer-placement {
     --size: 420px;
+}
+
+/* Centered heading for the drawer's filters section */
+.drawer-section-heading {
+    font-size: 20px;
+    display: block;
+    text-align: center;
 }
 
 /* Map comparison styles */

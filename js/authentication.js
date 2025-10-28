@@ -195,25 +195,27 @@ class AuthenticationManager {
         if (authResult.isValid) {
             const userInfo = authResult.userInfo;
             this.errorMessage.style.display = 'none';
+            // Persist session immediately so app init can read it
+            try {
+                sessionStorage.setItem('authenticated', 'true');
+                sessionStorage.setItem('username', userInfo.username);
+                sessionStorage.setItem('displayName', userInfo.displayName);
+            } catch (_) {}
+
+            // Hide the login form and show the loading overlay while we initialize in parallel
             this.#hide(this.loginOverlay);
-            console.log('[Auth] credentials valid; starting loading sequence');
-            this.#runLoadingSequence(2200, 2500).then(() => {
-                // Small extra hold after the ring completes
+            console.log('[Auth] credentials valid; starting loading sequence and app init in parallel');
+
+            const spinnerPromise = this.#runLoadingSequence(2200, 2500);
+            const initPromise = this.onLogin ? Promise.resolve(this.onLogin(userInfo)) : Promise.resolve();
+
+            // Wait for both: minimum spinner duration and app readiness
+            Promise.all([spinnerPromise, initPromise]).then(() => {
                 setTimeout(() => {
-                    try {
-                        sessionStorage.setItem('authenticated', 'true');
-                        sessionStorage.setItem('username', userInfo.username);
-                        sessionStorage.setItem('displayName', userInfo.displayName);
-                    } catch (_) {}
-                    console.log('[Auth] loading complete; restoring drawers and calling onLogin');
+                    console.log('[Auth] spinner and app init complete; restoring drawers and revealing app');
                     this.#restoreDrawers();
                     this.#updateDrawerWelcomeAndLogout(userInfo.displayName);
-                    // Now hide loading overlay and proceed to app
                     this.#hide(this.loadingOverlay);
-                    if (this.onLogin) {
-                        console.log('[Auth] invoking onLogin callback (fresh login)');
-                        this.onLogin(userInfo);
-                    }
                 }, 300);
             });
         } else {
