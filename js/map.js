@@ -50,11 +50,26 @@ export async function initializeMap(containerId) {
                         }
                     }
 
-                    // Filter only label/icon layers
-                    const labelLayers = streetsStyle.layers.filter(layer => layer.type === 'symbol');
+                    // Separate line layers (roads) and symbol layers (labels)
+                    const roadLayers = streetsStyle.layers.filter(layer =>
+                        layer.type === 'line' && layer.id.startsWith('road-')
+                    );
+                    const labelLayers = streetsStyle.layers.filter(layer =>
+                        layer.type === 'symbol'
+                    );
+
+                    const addedRoadLayerIds = [];
                     const addedLabelLayerIds = [];
 
-                    // Add label layers to the map (above imagery)
+                    // Add road line layers first (so labels draw on top)
+                    for (const layer of roadLayers) {
+                        if (!map.getLayer(layer.id)) {
+                            map.addLayer(layer);
+                            addedRoadLayerIds.push(layer.id);
+                        }
+                    }
+
+                    // Add label layers on top of roads
                     for (const layer of labelLayers) {
                         if (!map.getLayer(layer.id)) {
                             map.addLayer(layer);
@@ -62,8 +77,43 @@ export async function initializeMap(containerId) {
                         }
                     }
 
-                    // Persist the list of Mapbox label layer ids on the map instance for later reordering
+                    // Persist IDs for debugging or later restyling
+                    map.__mapboxRoadLayerIds = addedRoadLayerIds;
                     map.__mapboxLabelLayerIds = addedLabelLayerIds;
+
+                    // --- STYLE ROAD LAYERS FOR SATELLITE CONTEXT ---
+                    for (const layerId of addedRoadLayerIds) {
+                        const layer = map.getLayer(layerId);
+                        if (layer && layer.type === 'line') {
+                            // Only keep major highways and interstates
+                            if (
+                                layer.id.includes('motorway') ||  // interstates
+                                layer.id.includes('trunk') ||     // major highways
+                                layer.id.includes('primary')      // state routes
+                            ) {
+                                // Make these slightly brighter and semi-transparent
+                                map.setPaintProperty(layerId, 'line-opacity', 0.3);
+                                map.setPaintProperty(layerId, 'line-color', '#ffffff');
+                                map.setLayoutProperty(layerId, 'visibility', 'visible');
+                            } else {
+                                // Hide local and residential roads to declutter the map
+                                map.setLayoutProperty(layerId, 'visibility', 'none');
+                            }
+                        }
+                    }
+
+
+                    // --- ENHANCE LABEL READABILITY OVER SATELLITE IMAGERY ---
+                    for (const layerId of addedLabelLayerIds) {
+                        const layer = map.getLayer(layerId);
+                        if (layer && layer.type === 'symbol') {
+                            // Target only place-name layers (not roads, shields, or POIs)
+                            if (layer.id.startsWith('settlement-')) {
+                                map.setPaintProperty(layerId, 'text-halo-color', '#ffffff');
+                                map.setPaintProperty(layerId, 'text-halo-width', 1.5);
+                            }
+                        }
+                    }                    
 
                     console.log('Mapbox label layers added successfully');
                 } catch (err) {

@@ -10,13 +10,9 @@ class AuthenticationManager {
         this.validCredentialHashes = Array.isArray(options.validCredentialHashes)
             ? options.validCredentialHashes.slice()
             : [
-                '00qumill4a1pf.d3dyaWdodHxGdXJtYW41MTh8V2lsbA==', // Will
-                '00tz56iu3i1cg.YWVpZnJpZHxhbXkxMjN8QW15', // Amy 
-                '00dninu74o1xh.Z2hva2F5ZW18aG9rYXllbTF8R2Vvcmdl', // George
-                '005ymril4a1s5.Ym5vcnJpc3xibm9ycmlzIXxCb2JieQ==', // Bobby
-                '00ejcr264a1ry.a2Jhc3RvbnxrYmFzdG9uMXxLYXJlbg==', // Karen
-                '0006z6ok52232.d2JhZ3dlbGx8d2lsbGlhbWIhfFdpbGxpYW0=', // William
-                '00pbs17p59247.bXR5bWNodWt8bWVsaXNzYTEwMHxNZWxpc3Nh', // Melissa
+                '0071aee64h1yg.d3dyaWdodHx0cmlwbGVqdW1wfFdpbGw=', // Will
+                '004g086h3i1cp.YWVpZnJpZHxhbXk0NTZ8QW15', // Amy 
+                '00sjyx2q4o1xi.Z2hva2F5ZW18aG9rYXllbTJ8R2Vvcmdl', // George
             ];
 
         this.onLogin = typeof options.onLogin === 'function' ? options.onLogin : null;
@@ -34,7 +30,12 @@ class AuthenticationManager {
         this._suspendedDrawers = [];
     }
 
-    init() {
+    init(options = {}) {
+        // Allow passing callbacks/hashes at init time
+        if (typeof options.onLogin === 'function') this.onLogin = options.onLogin;
+        if (typeof options.onLogout === 'function') this.onLogout = options.onLogout;
+        if (Array.isArray(options.validCredentialHashes)) this.validCredentialHashes = options.validCredentialHashes.slice();
+        console.log('[Auth] init() begin');
         this.#injectStyles();
         this.#injectLoginOverlay();
         this.#injectLoadingOverlay();
@@ -42,6 +43,7 @@ class AuthenticationManager {
         // Wire submit
         this.authForm.addEventListener('submit', (e) => {
             e.preventDefault();
+            console.log('[Auth] form submit');
             this.#handleLogin();
         });
 
@@ -50,9 +52,14 @@ class AuthenticationManager {
             const storedUsername = sessionStorage.getItem('username') || '';
             const storedDisplayName = sessionStorage.getItem('displayName') || storedUsername;
             this.#hide(this.loginOverlay);
+            console.log('[Auth] session authenticated; restoring and calling onLogin');
             this.#updateDrawerWelcomeAndLogout(storedDisplayName);
-            if (this.onLogin) this.onLogin({ username: storedUsername, displayName: storedDisplayName });
+            if (this.onLogin) {
+                console.log('[Auth] invoking onLogin callback (session restore)');
+                this.onLogin({ username: storedUsername, displayName: storedDisplayName });
+            }
         } else {
+            console.log('[Auth] no session; showing login overlay');
             this.#suspendDrawers();
             this.#show(this.loginOverlay);
             setTimeout(() => this.usernameInput.focus(), 100);
@@ -64,6 +71,7 @@ class AuthenticationManager {
     }
 
     logout() {
+        console.log('[Auth] logout()');
         try {
             sessionStorage.removeItem('authenticated');
             sessionStorage.removeItem('username');
@@ -86,7 +94,7 @@ class AuthenticationManager {
         const style = document.createElement('style');
         style.textContent = `
             .auth-overlay { position: fixed; inset: 0; background: #F5F5F5; display: flex; justify-content: center; align-items: center; z-index: 9999; }
-            .auth-card { background: #fff; padding: 2rem; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.3); width: 100%; max-width: 420px; }
+            .auth-card { background: #fff; padding: 2rem; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.3); width: 100%; max-width: 480px; }
             .auth-header { text-align: center; margin-bottom: 1.5rem; }
             .auth-error { color: #dc3545; background: #f8d7da; border: 1px solid #f5c6cb; border-radius: 4px; padding: 0.5rem 0.75rem; margin: 0.5rem 0 1rem 0; display: none; }
             .auth-hidden { display: none !important; }
@@ -98,12 +106,11 @@ class AuthenticationManager {
             .auth-brand-logo { position: fixed; top: 50px; left: 50px; height: 80px; width: auto; z-index: 10000; }
 			.auth-input { width: 100%; box-sizing: border-box; }
 			.auth-password-wrapper { position: relative; }
-			.auth-eye-toggle { position: absolute; right: 8px; top: 50%; transform: translateY(-50%); }
+            .auth-eye-toggle { position: absolute; right: 8px; top: 50%; transform: translateY(-50%); background: transparent; border: none; padding: 4px; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; }
+            .auth-eye-toggle svg { width: 18px; height: 18px; fill: none; stroke: #555; stroke-width: 2; }
+            .auth-eye-toggle:hover svg { stroke: #000; }
             /* Ensure the progress ring matches our RAF updates exactly */
-            sl-progress-ring::part(indicator) { transition: stroke-dashoffset 0s linear !important; }
-            /* Drawer logout button styling to match Close button size but white by default */
-            .auth-logout-button::part(base) { background: #ffffff; color: #1f2937; border-color: #e5e7eb; }
-            .auth-logout-button::part(base):hover { background: #e7f1ff; border-color: #bcd7ff; }
+            wa-progress-ring::part(indicator) { transition: stroke-dashoffset 0s linear !important; }
         `;
         document.head.appendChild(style);
     }
@@ -112,10 +119,10 @@ class AuthenticationManager {
         const overlay = document.createElement('div');
         overlay.className = 'auth-overlay';
         overlay.innerHTML = `
-            <img src="Assets/nghs_logo.png" alt="NGHS" class="auth-brand-logo" />
+            <img src="assets/nghs_logo.png" alt="NGHS" class="auth-brand-logo" />
             <div class="auth-card">
                 <div class="auth-header">
-                    <h1 style="margin:0 0 0.5rem 0; font-size: 1.4rem; color:#333;">NGHS Interactive Strategy Map</h1>
+                    <h1 style="margin:0 0 0.5rem 0; font-size: 1.5rem; color:#333; font-weight: 700;">NGHS Interactive Portfolio</h1>
                     <p style="margin:0; color:#666;">Please log in to continue</p>
                 </div>
                 <form id="auth-form">
@@ -127,14 +134,13 @@ class AuthenticationManager {
                         <label for="auth-password-input" style="font-weight:600; color:#333;">Password</label>
                         <div class="auth-password-wrapper">
                             <input id="auth-password-input" class="auth-input" name="password" type="password" autocomplete="current-password" required style="padding:0.65rem 2.2rem 0.65rem 0.75rem; border:1px solid #ddd; border-radius:6px; font-size:1rem;" />
-                            <sl-icon-button id="auth-eye-toggle" class="auth-eye-toggle" name="eye" label="Show password"></sl-icon-button>
+                            <button type="button" id="auth-eye-toggle" class="auth-eye-toggle" aria-label="Show password" title="Show password">
+                                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7S1 12 1 12z"/><circle cx="12" cy="12" r="3"/></svg>
+                            </button>
                         </div>
                     </div>
                     <div id="auth-error" class="auth-error">Invalid username or password. Please try again.</div>
-                    <sl-button type="submit" variant="primary" style="width:100%;">
-                        <sl-icon slot="prefix" name="box-arrow-in-right"></sl-icon>
-                        Login
-                    </sl-button>
+                    <wa-button type="submit" variant="primary" style="width:100%;">Login</wa-button>
                 </form>
             </div>
         `;
@@ -150,8 +156,12 @@ class AuthenticationManager {
             eyeToggle.addEventListener('click', () => {
                 const isPassword = this.passwordInput.getAttribute('type') === 'password';
                 this.passwordInput.setAttribute('type', isPassword ? 'text' : 'password');
-                eyeToggle.name = isPassword ? 'eye-slash' : 'eye';
-                eyeToggle.label = isPassword ? 'Hide password' : 'Show password';
+                // Swap icon between eye and eye-slash
+                const eyeSvg = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7S1 12 1 12z"/><circle cx="12" cy="12" r="3"/></svg>';
+                const slashSvg = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M1 1l22 22"/><path d="M1 12s4-7 11-7c2.1 0 3.9.6 5.4 1.5"/><path d="M23 12s-4 7-11 7c-2.1 0-3.9-.6-5.4-1.5"/><circle cx="12" cy="12" r="3"/></svg>';
+                eyeToggle.innerHTML = isPassword ? slashSvg : eyeSvg;
+                eyeToggle.setAttribute('aria-label', isPassword ? 'Hide password' : 'Show password');
+                eyeToggle.setAttribute('title', isPassword ? 'Hide password' : 'Show password');
                 this.passwordInput.focus();
                 this.passwordInput.setSelectionRange(this.passwordInput.value.length, this.passwordInput.value.length);
             });
@@ -162,11 +172,11 @@ class AuthenticationManager {
         const overlay = document.createElement('div');
         overlay.className = 'auth-loading auth-hidden';
         overlay.innerHTML = `
-            <img src="Assets/nghs_logo.png" alt="NGHS" class="auth-brand-logo" />
+            <img src="assets/nghs_logo.png" alt="NGHS" class="auth-brand-logo" />
             <div class="auth-loading-card">
                 <p class="auth-loading-title">Loading...</p>
                 <div style="display:flex; flex-direction:column; align-items:center; gap:8px;">
-                    <sl-progress-ring id="auth-loading-ring" style="--size: 130px; --track-color: #bdbdbd; --track-width: 8px; --indicator-color: #96942E; --indicator-width: 10px;"></sl-progress-ring>
+                    <wa-progress-ring id="auth-loading-ring" style="--size: 130px; --track-color: #bdbdbd; --track-width: 8px; --indicator-color: #96942E; --indicator-width: 10px;"></wa-progress-ring>
                 </div>
             </div>
         `;
@@ -180,11 +190,13 @@ class AuthenticationManager {
     #handleLogin() {
         const username = this.usernameInput.value;
         const password = this.passwordInput.value;
+        console.log('[Auth] handleLogin attempt for user:', username);
         const authResult = this.#authenticate(username, password);
         if (authResult.isValid) {
             const userInfo = authResult.userInfo;
             this.errorMessage.style.display = 'none';
             this.#hide(this.loginOverlay);
+            console.log('[Auth] credentials valid; starting loading sequence');
             this.#runLoadingSequence(2200, 2500).then(() => {
                 // Small extra hold after the ring completes
                 setTimeout(() => {
@@ -193,14 +205,19 @@ class AuthenticationManager {
                         sessionStorage.setItem('username', userInfo.username);
                         sessionStorage.setItem('displayName', userInfo.displayName);
                     } catch (_) {}
+                    console.log('[Auth] loading complete; restoring drawers and calling onLogin');
                     this.#restoreDrawers();
                     this.#updateDrawerWelcomeAndLogout(userInfo.displayName);
                     // Now hide loading overlay and proceed to app
                     this.#hide(this.loadingOverlay);
-                    if (this.onLogin) this.onLogin(userInfo);
+                    if (this.onLogin) {
+                        console.log('[Auth] invoking onLogin callback (fresh login)');
+                        this.onLogin(userInfo);
+                    }
                 }, 300);
             });
         } else {
+            console.warn('[Auth] invalid credentials');
             this.errorMessage.style.display = 'block';
             this.passwordInput.value = '';
             this.passwordInput.focus();
@@ -211,31 +228,28 @@ class AuthenticationManager {
     #suspendDrawers() {
         try {
             this._suspendedDrawers = [];
-            const drawers = Array.from(document.querySelectorAll('sl-drawer'));
+            const drawers = Array.from(document.querySelectorAll('wa-drawer'));
             drawers.forEach((drawer) => {
-                const wasOpen = drawer.hasAttribute('open') && !drawer.hidden;
+                const wasOpen = (drawer.open === true) || (drawer.hasAttribute('open') && !drawer.hidden);
                 if (wasOpen) {
                     this._suspendedDrawers.push(drawer);
-                    // Prefer method when available
-                    if (typeof drawer.hide === 'function') {
-                        drawer.hide();
-                    } else {
-                        drawer.removeAttribute('open');
-                    }
+                    drawer.open = false;
                 }
             });
+            if (this._suspendedDrawers.length) {
+                console.log(`[Auth] suspended ${this._suspendedDrawers.length} drawer(s)`);
+            }
         } catch (_) {}
     }
 
     #restoreDrawers() {
         try {
             this._suspendedDrawers.forEach((drawer) => {
-                if (typeof drawer.show === 'function') {
-                    drawer.show();
-                } else {
-                    drawer.setAttribute('open', '');
-                }
+                drawer.open = true;
             });
+            if (this._suspendedDrawers.length) {
+                console.log(`[Auth] restored ${this._suspendedDrawers.length} drawer(s)`);
+            }
             this._suspendedDrawers = [];
         } catch (_) {}
     }
@@ -333,6 +347,7 @@ class AuthenticationManager {
             // Ensure ring starts at 0 and show overlay
             this.loadingProgress.value = 0;
             this.#show(this.loadingOverlay);
+            console.log(`[Auth] loading overlay shown; duration=${durationMs} maxTotal=${maxTotalMs}`);
             
             // Small delay to ensure DOM updates before starting animation
             setTimeout(() => {
@@ -387,6 +402,7 @@ class AuthenticationManager {
                     } else {
                         this.loadingProgress.value = 100;
                         // Do not hide overlay here; caller controls final hide timing
+                        console.log('[Auth] loading sequence complete');
                         resolve();
                     }
                 };
@@ -399,38 +415,25 @@ class AuthenticationManager {
         const drawer = document.querySelector('.drawer-placement');
         if (!drawer) return;
 
-        // Drawer title via label slot (allows styling like italics). Remove any inline welcome block.
-        const firstChild = drawer.firstElementChild;
-        // Remove deprecated inline welcome block if present
-        const oldWelcome = drawer.querySelector('#auth-welcome-block');
-        if (oldWelcome) {
-            oldWelcome.remove();
-        }
-
-        // Ensure a label slot element exists and update it
-        let labelEl = drawer.querySelector('#auth-drawer-label[slot="label"]');
-        if (!labelEl) {
-            labelEl = document.createElement('span');
-            labelEl.id = 'auth-drawer-label';
-            labelEl.setAttribute('slot', 'label');
-            // Insert as first child so it reliably serves as the label
-            drawer.insertBefore(labelEl, firstChild || null);
-        }
+        // Update the drawer's label attribute to show the welcome message
         const safeName = displayName || '';
-        labelEl.innerHTML = `<em style="font-size: 18px; font-weight: 500;">Welcome, ${safeName}!</em>`;
+        try {
+            drawer.setAttribute('label', `Welcome, ${safeName}!`);
+        } catch (_) {}
 
-        // Logout button in drawer footer area, aligned to left; match size to Close
+        // Logout button in drawer footer area
         let logoutBtn = drawer.querySelector('#auth-logout-button');
         if (!logoutBtn) {
-            logoutBtn = document.createElement('sl-button');
+            logoutBtn = document.createElement('wa-button');
             logoutBtn.id = 'auth-logout-button';
             logoutBtn.className = 'auth-logout-button';
             logoutBtn.setAttribute('variant', 'default');
             logoutBtn.setAttribute('size', 'medium');
             logoutBtn.setAttribute('slot', 'footer');
             logoutBtn.style.marginTop = '0';
-            logoutBtn.innerHTML = `<sl-icon slot="suffix" name="arrow-up-right-square"></sl-icon> Log out`;
+            logoutBtn.textContent = 'Log out';
             drawer.appendChild(logoutBtn);
+            console.log('[Auth] added Logout button to drawer footer');
             logoutBtn.addEventListener('click', () => this.logout());
         }
     }

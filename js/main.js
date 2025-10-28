@@ -4,6 +4,7 @@
  */
 
 import { initializeMap, addGeoJSONLayer, fitMapToBounds, enablePortfolioPopups, bringMapboxLabelsAboveServiceAreas } from './map.js';
+import { authenticationManager } from './authentication.js';
 import { loadGeoJSON, loadTextFile, asPointsFromLonLat } from './dataLoader.js';
 import { dataConfig } from './config.js';
 import { addServiceAreaLayer, addServiceAreaLabels, addServiceAreaMaskLayer } from './serviceAreas.js';
@@ -28,38 +29,51 @@ let showLongstreet = true; // default matches checked switch
  */
 async function initApp() {
     try {
-        console.log('Initializing NGHS Portfolio application...');
+        console.log('[App] Initializing application...');
 
         // Initialize the map
+        console.log('[App] initializeMap start');
         const map = await initializeMap('map-container');
+        console.log('[App] initializeMap done');
         mapInstance = map; // Store for filter functions
 
         // Load service area data
+        console.log('[App] load service-areas.geojson');
         serviceAreasData = await loadGeoJSON('data/service-areas.geojson');
+        console.log('[App] load service-areas-labels.geojson');
         serviceAreasLabelsData = await loadGeoJSON('data/service-areas-labels.geojson');
+        console.log('[App] load service-areas-mask.geojson');
         serviceAreasMaskData = await loadGeoJSON('data/service-areas-mask.geojson');
         
         // Load the portfolio GeoJSON data and convert to Points from lon/lat
+        console.log(`[App] load portfolio ${dataConfig.portfolioDataPath}`);
         const rawPortfolio = await loadGeoJSON(dataConfig.portfolioDataPath);
         portfolioData = asPointsFromLonLat(rawPortfolio);
+        console.log('[App] portfolio as points:', portfolioData.features?.length ?? 0);
 
         // Build allowed parcel_ids from portfolio
         const allowedParcelIds = getUniqueParcelIdsFromPortfolio(portfolioData);
+        console.log('[App] allowed parcel ids:', allowedParcelIds.length);
 
         // Load and filter parcels by allowed parcel_ids
         parcelsData = await loadFilteredParcels(allowedParcelIds);
+        console.log('[App] parcels loaded');
 
         // Add all layers to the map (service areas, parcels, portfolio)
+        console.log('[App] add all layers');
         addAllLayers(map);
 
         // Default Mapbox basemap only; no Esri layer arrangement
 
         // Fit the map to show all portfolio locations
+        console.log('[App] fitMapToBounds');
         fitMapToBounds(map, portfolioData);
 
         // Initialize the stats panel before filters apply
+        console.log('[App] initStatsPanel');
         initStatsPanel();
         // Initial stats render with current defaults
+        console.log('[App] updateStatsPanel initial');
         updateStatsPanel(portfolioData, {
             selectedOwnership,
             selectedPropertyType,
@@ -68,33 +82,40 @@ async function initApp() {
         });
 
         // Load and display the last updated date
+        console.log(`[App] load last updated ${dataConfig.lastUpdatedPath}`);
         const lastUpdated = await loadTextFile(dataConfig.lastUpdatedPath);
         const lastUpdatedElement = document.getElementById('last-updated');
         if (lastUpdatedElement && lastUpdated) {
             lastUpdatedElement.textContent = lastUpdated;
+            console.log('[App] last updated set');
         }
 
         // Initialize drawer functionality
+        console.log('[App] initializeDrawer');
         initializeDrawer();
 
         // Initialize ownership filter
+        console.log('[App] initializeOwnershipFilter');
         initializeOwnershipFilter();
 
         // Initialize property type filter
+        console.log('[App] initializePropertyTypeFilter');
         initializePropertyTypeFilter();
 
         // Initialize service area filter
+        console.log('[App] initializeServiceAreaFilter');
         initializeServiceAreaFilter();
 
         // Initialize Longstreet toggle filter
+        console.log('[App] initializeLongstreetToggle');
         initializeLongstreetToggle();
 
         // Basemap selector removed; default basemap remains in config
 
-        console.log('Application initialized successfully');
+        console.log('[App] Application initialized successfully');
 
     } catch (error) {
-        console.error('Failed to initialize application:', error);
+        console.error('[App] Failed to initialize application:', error);
         alert('Failed to load the map. Please check the console for details.');
     }
 }
@@ -400,10 +421,29 @@ function initializeDrawer() {
     console.log('Drawer functionality initialized');
 }
 
-// Start the application when the DOM is ready
-if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initApp);
-} else {
+// Start the application when the DOM is ready, but gate behind authentication
+function startAfterAuth() {
+    // Only initialize once
+    if (window.__appInitialized) return;
+    window.__appInitialized = true;
+    console.log('[Auth] Login successful, booting application...');
     initApp();
+}
+
+function boot() {
+    authenticationManager.init({
+        onLogin() {
+            startAfterAuth();
+        },
+        onLogout() {
+            // Optional: future cleanup
+        }
+    });
+}
+
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', boot);
+} else {
+    boot();
 }
 
