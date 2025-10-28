@@ -33,7 +33,7 @@ export function addServiceAreaMaskLayer(map, geojsonData, sourceId = 'service-ar
         });
     }
 
-    // Add a fill layer with white color at 50% opacity, no outline
+    // Add a fill layer with white color
     if (!map.getLayer(layerId)) {
         map.addLayer({
             id: layerId,
@@ -41,7 +41,7 @@ export function addServiceAreaMaskLayer(map, geojsonData, sourceId = 'service-ar
             source: sourceId,
             paint: {
                 'fill-color': '#ffffff',
-                'fill-opacity': 0.7
+                'fill-opacity': 0.5
             }
         });
     }

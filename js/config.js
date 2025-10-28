@@ -1,5 +1,5 @@
 /**
- * Configuration settings for the application
+ * Configuration settings for the Mapbox GL JS mapping application
  */
 
 export const mapConfig = {
@@ -9,6 +9,8 @@ export const mapConfig = {
         version: 8,
         // Required for text rendering on symbol layers
         glyphs: 'https://api.mapbox.com/fonts/v1/mapbox/{fontstack}/{range}.pbf?access_token=pk.eyJ1Ijoid3dyaWdodDIxIiwiYSI6ImNtYTJ4NWtwdjAwb2oydnEzdjV0anRxeWIifQ.h63WS8JxUedXWYkcNCkSnQ',
+        // Required for icons (e.g., highway shields) used by Mapbox Streets layers added at runtime
+        sprite: 'https://api.mapbox.com/styles/v1/mapbox/streets-v12/sprite?access_token=pk.eyJ1Ijoid3dyaWdodDIxIiwiYSI6ImNtYTJ4NWtwdjAwb2oydnEzdjV0anRxeWIifQ.h63WS8JxUedXWYkcNCkSnQ',
         sources: {
             'esri-satellite': {
                 type: 'raster',
@@ -17,7 +19,7 @@ export const mapConfig = {
                 ],
                 tileSize: 256,
                 attribution: ''
-            }
+            }      
         },
         layers: [
             {
@@ -26,7 +28,7 @@ export const mapConfig = {
                 source: 'esri-satellite',
                 minzoom: 0,
                 maxzoom: 22
-            }
+            },
         ]
     },
     center: [-83.82, 34.30], // Centered on Gainesville, GA area

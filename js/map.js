@@ -9,7 +9,7 @@ import { mapConfig } from './config.js';
  * @param {string} containerId - ID of the container element
  * @returns {Promise<mapboxgl.Map>} Initialized map instance
  */
-export function initializeMap(containerId) {
+export async function initializeMap(containerId) {
     return new Promise((resolve, reject) => {
         try {
             // Set the Mapbox access token
@@ -26,7 +26,7 @@ export function initializeMap(containerId) {
             });
 
             // Wait for map to load before resolving
-            map.on('load', () => {
+            map.on('load', async () => {
                 console.log('Map loaded successfully');
 
                 // Add scale control
@@ -35,6 +35,41 @@ export function initializeMap(containerId) {
                     unit: "imperial",
                 });
                 map.addControl(scale, "bottom-right");
+
+                // --- ADD MAPBOX LABELS ON TOP ---
+                try {
+                    console.log('Loading Mapbox Streets labels...');
+                    const streetsUrl = `https://api.mapbox.com/styles/v1/mapbox/streets-v12?access_token=${mapboxgl.accessToken}`;
+                    const response = await fetch(streetsUrl);
+                    const streetsStyle = await response.json();
+
+                    // Add all sources from the Streets style (if not already present)
+                    for (const [name, source] of Object.entries(streetsStyle.sources)) {
+                        if (!map.getSource(name)) {
+                            map.addSource(name, source);
+                        }
+                    }
+
+                    // Filter only label/icon layers
+                    const labelLayers = streetsStyle.layers.filter(layer => layer.type === 'symbol');
+                    const addedLabelLayerIds = [];
+
+                    // Add label layers to the map (above imagery)
+                    for (const layer of labelLayers) {
+                        if (!map.getLayer(layer.id)) {
+                            map.addLayer(layer);
+                            addedLabelLayerIds.push(layer.id);
+                        }
+                    }
+
+                    // Persist the list of Mapbox label layer ids on the map instance for later reordering
+                    map.__mapboxLabelLayerIds = addedLabelLayerIds;
+
+                    console.log('Mapbox label layers added successfully');
+                } catch (err) {
+                    console.error('Error loading Mapbox labels:', err);
+                }
+                
 
                 resolve(map);
             });
@@ -270,4 +305,37 @@ export function changeBasemap(map, styleUrl) {
 }
 
 // Esri basemap utilities were removed per request; default Mapbox basemap remains
+
+
+/**
+ * Repositions previously added Mapbox label layers so they render above
+ * polygon layers (mask and service areas) but below portfolio point layers.
+ * @param {mapboxgl.Map} map - Mapbox map instance
+ */
+export function bringMapboxLabelsAboveServiceAreas(map) {
+    if (!map) return;
+    const labelIds = Array.isArray(map.__mapboxLabelLayerIds) ? map.__mapboxLabelLayerIds : [];
+    if (labelIds.length === 0) return;
+
+    // Prefer to place labels just beneath portfolio points background so
+    // points (and their backgrounds) remain visually on top of labels
+    const beforeLayerId = map.getLayer('portfolio-points-background')
+        ? 'portfolio-points-background'
+        : (map.getLayer('portfolio-points') ? 'portfolio-points' : null);
+
+    for (const id of labelIds) {
+        if (!map.getLayer(id)) continue;
+        try {
+            if (beforeLayerId) {
+                map.moveLayer(id, beforeLayerId);
+            } else {
+                // Fallback: move to top if portfolio layers are not present yet
+                map.moveLayer(id);
+            }
+        } catch (e) {
+            // Non-fatal if a specific layer cannot be moved
+            console.warn(`Could not reposition label layer '${id}':`, e);
+        }
+    }
+}
 

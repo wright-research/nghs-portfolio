@@ -3,7 +3,7 @@
  * Coordinates the initialization and interaction of all modules
  */
 
-import { initializeMap, addGeoJSONLayer, fitMapToBounds, enablePortfolioPopups } from './map.js';
+import { initializeMap, addGeoJSONLayer, fitMapToBounds, enablePortfolioPopups, bringMapboxLabelsAboveServiceAreas } from './map.js';
 import { loadGeoJSON, loadTextFile, asPointsFromLonLat } from './dataLoader.js';
 import { dataConfig } from './config.js';
 import { addServiceAreaLayer, addServiceAreaLabels, addServiceAreaMaskLayer } from './serviceAreas.js';
@@ -132,6 +132,9 @@ function addAllLayers(map) {
         enablePortfolioPopups(map, 'portfolio-points');
     }
     
+    // Ensure Mapbox label layers render above service area and mask polygons
+    bringMapboxLabelsAboveServiceAreas(map);
+
     console.log('All layers added successfully');
 }
 
