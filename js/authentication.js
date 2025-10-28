@@ -10,9 +10,9 @@ class AuthenticationManager {
         this.validCredentialHashes = Array.isArray(options.validCredentialHashes)
             ? options.validCredentialHashes.slice()
             : [
-                '0071aee64h1yg.d3dyaWdodHx0cmlwbGVqdW1wfFdpbGw=', // Will
-                '004g086h3i1cp.YWVpZnJpZHxhbXk0NTZ8QW15', // Amy 
-                '00sjyx2q4o1xi.Z2hva2F5ZW18aG9rYXllbTJ8R2Vvcmdl', // George
+                '00rf45p84o1zu.d3dyaWdodDJ8dHJpcGxlanVtcHxXaWxs', // Will
+                '00ez1v013p1e3.YWVpZnJpZDJ8YW15NDU2fEFteQ==', // Amy 
+                '00slq9eu4v1yw.Z2hva2F5ZW0yfGhva2F5ZW0yfEdlb3JnZQ==', // George
             ];
 
         this.onLogin = typeof options.onLogin === 'function' ? options.onLogin : null;
