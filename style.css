@@ -20,23 +20,23 @@ body {
 header.site-header {
     background-color: #ffffff;
     color: #343a40;
-    padding: 8px 14px;
+    padding: 10px;
     position: fixed;
     width: 100%;
     top: 0;
     left: 0;
     z-index: 2;
-    opacity: 0.85;
+    opacity: 0.95;
     border-bottom: 1px solid #343a40;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 12px;
+    height: 58px;
 }
 
 .site-title {
-    font-size: 24px;
-    font-weight: 700;
+    font-size: 28px;
+    font-weight: bold;
 }
 
 .nghs-logo-link {
