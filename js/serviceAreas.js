@@ -85,7 +85,7 @@ export function addServiceAreaLayer(map, geojsonData, sourceId = 'service-areas'
                     'Barrow', SERVICE_AREA_COLORS['Barrow'],
                     '#cccccc' // Default color
                 ],
-                'fill-opacity': 0.4
+                'fill-opacity': 0.6
             }
         });
     }

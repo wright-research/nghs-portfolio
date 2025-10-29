@@ -21,6 +21,10 @@ export async function initializeMap(containerId) {
                 style: mapConfig.style,
                 center: mapConfig.center,
                 zoom: mapConfig.zoom,
+                // Prevent zooming too far out; allow full zoom-in by omitting maxZoom
+                minZoom: mapConfig.minZoom,
+                // Constrain panning to a local bounding box
+                maxBounds: mapConfig.maxBounds,
                 pitch: mapConfig.pitch,
                 bearing: mapConfig.bearing
             });
@@ -119,15 +123,23 @@ export async function initializeMap(containerId) {
                         'road-intersection',
                         'building-number-label',
                         'building-entrance',
-                        'block-number-label'
+                        'block-number-label',
+                        'waterway-label'
                     ];
 
                     for (const layerId of hiddenLabelIds) {
                         if (map.getLayer(layerId)) {
                           map.setLayoutProperty(layerId, 'visibility', 'none');
                         }
-                      }                      
-
+                      }
+                      
+                    console.log('Visible label layers after hiding unwanted ones:');
+                    addedLabelLayerIds.forEach(layerId => {
+                    const visibility = map.getLayoutProperty(layerId, 'visibility');
+                    if (visibility !== 'none') {
+                        console.log(`- ${layerId} (${visibility})`);
+                    }
+                    });
 
                     // --- ENHANCE LABEL READABILITY OVER SATELLITE IMAGERY ---
                     for (const layerId of addedLabelLayerIds) {

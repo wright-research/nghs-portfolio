@@ -6,7 +6,7 @@
 import { initializeMap, addClusteredPortfolioLayers, updateClusteredPortfolioData, fitMapToBounds, enablePortfolioPopups, bringMapboxLabelsAboveServiceAreas } from './map.js';
 import { authenticationManager } from './authentication.js';
 import { loadGeoJSON, loadTextFile, asPointsFromLonLat } from './dataLoader.js';
-import { dataConfig } from './config.js';
+import { dataConfig, featureFlags } from './config.js';
 import { addServiceAreaLayer, addServiceAreaLabels, addServiceAreaMaskLayer } from './serviceAreas.js';
 import { initStatsPanel, updateStatsPanel } from './stats.js';
 import { loadFilteredParcels, addParcelsLayers } from './parcels.js';
@@ -36,6 +36,8 @@ async function initApp() {
         const map = await initializeMap('map-container');
         console.log('[App] initializeMap done');
         mapInstance = map; // Store for filter functions
+        // Expose for quick testing in devtools (e.g., hide layers on the fly)
+        window.mapInstance = mapInstance;
 
         // Load service area data
         console.log('[App] load service-areas.geojson');
@@ -130,7 +132,7 @@ function addAllLayers(map) {
     
     // Add service area layers first (so they appear below portfolio points)
     // Add mask first to ensure it sits beneath other service area layers
-    if (serviceAreasMaskData) {
+    if (serviceAreasMaskData && featureFlags.showServiceAreaMask) {
         addServiceAreaMaskLayer(map, serviceAreasMaskData, 'service-areas-mask', 'service-areas-mask');
     }
     if (serviceAreasData) {
@@ -169,8 +171,11 @@ function getUniqueParcelIdsFromPortfolio(portfolio) {
     const ids = new Set();
     portfolio.features.forEach(f => {
         const p = f && f.properties ? f.properties : {};
-        const pid = p && p.parcel_id != null ? String(p.parcel_id) : null;
-        if (pid) ids.add(pid);
+        // Only include parcels for Owned properties
+        if (p && p.ownership_type === 'Owned') {
+            const pid = p.parcel_id != null ? String(p.parcel_id) : null;
+            if (pid) ids.add(pid);
+        }
     });
     return Array.from(ids);
 }

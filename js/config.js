@@ -33,6 +33,12 @@ export const mapConfig = {
     },
     center: [-83.82, 34.30], // Centered on Gainesville, GA area
     zoom: 8,
+    // Limit how far out users can zoom; higher values allow zooming in
+    // Keep max zoom unlimited (uses Mapbox default ~22)
+    minZoom: 7,
+    // Constrain panning to Northeast Georgia (approx. Habersham, Lumpkin, Hall, Barrow, Braselton area)
+    // Format: [[westLng, southLat], [eastLng, northLat]]
+    maxBounds: [[-86.6, 31.6], [-79.9, 37.1]],
     pitch: 0,
     bearing: 0
 };
@@ -41,5 +47,11 @@ export const dataConfig = {
     portfolioDataPath: 'data/nghs_portfolio.geojson',
     lastUpdatedPath: 'data/last_updated.txt',
     parcelsDataPath: 'data/nghs_parcels.geojson'
+};
+
+// Feature flags and quick toggles
+export const featureFlags = {
+    // Toggle for the white semi-transparent service area mask
+    showServiceAreaMask: true
 };
 
