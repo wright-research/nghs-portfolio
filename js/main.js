@@ -3,7 +3,7 @@
  * Coordinates the initialization and interaction of all modules
  */
 
-import { initializeMap, addGeoJSONLayer, fitMapToBounds, enablePortfolioPopups, bringMapboxLabelsAboveServiceAreas } from './map.js';
+import { initializeMap, addClusteredPortfolioLayers, updateClusteredPortfolioData, fitMapToBounds, enablePortfolioPopups, bringMapboxLabelsAboveServiceAreas } from './map.js';
 import { authenticationManager } from './authentication.js';
 import { loadGeoJSON, loadTextFile, asPointsFromLonLat } from './dataLoader.js';
 import { dataConfig } from './config.js';
@@ -146,10 +146,10 @@ function addAllLayers(map) {
         addParcelsLayers(map, parcelsData, 13);
     }
 
-    // Add portfolio points on top
+    // Add clustered portfolio points on top
     if (portfolioData) {
-        addGeoJSONLayer(map, portfolioData, 'portfolio', 'portfolio-points');
-        // Enable popups for portfolio points
+        addClusteredPortfolioLayers(map, portfolioData, 'portfolio');
+        // Enable popups for unclustered portfolio points
         enablePortfolioPopups(map, 'portfolio-points');
     }
     
@@ -173,6 +173,57 @@ function getUniqueParcelIdsFromPortfolio(portfolio) {
         if (pid) ids.add(pid);
     });
     return Array.from(ids);
+}
+
+/**
+ * Filters the portfolio FeatureCollection according to current UI selections.
+ * Returns a new FeatureCollection used to update the clustered source so
+ * cluster counts reflect the filters.
+ */
+function buildFilteredPortfolioCollection() {
+    if (!portfolioData || !Array.isArray(portfolioData.features)) {
+        return { type: 'FeatureCollection', features: [] };
+    }
+
+    const explicitCategories = ['Hospital', 'Land', 'Office', 'Vacant Building'];
+    const showAllServiceAreas = selectedServiceAreas.length === ALL_SERVICE_AREAS.length;
+
+    const filtered = portfolioData.features.filter((feature) => {
+        const p = feature && feature.properties ? feature.properties : {};
+
+        // Ownership filter
+        if (selectedOwnership && selectedOwnership !== 'all') {
+            if (p.ownership_type !== selectedOwnership) return false;
+        }
+
+        // Property type filter
+        if (selectedPropertyType && selectedPropertyType !== 'All') {
+            const bt = p.building_type || '';
+            if (selectedPropertyType === 'Medical Office') {
+                if (String(bt).slice(0, 13) !== 'Medical Office') return false;
+            } else if (selectedPropertyType === 'Other') {
+                const isExplicit = explicitCategories.includes(bt);
+                const isMedical = String(bt).slice(0, 13) === 'Medical Office';
+                if (isExplicit || isMedical) return false;
+            } else {
+                if (bt !== selectedPropertyType) return false;
+            }
+        }
+
+        // Service area filter (points)
+        if (!showAllServiceAreas) {
+            if (!selectedServiceAreas.includes(p.service_area)) return false;
+        }
+
+        // Longstreet toggle
+        if (showLongstreet === false) {
+            if (p.longstreet === 'Yes') return false;
+        }
+
+        return true;
+    });
+
+    return { type: 'FeatureCollection', features: filtered };
 }
 
 /**
@@ -228,16 +279,9 @@ function buildPortfolioFilterExpression() {
  * @param {mapboxgl.Map} map
  */
 function applyCombinedFilters(map) {
-    const layerId = 'portfolio-points';
-    const backgroundLayerId = `${layerId}-background`;
-    const combinedFilter = buildPortfolioFilterExpression();
-
-    if (map.getLayer(layerId)) {
-        map.setFilter(layerId, combinedFilter);
-    }
-    if (map.getLayer(backgroundLayerId)) {
-        map.setFilter(backgroundLayerId, combinedFilter);
-    }
+    // Update clustered portfolio source data so cluster counts reflect filters
+    const filteredCollection = buildFilteredPortfolioCollection();
+    updateClusteredPortfolioData(map, filteredCollection, 'portfolio');
 
     // Apply service area filters to polygon and label layers
     const polygonsLayerId = 'service-areas-fill';

@@ -86,14 +86,16 @@ export async function initializeMap(containerId) {
                     for (const layerId of addedRoadLayerIds) {
                         const layer = map.getLayer(layerId);
                         if (layer && layer.type === 'line') {
+                            // show all line layer.id values in the console
+                            console.log('Line layer ID:', layer.id);
                             // Only keep major highways and interstates
                             if (
-                                layer.id.includes('motorway') ||  // interstates
-                                layer.id.includes('trunk') ||     // major highways
-                                layer.id.includes('primary')      // state routes
+                                layer.id.includes('motorway') ||  
+                                layer.id.includes('major') ||     
+                                layer.id.includes('primary')
                             ) {
                                 // Make these slightly brighter and semi-transparent
-                                map.setPaintProperty(layerId, 'line-opacity', 0.3);
+                                map.setPaintProperty(layerId, 'line-opacity', 0.5);
                                 map.setPaintProperty(layerId, 'line-color', '#ffffff');
                                 map.setLayoutProperty(layerId, 'visibility', 'visible');
                             } else {
@@ -129,7 +131,6 @@ export async function initializeMap(containerId) {
 
                     // --- ENHANCE LABEL READABILITY OVER SATELLITE IMAGERY ---
                     for (const layerId of addedLabelLayerIds) {
-                        console.log('Added label layers:', addedLabelLayerIds);
                         const layer = map.getLayer(layerId);
                         if (layer && layer.type === 'symbol') {
                             // Target only place-name layers (not roads, shields, or POIs)
@@ -422,6 +423,188 @@ export function bringMapboxLabelsAboveServiceAreas(map) {
         } catch (e) {
             // Non-fatal if a specific layer cannot be moved
             console.warn(`Could not reposition label layer '${id}':`, e);
+        }
+    }
+}
+
+
+/**
+ * Adds clustered portfolio layers (clustered and unclustered) using the NGHS logo.
+ * - Source id defaults to 'portfolio' and enables clustering
+ * - Cluster layers: background circle + symbol with logo and count
+ * - Unclustered layers reuse ids 'portfolio-points[-background]' to keep popup code working
+ * @param {mapboxgl.Map} map
+ * @param {Object} geojsonData FeatureCollection of portfolio points
+ * @param {string} sourceId
+ */
+export function addClusteredPortfolioLayers(map, geojsonData, sourceId = 'portfolio') {
+    const logoPath = 'assets/nghs_logo.png';
+    const iconName = 'nghs-logo-icon';
+
+    const ensureIcon = (cb) => {
+        if (map.hasImage(iconName)) {
+            cb();
+        } else {
+            map.loadImage(logoPath, (error, image) => {
+                if (error) {
+                    console.error('Error loading logo image:', error);
+                    return;
+                }
+                if (!map.hasImage(iconName)) {
+                    try {
+                        map.addImage(iconName, image);
+                    } catch (e) {
+                        if (!(e && e.message && e.message.includes('already exists'))) {
+                            console.error('Unexpected error adding image:', e);
+                        }
+                    }
+                }
+                cb();
+            });
+        }
+    };
+
+    ensureIcon(() => {
+        const existing = map.getSource(sourceId);
+        if (existing) {
+            existing.setData(geojsonData);
+        } else {
+            map.addSource(sourceId, {
+                type: 'geojson',
+                data: geojsonData,
+                cluster: true,
+                clusterMaxZoom: 14,
+                clusterRadius: 50
+            });
+        }
+
+        // Cluster background circle (dark gray) sized by point_count
+        if (!map.getLayer('portfolio-clusters-background')) {
+            map.addLayer({
+                id: 'portfolio-clusters-background',
+                type: 'circle',
+                source: sourceId,
+                filter: ['has', 'point_count'],
+                paint: {
+                    'circle-radius': [
+                        'step', ['get', 'point_count'],
+                        20, 10, 22,
+                        50, 26,
+                        100, 30,
+                        250, 36
+                    ],
+                    'circle-color': '#343a40',
+                    'circle-opacity': 0.95,
+                    'circle-stroke-width': 2.5,
+                    'circle-stroke-color': '#222222'
+                }
+            });
+        }
+
+        // Cluster symbol: bold white count text (no icon)
+        if (!map.getLayer('portfolio-clusters')) {
+            map.addLayer({
+                id: 'portfolio-clusters',
+                type: 'symbol',
+                source: sourceId,
+                filter: ['has', 'point_count'],
+                layout: {
+                    'text-field': ['get', 'point_count_abbreviated'],
+                    'text-font': ['Arial Unicode MS Bold', 'DIN Offc Pro Medium'],
+                    'text-size': [
+                        'step', ['get', 'point_count'],
+                        14, 50, 16,
+                        100, 18,
+                        250, 22
+                    ],
+                    'text-anchor': 'center',
+                    'text-allow-overlap': true
+                },
+                paint: {
+                    'text-color': '#ffffff',
+                    'text-halo-color': '#343a40',
+                    'text-halo-width': 0
+                }
+            });
+        }
+
+        // Unclustered background circle (keep id pattern for popup helper)
+        if (!map.getLayer('portfolio-points-background')) {
+            map.addLayer({
+                id: 'portfolio-points-background',
+                type: 'circle',
+                source: sourceId,
+                filter: ['!', ['has', 'point_count']],
+                paint: {
+                    'circle-radius': 23,
+                    'circle-color': '#ffffff',
+                    'circle-stroke-width': 2.5,
+                    'circle-stroke-color': '#333333',
+                    'circle-opacity': 0.8
+                }
+            });
+        }
+
+        // Unclustered symbol with NGHS logo (retain id 'portfolio-points')
+        if (!map.getLayer('portfolio-points')) {
+            map.addLayer({
+                id: 'portfolio-points',
+                type: 'symbol',
+                source: sourceId,
+                filter: ['!', ['has', 'point_count']],
+                layout: {
+                    'icon-image': iconName,
+                    'icon-size': 0.1,
+                    'icon-allow-overlap': true
+                }
+            });
+        }
+
+        // Cluster click to expand zoom
+        const onClusterClick = (e) => {
+            const features = map.queryRenderedFeatures(e.point, { layers: ['portfolio-clusters'] });
+            const clusterId = features && features[0] && features[0].properties && features[0].properties.cluster_id;
+            if (clusterId == null) return;
+            const src = map.getSource(sourceId);
+            if (!src) return;
+            src.getClusterExpansionZoom(clusterId, (err, zoom) => {
+                if (err) return;
+                map.easeTo({ center: features[0].geometry.coordinates, zoom });
+            });
+        };
+        // Attach once
+        if (!map.__nghsClusterClickBound) {
+            map.on('click', 'portfolio-clusters', onClusterClick);
+            map.on('click', 'portfolio-clusters-background', onClusterClick);
+            map.__nghsClusterClickBound = true;
+        }
+
+        // Pointer cursor on cluster layers
+        if (!map.__nghsClusterCursorBound) {
+            const setPointer = () => { map.getCanvas().style.cursor = 'pointer'; };
+            const unsetPointer = () => { map.getCanvas().style.cursor = ''; };
+            map.on('mouseenter', 'portfolio-clusters', setPointer);
+            map.on('mouseleave', 'portfolio-clusters', unsetPointer);
+            map.on('mouseenter', 'portfolio-clusters-background', setPointer);
+            map.on('mouseleave', 'portfolio-clusters-background', unsetPointer);
+            map.__nghsClusterCursorBound = true;
+        }
+    });
+}
+
+/**
+ * Updates the clustered portfolio source data (to reflect filters).
+ * @param {mapboxgl.Map} map
+ * @param {Object} filteredGeojson FeatureCollection to set on the source
+ * @param {string} sourceId
+ */
+export function updateClusteredPortfolioData(map, filteredGeojson, sourceId = 'portfolio') {
+    const src = map.getSource(sourceId);
+    if (src && filteredGeojson) {
+        try {
+            src.setData(filteredGeojson);
+        } catch (e) {
+            console.error('Failed to update clustered portfolio data:', e);
         }
     }
 }
