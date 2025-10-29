@@ -39,6 +39,7 @@ export async function initializeMap(containerId) {
                 // --- ADD MAPBOX LABELS ON TOP ---
                 try {
                     console.log('Loading Mapbox Streets labels...');
+                    console.table(map.getStyle().layers);
                     const streetsUrl = `https://api.mapbox.com/styles/v1/mapbox/streets-v12?access_token=${mapboxgl.accessToken}`;
                     const response = await fetch(streetsUrl);
                     const streetsStyle = await response.json();
@@ -102,15 +103,51 @@ export async function initializeMap(containerId) {
                         }
                     }
 
+                    // --- HIDE UNWANTED LABEL LAYERS ---
+                    const hiddenLabelIds = [
+                        'airport-label',
+                        'golf-hole-label',
+                        'natural-line-label',
+                        'natural-point-label',
+                        'water-line-label',
+                        'water-point-label',
+                        'poi-label',
+                        'transit-label',
+                        'ferry-aerialway-label',
+                        'road-intersection',
+                        'building-number-label',
+                        'building-entrance',
+                        'block-number-label'
+                    ];
+
+                    for (const layerId of hiddenLabelIds) {
+                        if (map.getLayer(layerId)) {
+                          map.setLayoutProperty(layerId, 'visibility', 'none');
+                        }
+                      }                      
+
 
                     // --- ENHANCE LABEL READABILITY OVER SATELLITE IMAGERY ---
                     for (const layerId of addedLabelLayerIds) {
+                        console.log('Added label layers:', addedLabelLayerIds);
                         const layer = map.getLayer(layerId);
                         if (layer && layer.type === 'symbol') {
                             // Target only place-name layers (not roads, shields, or POIs)
                             if (layer.id.startsWith('settlement-')) {
                                 map.setPaintProperty(layerId, 'text-halo-color', '#ffffff');
                                 map.setPaintProperty(layerId, 'text-halo-width', 1.5);
+                            }
+
+                            // Road shields and route symbols
+                            if (
+                                layer.id.includes('road') ||
+                                layer.id.includes('motorway') ||
+                                layer.id.includes('trunk') ||
+                                layer.id.includes('primary')
+                            ) {
+                                // Slight transparency for shields and text
+                                map.setPaintProperty(layerId, 'icon-opacity', 0.9);
+                                map.setPaintProperty(layerId, 'text-opacity', 0.9);
                             }
                         }
                     }                    
