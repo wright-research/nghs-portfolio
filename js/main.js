@@ -3,7 +3,7 @@
  * Coordinates the initialization and interaction of all modules
  */
 
-import { initializeMap, addClusteredPortfolioLayers, updateClusteredPortfolioData, fitMapToBounds, enablePortfolioPopups, bringMapboxLabelsAboveServiceAreas } from './map.js';
+import { initializeMap, addClusteredPortfolioLayers, updateClusteredPortfolioData, fitMapToBounds, enablePortfolioPopups, sendMapboxLabelsBelowServiceAreas } from './map.js';
 import { authenticationManager } from './authentication.js';
 import { loadGeoJSON, loadTextFile, asPointsFromLonLat } from './dataLoader.js';
 import { dataConfig, featureFlags } from './config.js';
@@ -155,8 +155,8 @@ function addAllLayers(map) {
         enablePortfolioPopups(map, 'portfolio-points');
     }
     
-    // Ensure Mapbox label layers render above service area and mask polygons
-    bringMapboxLabelsAboveServiceAreas(map);
+    // Ensure Mapbox label layers render below service area and mask polygons
+    sendMapboxLabelsBelowServiceAreas(map);
 
     console.log('All layers added successfully');
 }
@@ -205,10 +205,10 @@ function buildFilteredPortfolioCollection() {
         if (selectedPropertyType && selectedPropertyType !== 'All') {
             const bt = p.building_type || '';
             if (selectedPropertyType === 'Medical Office') {
-                if (String(bt).slice(0, 13) !== 'Medical Office') return false;
+                if (String(bt).slice(0, 14) !== 'Medical Office') return false;
             } else if (selectedPropertyType === 'Other') {
                 const isExplicit = explicitCategories.includes(bt);
-                const isMedical = String(bt).slice(0, 13) === 'Medical Office';
+                const isMedical = String(bt).slice(0, 14) === 'Medical Office';
                 if (isExplicit || isMedical) return false;
             } else {
                 if (bt !== selectedPropertyType) return false;
@@ -247,12 +247,12 @@ function buildPortfolioFilterExpression() {
     if (selectedPropertyType && selectedPropertyType !== 'All') {
         if (selectedPropertyType === 'Medical Office') {
             // Prefix match: any building_type that starts with "Medical Office"
-            propertyCondition = ['match', ['slice', ['get', 'building_type'], 0, 13], ['Medical Office'], true, false];
+            propertyCondition = ['match', ['slice', ['get', 'building_type'], 0, 14], ['Medical Office'], true, false];
         } else if (selectedPropertyType === 'Other') {
             // Everything else: not one of listed explicit categories and not starting with Medical Office
             const explicitCategories = ['Hospital', 'Land', 'Office', 'Vacant Building'];
             const notExplicit = ['!', ['in', ['get', 'building_type'], ['literal', explicitCategories]]];
-            const notMedicalPrefix = ['!=', ['slice', ['get', 'building_type'], 0, 13], 'Medical Office'];
+            const notMedicalPrefix = ['!=', ['slice', ['get', 'building_type'], 0, 14], 'Medical Office'];
             propertyCondition = ['all', notExplicit, notMedicalPrefix];
         } else {
             propertyCondition = ['==', ['get', 'building_type'], selectedPropertyType];

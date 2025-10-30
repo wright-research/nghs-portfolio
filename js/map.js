@@ -99,7 +99,7 @@ export async function initializeMap(containerId) {
                                 layer.id.includes('primary')
                             ) {
                                 // Make these slightly brighter and semi-transparent
-                                map.setPaintProperty(layerId, 'line-opacity', 0.5);
+                                map.setPaintProperty(layerId, 'line-opacity', 0.8);
                                 map.setPaintProperty(layerId, 'line-color', '#ffffff');
                                 map.setLayoutProperty(layerId, 'visibility', 'visible');
                             } else {
@@ -147,8 +147,10 @@ export async function initializeMap(containerId) {
                         if (layer && layer.type === 'symbol') {
                             // Target only place-name layers (not roads, shields, or POIs)
                             if (layer.id.startsWith('settlement-')) {
-                                map.setPaintProperty(layerId, 'text-halo-color', '#ffffff');
+                                map.setPaintProperty(layerId, 'text-halo-color', '#000000');
                                 map.setPaintProperty(layerId, 'text-halo-width', 1.5);
+                                // make the text color white
+                                map.setPaintProperty(layerId, 'text-color', '#ffffff');
                             }
 
                             // Road shields and route symbols
@@ -408,20 +410,20 @@ export function changeBasemap(map, styleUrl) {
 
 
 /**
- * Repositions previously added Mapbox label layers so they render above
- * polygon layers (mask and service areas) but below portfolio point layers.
+ * Repositions Mapbox label layers so they render UNDER the Service Area polygons
+ * (mask, fills, and outlines). Portfolio markers remain on top.
  * @param {mapboxgl.Map} map - Mapbox map instance
  */
-export function bringMapboxLabelsAboveServiceAreas(map) {
+export function sendMapboxLabelsBelowServiceAreas(map) {
     if (!map) return;
     const labelIds = Array.isArray(map.__mapboxLabelLayerIds) ? map.__mapboxLabelLayerIds : [];
     if (labelIds.length === 0) return;
 
-    // Prefer to place labels just beneath portfolio points background so
-    // points (and their backgrounds) remain visually on top of labels
-    const beforeLayerId = map.getLayer('portfolio-points-background')
-        ? 'portfolio-points-background'
-        : (map.getLayer('portfolio-points') ? 'portfolio-points' : null);
+    // Move labels to draw BEFORE the lowest Service Area layer so they end up beneath
+    // the mask, fills, and outlines.
+    const beforeLayerId =
+        map.getLayer('service-areas-mask') ? 'service-areas-mask' :
+        (map.getLayer('service-areas-fill') ? 'service-areas-fill' : null);
 
     for (const id of labelIds) {
         if (!map.getLayer(id)) continue;
@@ -429,11 +431,10 @@ export function bringMapboxLabelsAboveServiceAreas(map) {
             if (beforeLayerId) {
                 map.moveLayer(id, beforeLayerId);
             } else {
-                // Fallback: move to top if portfolio layers are not present yet
-                map.moveLayer(id);
+                // If service area layers are not present yet, leave order unchanged
+                // to avoid placing labels above markers inadvertently.
             }
         } catch (e) {
-            // Non-fatal if a specific layer cannot be moved
             console.warn(`Could not reposition label layer '${id}':`, e);
         }
     }

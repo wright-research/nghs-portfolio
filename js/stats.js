@@ -6,6 +6,7 @@
 import { SERVICE_AREA_COLORS } from './serviceAreas.js';
 
 let panelEl = null;
+let kpiEl = null;
 
 /**
  * Creates the stats panel container in the DOM if it doesn't exist
@@ -24,6 +25,28 @@ export function initStatsPanel() {
     // Append near the map so it overlays correctly
     const container = document.getElementById('map-container') || document.body;
     container.appendChild(panelEl);
+
+    // Create KPI container for mobile view
+    if (!kpiEl) {
+        kpiEl = document.createElement('div');
+        kpiEl.id = 'stats-kpi';
+        kpiEl.className = 'stats-kpi-container';
+        kpiEl.setAttribute('role', 'region');
+        kpiEl.setAttribute('aria-label', 'Portfolio KPIs');
+
+        kpiEl.innerHTML = (
+            '<div class="kpi-card" id="kpi-card-properties">' +
+                '<div class="kpi-title">Properties</div>' +
+                '<div class="kpi-value" id="kpi-properties">—</div>' +
+            '</div>' +
+            '<div class="kpi-card" id="kpi-card-secondary">' +
+                '<div class="kpi-title" id="kpi-secondary-title">Total SF</div>' +
+                '<div class="kpi-value" id="kpi-secondary-value">—</div>' +
+            '</div>'
+        );
+
+        container.appendChild(kpiEl);
+    }
     return panelEl;
 }
 
@@ -33,7 +56,7 @@ function getEmptyPanelMarkup() {
             '<table class="stats-table" aria-describedby="summary-description">' +
                 '<thead>' +
                     '<tr>' +
-                        '<th scope="col" colspan="2" class="stats-section-title">All Properties</th>' +
+                        '<th scope="col" colspan="2" class="stats-section-title" id="stats-main-title">All Properties</th>' +
                     '</tr>' +
                 '</thead>' +
                 '<tbody>' +
@@ -87,6 +110,18 @@ export function updateStatsPanel(portfolioData, selections) {
     if (!portfolioData || !portfolioData.features) return;
 
     const { selectedOwnership, selectedPropertyType, selectedServiceAreas, showLongstreet = true } = selections || {};
+
+    // Update main heading based on selected property type
+    try {
+        const titleEl = panelEl.querySelector('#stats-main-title');
+        if (titleEl) {
+            const isAll = !selectedPropertyType || selectedPropertyType === 'All';
+            const heading = isAll ? 'All Properties' : `${selectedPropertyType} Properties`;
+            titleEl.textContent = heading;
+        }
+    } catch (_) {
+        // non-fatal
+    }
 
     // Show/hide sections based on selected property type
     updateSectionVisibility(selectedPropertyType);
@@ -149,6 +184,64 @@ export function updateStatsPanel(portfolioData, selections) {
         return { area, totalAcres };
     });
     renderAcresRows(acresRows, showTotal);
+
+    // --- KPI updates for mobile view ---
+    try {
+        // Total properties shown
+        const totalProperties = Array.isArray(features) ? features.length : 0;
+        const propertiesEl = document.getElementById('kpi-properties');
+        if (propertiesEl) {
+            propertiesEl.textContent = Number(totalProperties).toLocaleString();
+        }
+
+        // Secondary KPI: Total SF or Total Acreage (for Land)
+        const secondaryTitleEl = document.getElementById('kpi-secondary-title');
+        const secondaryValueEl = document.getElementById('kpi-secondary-value');
+        if (secondaryTitleEl && secondaryValueEl) {
+            if (selectedPropertyType === 'Land') {
+                // Compute acreage without double counting grouped properties
+                const standaloneAcres = features.reduce((sum, f) => {
+                    const p = f && f.properties ? f.properties : {};
+                    const grouping = p.grouping;
+                    const acres = p.land_size;
+                    const isStandalone = !grouping || grouping === 'None';
+                    if (isStandalone && typeof acres === 'number' && isFinite(acres)) {
+                        return sum + acres;
+                    }
+                    return sum;
+                }, 0);
+
+                const groupingToMaxAcres = new Map();
+                features.forEach(f => {
+                    const p = f && f.properties ? f.properties : {};
+                    const grouping = p.grouping;
+                    const acres = p.land_size;
+                    if (grouping && grouping !== 'None' && typeof acres === 'number' && isFinite(acres)) {
+                        const prev = groupingToMaxAcres.get(grouping);
+                        if (prev === undefined || acres > prev) {
+                            groupingToMaxAcres.set(grouping, acres);
+                        }
+                    }
+                });
+                const groupedAcres = Array.from(groupingToMaxAcres.values()).reduce((a, b) => a + b, 0);
+                const totalAcres = standaloneAcres + groupedAcres;
+
+                secondaryTitleEl.textContent = 'Total Acreage';
+                secondaryValueEl.textContent = formatAcreage(totalAcres);
+            } else {
+                // Total square footage across all selected features
+                const numericSfs = features
+                    .map(f => f && f.properties ? f.properties.square_footage : null)
+                    .filter(v => typeof v === 'number' && isFinite(v));
+                const totalSf = numericSfs.reduce((sum, v) => sum + v, 0);
+                secondaryTitleEl.textContent = 'Total SF';
+                secondaryValueEl.textContent = formatNumber(totalSf);
+            }
+        }
+    } catch (e) {
+        // Non-fatal; KPI rendering should not break desktop stats
+        console.warn('KPI update failed:', e);
+    }
 }
 
 function updateSectionVisibility(selectedPropertyType) {
