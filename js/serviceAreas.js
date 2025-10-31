@@ -41,7 +41,7 @@ export function addServiceAreaMaskLayer(map, geojsonData, sourceId = 'service-ar
             source: sourceId,
             paint: {
                 'fill-color': '#ffffff',
-                'fill-opacity': 0.5
+                'fill-opacity': 0.2
             }
         });
     }

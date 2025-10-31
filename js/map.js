@@ -303,7 +303,22 @@ export function enablePortfolioPopups(map, layerId = 'portfolio-points') {
         const name = escapeHtml(props.name || 'Unknown');
         const buildingType = escapeHtml(props.building_type || '');
 
-        const html = `\n            <div class="popup-content">\n                <div class="popup-title">${name}</div>\n                <div class="popup-subtitle">${buildingType}</div>\n            </div>\n        `;
+        // Determine which size value to show based on building_type
+        const rawBuildingType = (props.building_type || '');
+        const isLand = typeof rawBuildingType === 'string' && rawBuildingType.toLowerCase() === 'land';
+        const sizeLabel = isLand ? 'Land Size' : 'Square Footage';
+        const sizeRaw = isLand ? props.land_size : props.square_footage;
+        let sizeText;
+        if (sizeRaw == null || sizeRaw === '') {
+            sizeText = '—';
+        } else if (isLand) {
+            sizeText = String(sizeRaw) + ' acres';
+        } else {
+            const num = Number(sizeRaw);
+            sizeText = Number.isFinite(num) ? num.toLocaleString('en-US') : String(sizeRaw);
+        }
+
+        const html = `\n            <div class="popup-content">\n                <div class="popup-title">${name}</div>\n                <div class="popup-subtitle">${buildingType}</div>\n                <div class="popup-detail"><span class="popup-detail-label">${escapeHtml(sizeLabel)}:</span> ${escapeHtml(sizeText)}</div>\n            </div>\n        `;
 
         // Ensure only one popup is open at a time to avoid overlap/race issues
         if (activePopup) {
