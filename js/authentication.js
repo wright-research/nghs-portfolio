@@ -47,6 +47,21 @@ class AuthenticationManager {
             this.#handleLogin();
         });
 
+		// Allow pressing Enter in inputs to submit the form
+		const submitOnEnter = (ev) => {
+			if (ev && (ev.key === 'Enter' || ev.keyCode === 13)) {
+				ev.preventDefault();
+				if (this.authForm && typeof this.authForm.requestSubmit === 'function') {
+					this.authForm.requestSubmit();
+				} else if (this.authForm) {
+					// Fallback for older browsers
+					this.authForm.dispatchEvent(new Event('submit', { cancelable: true, bubbles: true }));
+				}
+			}
+		};
+		if (this.usernameInput) this.usernameInput.addEventListener('keydown', submitOnEnter);
+		if (this.passwordInput) this.passwordInput.addEventListener('keydown', submitOnEnter);
+
         // If already authenticated in this session, restore and update drawer UI
         if (sessionStorage.getItem('authenticated') === 'true') {
             const storedUsername = sessionStorage.getItem('username') || '';
