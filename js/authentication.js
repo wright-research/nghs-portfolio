@@ -13,6 +13,7 @@ class AuthenticationManager {
                 '00rf45p84o1zu.d3dyaWdodDJ8dHJpcGxlanVtcHxXaWxs', // Will
                 '00ez1v013p1e3.YWVpZnJpZDJ8YW15NDU2fEFteQ==', // Amy 
                 '00slq9eu4v1yw.Z2hva2F5ZW0yfGhva2F5ZW0yfEdlb3JnZQ==', // George
+                '00tb11ea5221q.d2JhZ3dlbGwyfHdpbGxpYW0hfFdpbGxpYW0=' // William Bagwell
             ];
 
         this.onLogin = typeof options.onLogin === 'function' ? options.onLogin : null;
