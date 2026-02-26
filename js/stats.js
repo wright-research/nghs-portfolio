@@ -89,7 +89,7 @@ function getEmptyPanelMarkup() {
             '<table id="table-acres" class="stats-table stats-acres-table" aria-describedby="summary-description">' +
                 '<thead>' +
                     '<tr>' +
-                        '<th scope="col" colspan="2" class="stats-section-title">Land Size - Total Acres</th>' +
+                        '<th scope="col" colspan="2" class="stats-section-title">Land Size (Acres)</th>' +
                     '</tr>' +
                 '</thead>' +
                 '<tbody class="stats-acres-tbody">' +
