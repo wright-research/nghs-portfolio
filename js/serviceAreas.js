@@ -41,7 +41,7 @@ export function addServiceAreaMaskLayer(map, geojsonData, sourceId = 'service-ar
             source: sourceId,
             paint: {
                 'fill-color': '#ffffff',
-                'fill-opacity': 0.2
+                'fill-opacity': 0.6
             }
         });
     }
@@ -133,6 +133,7 @@ export function addServiceAreaLabels(map, geojsonData, sourceId = 'service-areas
             id: layerId,
             type: 'symbol',
             source: sourceId,
+            maxzoom: 12,
             layout: {
                 'text-field': ['get', 'label'],
                 'text-font': ['Open Sans Bold', 'Arial Unicode MS Bold'],
@@ -155,6 +156,25 @@ export function addServiceAreaLabels(map, geojsonData, sourceId = 'service-areas
 }
 
 /**
+ * Toggles the service area fill on or off.
+ * On: semi-transparent colored fill with a thin dark outline.
+ * Off: no fill, thick white outline only.
+ * @param {mapboxgl.Map} map
+ * @param {boolean} showFill
+ */
+export function setServiceAreaFill(map, showFill) {
+    if (map.getLayer('service-areas-fill')) {
+        map.setPaintProperty('service-areas-fill', 'fill-opacity', showFill ? 0.6 : 0);
+    }
+    if (map.getLayer('service-areas-fill-outline')) {
+        map.setPaintProperty('service-areas-fill-outline', 'line-color', showFill ? '#333333' : '#ffffff');
+        map.setPaintProperty('service-areas-fill-outline', 'line-width', showFill ? 1.5 : 2);
+        map.setPaintProperty('service-areas-fill-outline', 'line-opacity', showFill ? 0.8 : 0.9);
+        map.setPaintProperty('service-areas-fill-outline', 'line-dasharray', showFill ? null : [1, 2]);
+    }
+}
+
+/**
  * Loads and adds all service area data to the map
  * @param {mapboxgl.Map} map - Mapbox map instance
  * @returns {Promise<void>}
@@ -163,17 +183,11 @@ export async function initializeServiceAreas(map) {
     try {
         console.log('Loading service areas...');
 
-        // Load service area mask (must be lowest among service area layers)
-        const maskData = await loadGeoJSON('data/service-areas-mask.geojson');
-
         // Load service area polygons
         const serviceAreasData = await loadGeoJSON('data/service-areas.geojson');
-        
+
         // Load service area labels
         const labelsData = await loadGeoJSON('data/service-areas-labels.geojson');
-
-        // Add the mask layer first so it sits beneath others
-        addServiceAreaMaskLayer(map, maskData);
 
         // Add the polygon layer (below portfolio points)
         addServiceAreaLayer(map, serviceAreasData);
@@ -181,14 +195,8 @@ export async function initializeServiceAreas(map) {
         // Add the labels layer (below portfolio points)
         addServiceAreaLabels(map, labelsData);
 
-        // Ensure mask is ordered below the fill layer
-        try {
-            if (map.getLayer('service-areas-mask') && map.getLayer('service-areas-fill')) {
-                map.moveLayer('service-areas-mask', 'service-areas-fill');
-            }
-        } catch (orderError) {
-            console.warn('Could not reorder service area mask beneath fill:', orderError);
-        }
+        // Mask layer disabled for evaluation
+        // addServiceAreaMaskLayer(map, maskData);
 
         console.log('Service areas initialized successfully');
 

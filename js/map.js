@@ -98,9 +98,10 @@ export async function initializeMap(containerId) {
                                 layer.id.includes('major') ||     
                                 layer.id.includes('primary')
                             ) {
-                                // Make these slightly brighter and semi-transparent
-                                map.setPaintProperty(layerId, 'line-opacity', 0.8);
-                                map.setPaintProperty(layerId, 'line-color', '#ffffff');
+                                // Thin gray roads that blend with aerial imagery
+                                map.setPaintProperty(layerId, 'line-opacity', 0.6);
+                                map.setPaintProperty(layerId, 'line-color', '#888888');
+                                map.setPaintProperty(layerId, 'line-width', 1);
                                 map.setLayoutProperty(layerId, 'visibility', 'visible');
                             } else {
                                 // Hide local and residential roads to declutter the map

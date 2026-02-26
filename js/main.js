@@ -7,7 +7,7 @@ import { initializeMap, addClusteredPortfolioLayers, updateClusteredPortfolioDat
 import { authenticationManager } from './authentication.js';
 import { loadGeoJSON, loadTextFile, asPointsFromLonLat } from './dataLoader.js';
 import { dataConfig, featureFlags } from './config.js';
-import { addServiceAreaLayer, addServiceAreaLabels, addServiceAreaMaskLayer } from './serviceAreas.js';
+import { addServiceAreaLayer, addServiceAreaLabels, addServiceAreaMaskLayer, setServiceAreaFill } from './serviceAreas.js';
 import { initStatsPanel, updateStatsPanel } from './stats.js';
 import { loadFilteredParcels, addParcelsLayers } from './parcels.js';
 
@@ -111,6 +111,10 @@ async function initApp() {
         // Initialize Longstreet toggle filter
         console.log('[App] initializeLongstreetToggle');
         initializeLongstreetToggle();
+
+        // Initialize service area fill toggle
+        console.log('[App] initializeServiceAreaFillToggle');
+        initializeServiceAreaFillToggle();
 
         // Basemap selector removed; default basemap remains in config
 
@@ -423,6 +427,26 @@ function initializeLongstreetToggle() {
         });
 
         console.log('Longstreet toggle initialized');
+    }
+}
+
+/**
+ * Initializes the service area fill toggle
+ */
+function initializeServiceAreaFillToggle() {
+    const fillToggle = document.getElementById('serviceArea-fill');
+    if (fillToggle && mapInstance) {
+        // Sync initial state from the checked markup default
+        setServiceAreaFill(mapInstance, Boolean(fillToggle.checked));
+
+        const eventTypes = ['wa-change', 'change', 'input', 'sl-change'];
+        eventTypes.forEach(eventType => {
+            fillToggle.addEventListener(eventType, () => {
+                setServiceAreaFill(mapInstance, Boolean(fillToggle.checked));
+            });
+        });
+
+        console.log('Service area fill toggle initialized');
     }
 }
 
