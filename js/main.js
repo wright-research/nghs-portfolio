@@ -316,6 +316,14 @@ function applyCombinedFilters(map) {
         map.setFilter(labelsLayerId, labelsFilter);
     }
 
+    // Hide parcel polygons entirely when viewing Leased-only properties
+    const parcelVisibility = (selectedOwnership === 'Leased') ? 'none' : 'visible';
+    ['parcels-fill', 'parcels-outline'].forEach(layerId => {
+        if (map.getLayer(layerId)) {
+            map.setLayoutProperty(layerId, 'visibility', parcelVisibility);
+        }
+    });
+
     // Update stats based on current selections
     if (portfolioData) {
         updateStatsPanel(portfolioData, {
