@@ -19,7 +19,8 @@ let serviceAreasData = null;
 let serviceAreasLabelsData = null;
 let serviceAreasMaskData = null;
 let selectedOwnership = 'all';
-let selectedPropertyType = 'All';
+const ALL_PROPERTY_TYPES = ['Medical Office', 'Hospital', 'Land', 'Office', 'Vacant Building', 'Multi-Family', 'Other'];
+let selectedPropertyTypes = [...ALL_PROPERTY_TYPES];
 const ALL_SERVICE_AREAS = ['Habersham', 'Lumpkin', 'Gainesville', 'Braselton', 'Barrow'];
 let selectedServiceAreas = [...ALL_SERVICE_AREAS];
 let showLongstreet = true; // default matches checked switch
@@ -78,7 +79,7 @@ async function initApp() {
         console.log('[App] updateStatsPanel initial');
         updateStatsPanel(portfolioData, {
             selectedOwnership,
-            selectedPropertyType,
+            selectedPropertyTypes,
             selectedServiceAreas,
             showLongstreet
         });
@@ -194,7 +195,7 @@ function buildFilteredPortfolioCollection() {
         return { type: 'FeatureCollection', features: [] };
     }
 
-    const explicitCategories = ['Hospital', 'Land', 'Office', 'Vacant Building'];
+    const explicitCategories = ['Hospital', 'Land', 'Office', 'Vacant Building', 'Multi-Family'];
     const showAllServiceAreas = selectedServiceAreas.length === ALL_SERVICE_AREAS.length;
 
     const filtered = portfolioData.features.filter((feature) => {
@@ -205,18 +206,16 @@ function buildFilteredPortfolioCollection() {
             if (p.ownership_type !== selectedOwnership) return false;
         }
 
-        // Property type filter
-        if (selectedPropertyType && selectedPropertyType !== 'All') {
-            const bt = p.building_type || '';
-            if (selectedPropertyType === 'Medical Office') {
-                if (String(bt).slice(0, 14) !== 'Medical Office') return false;
-            } else if (selectedPropertyType === 'Other') {
-                const isExplicit = explicitCategories.includes(bt);
-                const isMedical = String(bt).slice(0, 14) === 'Medical Office';
-                if (isExplicit || isMedical) return false;
-            } else {
-                if (bt !== selectedPropertyType) return false;
-            }
+        // Property type filter — empty = show nothing, full set = show all
+        if (selectedPropertyTypes.length === 0) return false;
+        if (selectedPropertyTypes.length < ALL_PROPERTY_TYPES.length) {
+            const bt = String(p.building_type || '');
+            const matches = selectedPropertyTypes.some(type => {
+                if (type === 'Medical Office') return bt.slice(0, 14) === 'Medical Office';
+                if (type === 'Other') return !explicitCategories.includes(bt) && bt.slice(0, 14) !== 'Medical Office';
+                return bt === type;
+            });
+            if (!matches) return false;
         }
 
         // Service area filter (points)
@@ -246,26 +245,32 @@ function buildPortfolioFilterExpression() {
         ownershipCondition = ['==', ['get', 'ownership_type'], selectedOwnership];
     }
 
-    // Property type condition
+    // Property type condition — empty = show nothing, full set = no condition
     let propertyCondition = null;
-    if (selectedPropertyType && selectedPropertyType !== 'All') {
-        if (selectedPropertyType === 'Medical Office') {
-            // Prefix match: any building_type that starts with "Medical Office"
-            propertyCondition = ['match', ['slice', ['get', 'building_type'], 0, 14], ['Medical Office'], true, false];
-        } else if (selectedPropertyType === 'Other') {
-            // Everything else: not one of listed explicit categories and not starting with Medical Office
-            const explicitCategories = ['Hospital', 'Land', 'Office', 'Vacant Building'];
-            const notExplicit = ['!', ['in', ['get', 'building_type'], ['literal', explicitCategories]]];
-            const notMedicalPrefix = ['!=', ['slice', ['get', 'building_type'], 0, 14], 'Medical Office'];
-            propertyCondition = ['all', notExplicit, notMedicalPrefix];
-        } else {
-            propertyCondition = ['==', ['get', 'building_type'], selectedPropertyType];
-        }
+    if (selectedPropertyTypes.length === 0) {
+        propertyCondition = ['boolean', false];
+    } else if (selectedPropertyTypes.length < ALL_PROPERTY_TYPES.length) {
+        const explicitCats = ['Hospital', 'Land', 'Office', 'Vacant Building', 'Multi-Family'];
+        const typeConditions = selectedPropertyTypes.map(type => {
+            if (type === 'Medical Office') {
+                return ['match', ['slice', ['get', 'building_type'], 0, 14], ['Medical Office'], true, false];
+            } else if (type === 'Other') {
+                return ['all',
+                    ['!', ['in', ['get', 'building_type'], ['literal', explicitCats]]],
+                    ['!=', ['slice', ['get', 'building_type'], 0, 14], 'Medical Office']
+                ];
+            } else {
+                return ['==', ['get', 'building_type'], type];
+            }
+        });
+        propertyCondition = typeConditions.length === 1 ? typeConditions[0] : ['any', ...typeConditions];
     }
 
-    // Service area condition (for portfolio points)
+    // Service area condition — empty = show nothing, full set = no condition
     let serviceAreaCondition = null;
-    if (selectedServiceAreas && selectedServiceAreas.length > 0 && selectedServiceAreas.length < ALL_SERVICE_AREAS.length) {
+    if (selectedServiceAreas.length === 0) {
+        serviceAreaCondition = ['boolean', false];
+    } else if (selectedServiceAreas.length < ALL_SERVICE_AREAS.length) {
         serviceAreaCondition = ['in', ['get', 'service_area'], ['literal', selectedServiceAreas]];
     }
 
@@ -328,7 +333,7 @@ function applyCombinedFilters(map) {
     if (portfolioData) {
         updateStatsPanel(portfolioData, {
             selectedOwnership,
-            selectedPropertyType,
+            selectedPropertyTypes,
             selectedServiceAreas,
             showLongstreet
         });
@@ -363,11 +368,22 @@ function initializePropertyTypeFilter() {
     const propertyTypeFilter = document.getElementById('property-type-filter');
 
     if (propertyTypeFilter && mapInstance) {
-        const eventTypes = ['wa-change', 'change', 'wa-select', 'input', 'sl-change'];
+        // Default: select all options
+        const options = Array.from(propertyTypeFilter.querySelectorAll('wa-option'));
+        options.forEach(opt => { opt.selected = true; });
+        selectedPropertyTypes = [...ALL_PROPERTY_TYPES];
+        applyCombinedFilters(mapInstance);
 
+        const eventTypes = ['wa-change', 'change', 'wa-select', 'input', 'sl-change'];
         eventTypes.forEach(eventType => {
-            propertyTypeFilter.addEventListener(eventType, (event) => {
-                selectedPropertyType = event.target.value;
+            propertyTypeFilter.addEventListener(eventType, () => {
+                const currentOptions = Array.from(propertyTypeFilter.querySelectorAll('wa-option'));
+                const currentSelected = currentOptions.filter(o => o.selected).map(o => o.value).filter(Boolean);
+                if ((!currentSelected || currentSelected.length === 0) && Array.isArray(propertyTypeFilter.value)) {
+                    selectedPropertyTypes = propertyTypeFilter.value;
+                } else {
+                    selectedPropertyTypes = currentSelected;
+                }
                 applyCombinedFilters(mapInstance);
             });
         });
@@ -402,10 +418,6 @@ function initializeServiceAreaFilter() {
                     selectedServiceAreas = serviceAreaFilter.value;
                 } else {
                     selectedServiceAreas = currentSelected;
-                }
-                // Guard: if none selected, treat as all (show everything)
-                if (!selectedServiceAreas || selectedServiceAreas.length === 0) {
-                    selectedServiceAreas = [...ALL_SERVICE_AREAS];
                 }
                 applyCombinedFilters(mapInstance);
             });

@@ -1,164 +1,3067 @@
 {
-"type": "FeatureCollection",
-"name": "nghs_portfolio",
-"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
-"features": [
-{ "type": "Feature", "properties": { "parcel_id": "7f36da6abe9a193e1ad877b3b67664b6", "name": "Auburn Medical Office", "address": "12 7th Street", "ownership_type": "Leased", "building_type": "Medical Office Building (Freestanding)", "land_size": null, "square_footage": 3522.0, "listed_for_sale": "No", "longstreet": "No", "lat": 34.010453, "lon": -83.823996, "service_area": "Braselton", "grouping": null }, "geometry": { "type": "Point", "coordinates": [ -83.823996, 34.010453 ] } },
-{ "type": "Feature", "properties": { "parcel_id": "da71eb3549ebb12c3315867b3a7fefef", "name": "Barrow Medical Office Building", "address": "314 North Broad Street", "ownership_type": "Owned", "building_type": "Medical Office Building (Multi-Tenant)", "land_size": 14.28, "square_footage": 45135.0, "listed_for_sale": "No", "longstreet": "No", "lat": 34.008227, "lon": -83.707708, "service_area": "Barrow", "grouping": "A" }, "geometry": { "type": "Point", "coordinates": [ -83.707708, 34.008227 ] } },
-{ "type": "Feature", "properties": { "parcel_id": "da71eb3549ebb12c3315867b3a7fefef", "name": "NGMC - Barrow", "address": "316 North Broad Street", "ownership_type": "Owned", "building_type": "Hospital", "land_size": 14.28, "square_footage": 73973.0, "listed_for_sale": "No", "longstreet": "No", "lat": 34.008101, "lon": -83.707521, "service_area": "Barrow", "grouping": "A" }, "geometry": { "type": "Point", "coordinates": [ -83.707521, 34.008101 ] } },
-{ "type": "Feature", "properties": { "parcel_id": "824440b3d48beb5d43eb01d2f8bfd6d0", "name": "NGPG Podiatry Winder", "address": "293 North Broad Street", "ownership_type": "Leased", "building_type": "Medical Office Building (Freestanding)", "land_size": 2.5, "square_footage": 1578.0, "listed_for_sale": "No", "longstreet": "No", "lat": 34.005322, "lon": -83.706442, "service_area": "Barrow", "grouping": null }, "geometry": { "type": "Point", "coordinates": [ -83.706442, 34.005322 ] } },
-{ "type": "Feature", "properties": { "parcel_id": "d146b6b6d8665e492598fd21e8ff197f", "name": "Winder - Gainesville Highway", "address": "0 Gainesville Highway", "ownership_type": "Owned", "building_type": "Land", "land_size": 22.68, "square_footage": null, "listed_for_sale": "No", "longstreet": "No", "lat": 34.009322, "lon": -83.710288, "service_area": "Barrow", "grouping": null }, "geometry": { "type": "Point", "coordinates": [ -83.710288, 34.009322 ] } },
-{ "type": "Feature", "properties": { "parcel_id": "bf4af99d28843e3602ada864ee0bd3a3", "name": "Bethlehem - Loganville Hwy -12.79 Acres", "address": "0 Loganville Highway", "ownership_type": "Owned", "building_type": "Land", "land_size": 12.79, "square_footage": null, "listed_for_sale": "No", "longstreet": "No", "lat": 33.939626, "lon": -83.760284, "service_area": "Barrow", "grouping": null }, "geometry": { "type": "Point", "coordinates": [ -83.760284, 33.939626 ] } },
-{ "type": "Feature", "properties": { "parcel_id": "847b32191d0d5441e5d5f668f1c52200", "name": "Bethlehem - Loganville Hwy - 18.90 Acres", "address": "0 Loganville Highway", "ownership_type": "Owned", "building_type": "Land", "land_size": 18.9, "square_footage": null, "listed_for_sale": "No", "longstreet": "No", "lat": 33.938427, "lon": -83.757776, "service_area": "Barrow", "grouping": null }, "geometry": { "type": "Point", "coordinates": [ -83.757776, 33.938427 ] } },
-{ "type": "Feature", "properties": { "parcel_id": "aa95ec171b1f5af68c730864ded74502", "name": "Bethlehem - Loganville Hwy - 2.896 Acres", "address": "0 Loganville Highway (tract 9)", "ownership_type": "Owned", "building_type": "Land", "land_size": 2.896, "square_footage": null, "listed_for_sale": "No", "longstreet": "No", "lat": 33.942319, "lon": -83.758601, "service_area": "Barrow", "grouping": null }, "geometry": { "type": "Point", "coordinates": [ -83.758601, 33.942319 ] } },
-{ "type": "Feature", "properties": { "parcel_id": "57fe61ef5cb561c57dd338af691c1d84", "name": "Medical Plaza 1 in Bethlehem", "address": "990 Loganville Highway", "ownership_type": "Owned", "building_type": "Medical Office Building (Multi-Tenant)", "land_size": 10.55, "square_footage": 34000.0, "listed_for_sale": "No", "longstreet": "No", "lat": 33.941342, "lon": -83.759739, "service_area": "Barrow", "grouping": null }, "geometry": { "type": "Point", "coordinates": [ -83.759739, 33.941342 ] } },
-{ "type": "Feature", "properties": { "parcel_id": "1d26fb495c881bf9224736783c194868", "name": "Medical Plaza 2 in Dawsonville", "address": "22 Prestige Lane", "ownership_type": "Owned", "building_type": "Medical Office Building (Multi-Tenant)", "land_size": 1.28, "square_footage": 35800.0, "listed_for_sale": "No", "longstreet": "No", "lat": 34.368166, "lon": -84.033471, "service_area": "Lumpkin", "grouping": null }, "geometry": { "type": "Point", "coordinates": [ -84.033471, 34.368166 ] } },
-{ "type": "Feature", "properties": { "parcel_id": "3cffae08b7246e13d4c832f64ad53ba3", "name": "Dawsonville - 81 Prominence Court", "address": "81 Prominence Court", "ownership_type": "Leased", "building_type": "Medical Office Building (Multi-Tenant)", "land_size": null, "square_footage": 4000.0, "listed_for_sale": "No", "longstreet": "No", "lat": 34.368717, "lon": -84.034131, "service_area": "Lumpkin", "grouping": null }, "geometry": { "type": "Point", "coordinates": [ -84.034131, 34.368717 ] } },
-{ "type": "Feature", "properties": { "parcel_id": "c87878c5732ec27527c327344af0879a", "name": "Medical Plaza 1 in Dawsonville", "address": "108 Prominence Court", "ownership_type": "Owned", "building_type": "Medical Office Building (Multi-Tenant)", "land_size": 2.96, "square_footage": 26078.0, "listed_for_sale": "No", "longstreet": "No", "lat": 34.368792, "lon": -84.033016, "service_area": "Lumpkin", "grouping": null }, "geometry": { "type": "Point", "coordinates": [ -84.033016, 34.368792 ] } },
-{ "type": "Feature", "properties": { "parcel_id": "dadd01320defcc67e396abb93c4d0716", "name": "Dawsonville Medical Office - Highway 53", "address": "5959 Highway 53 East", "ownership_type": "Leased", "building_type": "Medical Office Building (Multi-Tenant)", "land_size": null, "square_footage": 2500.0, "listed_for_sale": "No", "longstreet": "No", "lat": 34.369416, "lon": -84.041399, "service_area": "Lumpkin", "grouping": null }, "geometry": { "type": "Point", "coordinates": [ -84.041399, 34.369416 ] } },
-{ "type": "Feature", "properties": { "parcel_id": "efe857f560dfb585beca891e1a0c40db", "name": "Dawsonville Medical Office - Medical Center Drive", "address": "45 Medical Center Drive", "ownership_type": "Owned", "building_type": "Medical Office Building (Freestanding)", "land_size": 2.09, "square_footage": 8109.0, "listed_for_sale": "No", "longstreet": "No", "lat": 34.366954, "lon": -84.038757, "service_area": "Lumpkin", "grouping": null }, "geometry": { "type": "Point", "coordinates": [ -84.038757, 34.366954 ] } },
-{ "type": "Feature", "properties": { "parcel_id": "373bf5a5f75ddd5e6022787ba63e25e7", "name": "Dawsonville Medical Office - 200 Dawson Commons", "address": "200 Dawson Commons Circle", "ownership_type": "Leased", "building_type": "Medical Office Building (Multi-Tenant)", "land_size": null, "square_footage": 3692.0, "listed_for_sale": "No", "longstreet": "No", "lat": 34.368871, "lon": -84.042638, "service_area": "Lumpkin", "grouping": null }, "geometry": { "type": "Point", "coordinates": [ -84.042638, 34.368871 ] } },
-{ "type": "Feature", "properties": { "parcel_id": "fd4adde1757f6e6745585ac4dce61681", "name": "Cumming Medical Offices - Keith Bridge Road", "address": "2825 Keith Bridge Road", "ownership_type": "Owned", "building_type": "Medical Office Building (Multi-Tenant)", "land_size": 2.5, "square_footage": 11497.0, "listed_for_sale": "No", "longstreet": "No", "lat": 34.255035, "lon": -84.090642, "service_area": "Lumpkin", "grouping": null }, "geometry": { "type": "Point", "coordinates": [ -84.090642, 34.255035 ] } },
-{ "type": "Feature", "properties": { "parcel_id": "23ee25bdfd494051a4979f368966800d", "name": "Cumming Medical Offices - Sanders Road", "address": "900 Sanders Road", "ownership_type": "Leased", "building_type": "Medical Office Building (Multi-Tenant)", "land_size": null, "square_footage": 7809.0, "listed_for_sale": "No", "longstreet": "No", "lat": 34.184788, "lon": -84.123806, "service_area": "Lumpkin", "grouping": null }, "geometry": { "type": "Point", "coordinates": [ -84.123806, 34.184788 ] } },
-{ "type": "Feature", "properties": { "parcel_id": "a88da328a1b8931be94977489c4242a7", "name": "Lavonia Medical Offices", "address": "12192 Augusta Road", "ownership_type": "Leased", "building_type": "Medical Office Building (Freestanding)", "land_size": null, "square_footage": 7304.0, "listed_for_sale": "No", "longstreet": "No", "lat": 34.428454, "lon": -83.105874, "service_area": "Habersham", "grouping": null }, "geometry": { "type": "Point", "coordinates": [ -83.105874, 34.428454 ] } },
-{ "type": "Feature", "properties": { "parcel_id": "be136bfa21c9025cde476293f632efeb", "name": "Dacula Medical Offices", "address": "852 Dacula Road", "ownership_type": "Owned", "building_type": "Medical Office Building (Freestanding)", "land_size": 3.25, "square_footage": 10415.0, "listed_for_sale": "No", "longstreet": "No", "lat": 34.008817, "lon": -83.916111, "service_area": "Barrow", "grouping": null }, "geometry": { "type": "Point", "coordinates": [ -83.916111, 34.008817 ] } },
-{ "type": "Feature", "properties": { "parcel_id": "953cc7822c407106971362fc4a5953f8", "name": "Medical Plaza 1 in Buford", "address": "4445 South Lee Street", "ownership_type": "Owned", "building_type": "Medical Office Building (Multi-Tenant)", "land_size": 8.47, "square_footage": 93330.0, "listed_for_sale": "No", "longstreet": "No", "lat": 34.104531, "lon": -84.001828, "service_area": "Braselton", "grouping": null }, "geometry": { "type": "Point", "coordinates": [ -84.001828, 34.104531 ] } },
-{ "type": "Feature", "properties": { "parcel_id": "cfe14b1baba8e1b6b943bdf1a8ea68c7", "name": "Buford Professional Park - 4095 South Lee St", "address": "4095 South Lee Street", "ownership_type": "Leased", "building_type": "Medical Office Building (Freestanding)", "land_size": 1.45, "square_footage": 7492.0, "listed_for_sale": "No", "longstreet": "Yes", "lat": 34.093743, "lon": -83.998164, "service_area": "Braselton", "grouping": null }, "geometry": { "type": "Point", "coordinates": [ -83.998164, 34.093743 ] } },
-{ "type": "Feature", "properties": { "parcel_id": "9ad7fb5a5d49d017c97166d8187c1a36", "name": "Hamilton Mill Medical Office - 3625 Braselton Hwy", "address": "3625 Braselton Highway", "ownership_type": "Leased", "building_type": "Medical Office Building (Multi-Tenant)", "land_size": null, "square_footage": 3645.0, "listed_for_sale": "No", "longstreet": "No", "lat": 34.068647, "lon": -83.904529, "service_area": "Barrow", "grouping": null }, "geometry": { "type": "Point", "coordinates": [ -83.904529, 34.068647 ] } },
-{ "type": "Feature", "properties": { "parcel_id": "5d5572a0d4ba8816a2ba885a2564d8a0", "name": "Suwanee - 1120 Peachtree Industrial Boulevard", "address": "1120 Peachtree Industrial Boulevard", "ownership_type": "Leased", "building_type": "Medical Office Building (Multi-Tenant)", "land_size": 5.3, "square_footage": 36841.0, "listed_for_sale": "No", "longstreet": "Yes", "lat": 34.04725, "lon": -84.091961, "service_area": "Braselton", "grouping": null }, "geometry": { "type": "Point", "coordinates": [ -84.091961, 34.04725 ] } },
-{ "type": "Feature", "properties": { "parcel_id": "ad11c247096a3d02efd9f633da1c634a", "name": "Hoschton - Thompson Mill Road", "address": "0 Thompson Mill Rd.", "ownership_type": "Owned", "building_type": "Land", "land_size": 6.02, "square_footage": null, "listed_for_sale": "No", "longstreet": "No", "lat": 34.10929, "lon": -83.848577, "service_area": "Braselton", "grouping": null }, "geometry": { "type": "Point", "coordinates": [ -83.848577, 34.10929 ] } },
-{ "type": "Feature", "properties": { "parcel_id": "71ef907ab921bb65ac185e65039cbe67", "name": "Hamilton Mill Medical Offices - 3575 Braselton Hwy", "address": "3575 Braselton Highway", "ownership_type": "Owned", "building_type": "Medical Office Building (Freestanding)", "land_size": 1.38, "square_footage": 9411.0, "listed_for_sale": "No", "longstreet": "No", "lat": 34.068736, "lon": -83.908298, "service_area": "Barrow", "grouping": null }, "geometry": { "type": "Point", "coordinates": [ -83.908298, 34.068736 ] } },
-{ "type": "Feature", "properties": { "parcel_id": "da5c5000953f4640f1479b4aa78c8dce", "name": "Highpoint Building - 1270 Friendship Road", "address": "1270 Friendship Road", "ownership_type": "Leased", "building_type": "Medical Office Building (Multi-Tenant)", "land_size": 19.4, "square_footage": 42848.0, "listed_for_sale": "No", "longstreet": "Yes", "lat": 34.118975, "lon": -83.829776, "service_area": "Braselton", "grouping": null }, "geometry": { "type": "Point", "coordinates": [ -83.829776, 34.118975 ] } },
-{ "type": "Feature", "properties": { "parcel_id": "b0daf9e72b57876472a107058c151eca", "name": "Cornelia - Walmart Outlot #4", "address": "0 Chase Road", "ownership_type": "Owned", "building_type": "Land", "land_size": 2.16, "square_footage": null, "listed_for_sale": "No", "longstreet": "No", "lat": 34.536913, "lon": -83.535388, "service_area": "Habersham", "grouping": null }, "geometry": { "type": "Point", "coordinates": [ -83.535388, 34.536913 ] } },
-{ "type": "Feature", "properties": { "parcel_id": "7fd683e35812b7a4cabf95dafdfa9a1d", "name": "Demorest - Austin Drive - 11.71 Acres", "address": "0 Austin Drive", "ownership_type": "Owned", "building_type": "Land", "land_size": 11.71, "square_footage": null, "listed_for_sale": "No", "longstreet": "No", "lat": 34.583977, "lon": -83.539136, "service_area": "Habersham", "grouping": null }, "geometry": { "type": "Point", "coordinates": [ -83.539136, 34.583977 ] } },
-{ "type": "Feature", "properties": { "parcel_id": "7bc5843089766620b84d4c81fbc0c496", "name": "Clarkesville Office Building - Robertson Loop Road", "address": "125 Robertson Loop Road", "ownership_type": "Owned", "building_type": "Other", "land_size": 0.74, "square_footage": 1500.0, "listed_for_sale": "No", "longstreet": "No", "lat": 34.590107, "lon": -83.533651, "service_area": "Habersham", "grouping": null }, "geometry": { "type": "Point", "coordinates": [ -83.533651, 34.590107 ] } },
-{ "type": "Feature", "properties": { "parcel_id": "f5920aa90c9d46bc1b4a0fa87f840e06", "name": "Demorest Medical Office - 800 Austin Drive", "address": "800 Austin Drive", "ownership_type": "Leased", "building_type": "Medical Office Building (Multi-Tenant)", "land_size": null, "square_footage": 6336.0, "listed_for_sale": "No", "longstreet": "No", "lat": 34.585225, "lon": -83.536211, "service_area": "Habersham", "grouping": null }, "geometry": { "type": "Point", "coordinates": [ -83.536211, 34.585225 ] } },
-{ "type": "Feature", "properties": { "parcel_id": "5c129663104aa1aecfb846b18723626f", "name": "Demorest Medical Office - 157 Adams Drive", "address": "157 Adams Drive", "ownership_type": "Leased", "building_type": "Medical Office Building (Freestanding)", "land_size": null, "square_footage": 3392.0, "listed_for_sale": "No", "longstreet": "No", "lat": 34.582195, "lon": -83.537148, "service_area": "Habersham", "grouping": null }, "geometry": { "type": "Point", "coordinates": [ -83.537148, 34.582195 ] } },
-{ "type": "Feature", "properties": { "parcel_id": "41e1678c221c074e869a4c2b837c439a", "name": "New Horizons - Habersham", "address": "105 Habersham Terrace Gardens", "ownership_type": "Owned", "building_type": "Medical Office Building (Freestanding)", "land_size": 22.45, "square_footage": 34902.0, "listed_for_sale": "No", "longstreet": "No", "lat": 34.580145, "lon": -83.538696, "service_area": "Habersham", "grouping": "B" }, "geometry": { "type": "Point", "coordinates": [ -83.538696, 34.580145 ] } },
-{ "type": "Feature", "properties": { "parcel_id": "41e1678c221c074e869a4c2b837c439a", "name": "Demorest Office Building - 487 Historic Highway 441", "address": "487 Historic Highway 441 N", "ownership_type": "Owned", "building_type": "Office", "land_size": 22.45, "square_footage": 9152.0, "listed_for_sale": "No", "longstreet": "No", "lat": 34.580147, "lon": -83.536951, "service_area": "Habersham", "grouping": "B" }, "geometry": { "type": "Point", "coordinates": [ -83.536951, 34.580147 ] } },
-{ "type": "Feature", "properties": { "parcel_id": "41e1678c221c074e869a4c2b837c439a", "name": "Demorest Medical Office - 247 Adams Drive", "address": "247 Adams Drive", "ownership_type": "Owned", "building_type": "Medical Office Building (Multi-Tenant)", "land_size": 22.45, "square_footage": 15824.0, "listed_for_sale": "No", "longstreet": "No", "lat": 34.580333, "lon": -83.539791, "service_area": "Habersham", "grouping": "B" }, "geometry": { "type": "Point", "coordinates": [ -83.539791, 34.580333 ] } },
-{ "type": "Feature", "properties": { "parcel_id": "41e1678c221c074e869a4c2b837c439a", "name": "NGMC - Habersham", "address": "541 Historic Highway 441 North", "ownership_type": "Owned", "building_type": "Hospital", "land_size": 22.45, "square_footage": 163879.0, "listed_for_sale": "No", "longstreet": "No", "lat": 34.581065340296085, "lon": -83.536991826359071, "service_area": "Habersham", "grouping": "B" }, "geometry": { "type": "Point", "coordinates": [ -83.536991826359071, 34.581065340296085 ] } },
-{ "type": "Feature", "properties": { "parcel_id": "41e1678c221c074e869a4c2b837c439a", "name": "Demorest Office Building - 175 Adams Drive", "address": "175 Adams Drive", "ownership_type": "Owned", "building_type": "Vacant Building", "land_size": 22.45, "square_footage": 3600.0, "listed_for_sale": "No", "longstreet": "No", "lat": 34.582088, "lon": -83.537564, "service_area": "Habersham", "grouping": "B" }, "geometry": { "type": "Point", "coordinates": [ -83.537564, 34.582088 ] } },
-{ "type": "Feature", "properties": { "parcel_id": "068d341b3cfb4aa4b28076a0081b2a2c", "name": "Demorest Medical Office - 801 Austin Drive", "address": "801 Austin Drive", "ownership_type": "Leased", "building_type": "Medical Office Building (Freestanding)", "land_size": 0.78, "square_footage": 4189.0, "listed_for_sale": "No", "longstreet": "Yes", "lat": 34.586018, "lon": -83.535985, "service_area": "Habersham", "grouping": null }, "geometry": { "type": "Point", "coordinates": [ -83.535985, 34.586018 ] } },
-{ "type": "Feature", "properties": { "parcel_id": "bd18ebe1311805ccbe0ed94e0f28c893", "name": "Demorest Medical Office - 835 Austin Drive", "address": "835 Austin Drive", "ownership_type": "Leased", "building_type": "Medical Office Building (Multi-Tenant)", "land_size": 1.07, "square_footage": 6344.0, "listed_for_sale": "No", "longstreet": "Yes", "lat": 34.58603, "lon": -83.537175, "service_area": "Habersham", "grouping": null }, "geometry": { "type": "Point", "coordinates": [ -83.537175, 34.58603 ] } },
-{ "type": "Feature", "properties": { "parcel_id": "89eb5e0cd13780a633a5f7986c860999", "name": "Demorest - 550 N. Historic Hwy 441", "address": "550 North Historic Highway 441", "ownership_type": "Owned", "building_type": "Land", "land_size": 6.74, "square_footage": null, "listed_for_sale": "No", "longstreet": "No", "lat": 34.581537, "lon": -83.535232, "service_area": "Habersham", "grouping": null }, "geometry": { "type": "Point", "coordinates": [ -83.535232, 34.581537 ] } },
-{ "type": "Feature", "properties": { "parcel_id": "bef55588e46eb6c16acedd1be3929abe", "name": "Demorest Medical Office - 870 Austin Drive", "address": "870 Austin Drive", "ownership_type": "Leased", "building_type": "Medical Office Building (Multi-Tenant)", "land_size": null, "square_footage": 10000.0, "listed_for_sale": "No", "longstreet": "No", "lat": 34.584697, "lon": -83.537626, "service_area": "Habersham", "grouping": null }, "geometry": { "type": "Point", "coordinates": [ -83.537626, 34.584697 ] } },
-{ "type": "Feature", "properties": { "parcel_id": "0abe8b2942c24fe5dade147aa142aa5d", "name": "Habersham Professional Park - 155 Professional Dr", "address": "155 Professional Drive", "ownership_type": "Leased", "building_type": "Medical Office Building (Freestanding)", "land_size": 1.49, "square_footage": 6468.0, "listed_for_sale": "No", "longstreet": "Yes", "lat": 34.504399, "lon": -83.54427, "service_area": "Habersham", "grouping": null }, "geometry": { "type": "Point", "coordinates": [ -83.54427, 34.504399 ] } },
-{ "type": "Feature", "properties": { "parcel_id": "da7c9597cd3991f25e984270390b608f", "name": "Habersham Professional Park - 104 Professional Dr", "address": "104 Professional Drive", "ownership_type": "Leased", "building_type": "Medical Office Building (Multi-Tenant)", "land_size": 1.57, "square_footage": 6270.0, "listed_for_sale": "No", "longstreet": "Yes", "lat": 34.504168, "lon": -83.544677, "service_area": "Habersham", "grouping": null }, "geometry": { "type": "Point", "coordinates": [ -83.544677, 34.504168 ] } },
-{ "type": "Feature", "properties": { "parcel_id": "832491ba4d585453a7376c4d9f8951fe", "name": "Demorest - 340 N. Historic Hwy 441", "address": "340 North Historic Highway 441", "ownership_type": "Owned", "building_type": "Land", "land_size": 9.46, "square_footage": null, "listed_for_sale": "No", "longstreet": "No", "lat": 34.577592, "lon": -83.536188, "service_area": "Habersham", "grouping": null }, "geometry": { "type": "Point", "coordinates": [ -83.536188, 34.577592 ] } },
-{ "type": "Feature", "properties": { "parcel_id": "e3ba829b660bb07e3a44b7920f95f193", "name": "Demorest - 445 Grandis Heights Circle", "address": "445 Grandis Heights Circle", "ownership_type": "Owned", "building_type": "Land", "land_size": 1.65, "square_footage": null, "listed_for_sale": "No", "longstreet": "No", "lat": 34.658003, "lon": -83.434751, "service_area": "Habersham", "grouping": null }, "geometry": { "type": "Point", "coordinates": [ -83.434751, 34.658003 ] } },
-{ "type": "Feature", "properties": { "parcel_id": "772ad21b7c674646d854d22119bf2f1b", "name": "Sims Street Medical Office", "address": "1285 Sims Street", "ownership_type": "Owned", "building_type": "Medical Office Building (Freestanding)", "land_size": 0.71, "square_footage": 7012.0, "listed_for_sale": "No", "longstreet": "No", "lat": 34.304563, "lon": -83.812205, "service_area": "Gainesville", "grouping": null }, "geometry": { "type": "Point", "coordinates": [ -83.812205, 34.304563 ] } },
-{ "type": "Feature", "properties": { "parcel_id": "f7436e0a781c696ca371036d1f6f9c96", "name": "Gainesville - 3719 Price Road", "address": "3719 Price Road", "ownership_type": "Owned", "building_type": "Land", "land_size": 0.92, "square_footage": null, "listed_for_sale": "No", "longstreet": "No", "lat": 34.375696, "lon": -83.875774, "service_area": "Gainesville", "grouping": null }, "geometry": { "type": "Point", "coordinates": [ -83.875774, 34.375696 ] } },
-{ "type": "Feature", "properties": { "parcel_id": "f544522bb1b8b218fd05a2308b65be1f", "name": "Gainesville - 439 Fair Street", "address": "439 Fair Street", "ownership_type": "Owned", "building_type": "Land", "land_size": 0.18, "square_footage": null, "listed_for_sale": "No", "longstreet": "No", "lat": 34.300957, "lon": -83.815865, "service_area": "Gainesville", "grouping": null }, "geometry": { "type": "Point", "coordinates": [ -83.815865, 34.300957 ] } },
-{ "type": "Feature", "properties": { "parcel_id": "66746fea27bcc76323d43636de71653e", "name": "Gainesville - 412 Osborne Street", "address": "412 Osborne Street", "ownership_type": "Owned", "building_type": "Land", "land_size": 0.82, "square_footage": null, "listed_for_sale": "No", "longstreet": "No", "lat": 34.303084, "lon": -83.811111, "service_area": "Gainesville", "grouping": null }, "geometry": { "type": "Point", "coordinates": [ -83.811111, 34.303084 ] } },
-{ "type": "Feature", "properties": { "parcel_id": "335384276ab5391b0075faec24264f27", "name": "Medical Arts - 655 Jesse Jewell Parkway SE", "address": "655 Jesse Jewell Parkway SE", "ownership_type": "Leased", "building_type": "Medical Office Building (Multi-Tenant)", "land_size": 1.88, "square_footage": 18441.0, "listed_for_sale": "No", "longstreet": "Yes", "lat": 34.300841, "lon": -83.819739, "service_area": "Gainesville", "grouping": null }, "geometry": { "type": "Point", "coordinates": [ -83.819739, 34.300841 ] } },
-{ "type": "Feature", "properties": { "parcel_id": "3db31e78fed59f239790f56bf2f24b3b", "name": "Lanier Park Gainesville", "address": "675 White Sulphur Road", "ownership_type": "Owned", "building_type": "Medical Office Building (Multi-Tenant)", "land_size": 14.48, "square_footage": 149130.0, "listed_for_sale": "No", "longstreet": "No", "lat": 34.320711, "lon": -83.795665, "service_area": "Gainesville", "grouping": null }, "geometry": { "type": "Point", "coordinates": [ -83.795665, 34.320711 ] } },
-{ "type": "Feature", "properties": { "parcel_id": "b33aea3dbab4a9c8ad83bb4e2f62582a", "name": "Gainesville - 627 White Sulphur Road", "address": "627 White Sulphur Road", "ownership_type": "Owned", "building_type": "Land", "land_size": 2.24, "square_footage": null, "listed_for_sale": "No", "longstreet": "No", "lat": 34.318857, "lon": -83.793612, "service_area": "Gainesville", "grouping": null }, "geometry": { "type": "Point", "coordinates": [ -83.793612, 34.318857 ] } },
-{ "type": "Feature", "properties": { "parcel_id": "c5b4afb2d52c7a66ca0754f4693fc3fe", "name": "Gainesville - 1040 Jesse Jewell Parkway", "address": "1040 Jesse Jewell Parkway", "ownership_type": "Owned", "building_type": "Storage", "land_size": 1.22, "square_footage": 5131.0, "listed_for_sale": "No", "longstreet": "No", "lat": 34.301819, "lon": -83.815402, "service_area": "Gainesville", "grouping": null }, "geometry": { "type": "Point", "coordinates": [ -83.815402, 34.301819 ] } },
-{ "type": "Feature", "properties": { "parcel_id": "9939c076d0d6ca8c648cdc2f1f0cfe69", "name": "Limestone Medical Office Building - 2510", "address": "2510 Limestone Parkway", "ownership_type": "Leased", "building_type": "Medical Office Building (Freestanding)", "land_size": null, "square_footage": 5000.0, "listed_for_sale": "No", "longstreet": "No", "lat": 34.330582, "lon": -83.807148, "service_area": "Gainesville", "grouping": null }, "geometry": { "type": "Point", "coordinates": [ -83.807148, 34.330582 ] } },
-{ "type": "Feature", "properties": { "parcel_id": "08a54fafeb62263313abe8f0b66ee1a5", "name": "2500 Limestone Parkway Building", "address": "2500 Limestone Parkway", "ownership_type": "Owned", "building_type": "Hospital", "land_size": 7.93, "square_footage": 61000.0, "listed_for_sale": "No", "longstreet": "No", "lat": 34.330486, "lon": -83.805942, "service_area": "Gainesville", "grouping": null }, "geometry": { "type": "Point", "coordinates": [ -83.805942, 34.330486 ] } },
-{ "type": "Feature", "properties": { "parcel_id": "8a9a70e6b84adefe7d1bf3a6c3762185", "name": "Thompson Mill Medical Offices", "address": "1574 Friendship Road", "ownership_type": "Owned", "building_type": "Medical Office Building (Multi-Tenant)", "land_size": 5.4, "square_footage": 10965.0, "listed_for_sale": "No", "longstreet": "No", "lat": 34.113215, "lon": -83.848014, "service_area": "Braselton", "grouping": null }, "geometry": { "type": "Point", "coordinates": [ -83.848014, 34.113215 ] } },
-{ "type": "Feature", "properties": { "parcel_id": "693441c6bc3bedb7a8fe4efc8c8cfd8e", "name": "Interstate Ridge Business Park - 930", "address": "930 Interstate Ridge Drive", "ownership_type": "Leased", "building_type": "Mixed Use", "land_size": null, "square_footage": 7254.0, "listed_for_sale": "No", "longstreet": "No", "lat": 34.284339, "lon": -83.810601, "service_area": "Gainesville", "grouping": "C" }, "geometry": { "type": "Point", "coordinates": [ -83.810601, 34.284339 ] } },
-{ "type": "Feature", "properties": { "parcel_id": "693441c6bc3bedb7a8fe4efc8c8cfd8e", "name": "Interstate Ridge Business Park - 935", "address": "935 Interstate Ridge Drive, Suites F-M", "ownership_type": "Leased", "building_type": "Mixed Use", "land_size": null, "square_footage": 15427.0, "listed_for_sale": "No", "longstreet": "No", "lat": 34.284698, "lon": -83.809908, "service_area": "Gainesville", "grouping": "C" }, "geometry": { "type": "Point", "coordinates": [ -83.809908, 34.284698 ] } },
-{ "type": "Feature", "properties": { "parcel_id": "88a970bbe78262c07ffd4e8a7bacb46f", "name": "668 Lanier Park Drive Building", "address": "668 Lanier Park Drive", "ownership_type": "Owned", "building_type": "Office", "land_size": 0.91, "square_footage": 8639.0, "listed_for_sale": "No", "longstreet": "No", "lat": 34.319742, "lon": -83.797862, "service_area": "Gainesville", "grouping": null }, "geometry": { "type": "Point", "coordinates": [ -83.797862, 34.319742 ] } },
-{ "type": "Feature", "properties": { "parcel_id": "df00290f20cb9a3fb68b3b782e9252fd", "name": "Sherwood Park Drive Building - 1215", "address": "1215 Sherwood Park Drive", "ownership_type": "Owned", "building_type": "Office", "land_size": 4.02, "square_footage": 3757.0, "listed_for_sale": "No", "longstreet": "No", "lat": 34.307372, "lon": -83.816909, "service_area": "Gainesville", "grouping": null }, "geometry": { "type": "Point", "coordinates": [ -83.816909, 34.307372 ] } },
-{ "type": "Feature", "properties": { "parcel_id": "7bdb15dea3922741f71cd30c258e5278", "name": "687 Lanier Park Drive", "address": "687 Lanier Park Drive", "ownership_type": "Owned", "building_type": "Vacant Building", "land_size": 0.53, "square_footage": 2416.0, "listed_for_sale": "No", "longstreet": "No", "lat": 34.321075, "lon": -83.797302, "service_area": "Gainesville", "grouping": null }, "geometry": { "type": "Point", "coordinates": [ -83.797302, 34.321075 ] } },
-{ "type": "Feature", "properties": { "parcel_id": "48a63e7f44168a8c766bbafe1c104e2f", "name": "White Sulphur Medical Office Building", "address": "675 White Sulphur Road", "ownership_type": "Owned", "building_type": "Medical Office Building (Freestanding)", "land_size": 0.8, "square_footage": 27122.0, "listed_for_sale": "No", "longstreet": "No", "lat": 34.320784, "lon": -83.794963, "service_area": "Gainesville", "grouping": null }, "geometry": { "type": "Point", "coordinates": [ -83.794963, 34.320784 ] } },
-{ "type": "Feature", "properties": { "parcel_id": "a8414f580351cb95aaef74b4ed03dbc0", "name": "Gainesville - 478 Wall Street", "address": "478 Wall Street", "ownership_type": "Owned", "building_type": "Land", "land_size": 0.19, "square_footage": null, "listed_for_sale": "No", "longstreet": "No", "lat": 34.301992, "lon": -83.81167, "service_area": "Gainesville", "grouping": null }, "geometry": { "type": "Point", "coordinates": [ -83.81167, 34.301992 ] } },
-{ "type": "Feature", "properties": { "parcel_id": "df3be9bca017412883eb82ca9b3cf7f9", "name": "Sherwood Park Medical Office - 1211", "address": "1211 Sherwood Park Drive", "ownership_type": "Owned", "building_type": "Medical Office Building (Freestanding)", "land_size": 0.6, "square_footage": 9307.0, "listed_for_sale": "No", "longstreet": "No", "lat": 34.307642, "lon": -83.816681, "service_area": "Gainesville", "grouping": null }, "geometry": { "type": "Point", "coordinates": [ -83.816681, 34.307642 ] } },
-{ "type": "Feature", "properties": { "parcel_id": "52775f9847b993d078beed49cd592f8e", "name": "Sherwood Park Medical Office - 1221", "address": "1221 Sherwood Park Drive", "ownership_type": "Owned", "building_type": "Medical Office Building (Multi-Tenant)", "land_size": null, "square_footage": 2300.0, "listed_for_sale": "No", "longstreet": "No", "lat": 34.307123, "lon": -83.817102, "service_area": "Gainesville", "grouping": null }, "geometry": { "type": "Point", "coordinates": [ -83.817102, 34.307123 ] } },
-{ "type": "Feature", "properties": { "parcel_id": "8e9b818af7c60d2b073a66f405b2f652", "name": "Gainesville - 1007 Summit Street", "address": "1007 Summit Street", "ownership_type": "Owned", "building_type": "Land", "land_size": 0.13, "square_footage": null, "listed_for_sale": "No", "longstreet": "No", "lat": 34.300647, "lon": -83.815541, "service_area": "Gainesville", "grouping": null }, "geometry": { "type": "Point", "coordinates": [ -83.815541, 34.300647 ] } },
-{ "type": "Feature", "properties": { "parcel_id": "153d807251d704d68a7979f824d5cc18", "name": "597 South Enota Drive", "address": "597 South Enota Drive", "ownership_type": "Owned", "building_type": "Medical Office Building (Multi-Tenant)", "land_size": 5.4, "square_footage": 30913.0, "listed_for_sale": "No", "longstreet": "No", "lat": 34.310721, "lon": -83.816888, "service_area": "Gainesville", "grouping": null }, "geometry": { "type": "Point", "coordinates": [ -83.816888, 34.310721 ] } },
-{ "type": "Feature", "properties": { "parcel_id": "0a08efaec91647be0cc4f72932fe6993", "name": "1075 Jesse Jewell Building", "address": "1075 Jesse Jewell Parkway, SE", "ownership_type": "Owned", "building_type": "Medical Office Building (Multi-Tenant)", "land_size": 47.33, "square_footage": 14258.0, "listed_for_sale": "No", "longstreet": "No", "lat": 34.30257, "lon": -83.81552, "service_area": "Gainesville", "grouping": "D" }, "geometry": { "type": "Point", "coordinates": [ -83.81552, 34.30257 ] } },
-{ "type": "Feature", "properties": { "parcel_id": "0a08efaec91647be0cc4f72932fe6993", "name": "Wisteria Medical Offices", "address": "200 South Enota Drive", "ownership_type": "Owned", "building_type": "Medical Office Building (Multi-Tenant)", "land_size": 47.33, "square_footage": 66976.0, "listed_for_sale": "No", "longstreet": "No", "lat": 34.303533, "lon": -83.815769, "service_area": "Gainesville", "grouping": "D" }, "geometry": { "type": "Point", "coordinates": [ -83.815769, 34.303533 ] } },
-{ "type": "Feature", "properties": { "parcel_id": "0a08efaec91647be0cc4f72932fe6993", "name": "Laurelwood Medical Offices", "address": "200 Wisteria Drive", "ownership_type": "Owned", "building_type": "Office", "land_size": 47.33, "square_footage": 50884.0, "listed_for_sale": "No", "longstreet": "No", "lat": 34.30368, "lon": -83.814402, "service_area": "Gainesville", "grouping": "D" }, "geometry": { "type": "Point", "coordinates": [ -83.814402, 34.30368 ] } },
-{ "type": "Feature", "properties": { "parcel_id": "0a08efaec91647be0cc4f72932fe6993", "name": "Women and Children Pavilion", "address": "743 Spring Street", "ownership_type": "Owned", "building_type": "Hospital", "land_size": 47.33, "square_footage": null, "listed_for_sale": "No", "longstreet": "No", "lat": 34.303331799959253, "lon": -83.818001561253794, "service_area": "Gainesville", "grouping": "D" }, "geometry": { "type": "Point", "coordinates": [ -83.818001561253794, 34.303331799959253 ] } },
-{ "type": "Feature", "properties": { "parcel_id": "0a08efaec91647be0cc4f72932fe6993", "name": "Outpatient Building", "address": "743 Spring Street", "ownership_type": "Owned", "building_type": "Hospital", "land_size": 47.33, "square_footage": null, "listed_for_sale": "No", "longstreet": "No", "lat": 34.303419066266933, "lon": -83.816468852982041, "service_area": "Gainesville", "grouping": "D" }, "geometry": { "type": "Point", "coordinates": [ -83.816468852982041, 34.303419066266933 ] } },
-{ "type": "Feature", "properties": { "parcel_id": "0a08efaec91647be0cc4f72932fe6993", "name": "NGMC - Gainesville", "address": "743 Spring Street", "ownership_type": "Owned", "building_type": "Hospital", "land_size": 47.33, "square_footage": 1900800.0, "listed_for_sale": "No", "longstreet": "No", "lat": 34.304322, "lon": -83.81698, "service_area": "Gainesville", "grouping": "D" }, "geometry": { "type": "Point", "coordinates": [ -83.81698, 34.304322 ] } },
-{ "type": "Feature", "properties": { "parcel_id": "0a08efaec91647be0cc4f72932fe6993", "name": "Gainesville - South Enota Sherwood Park ROW", "address": "0 South Enota Drive", "ownership_type": "Owned", "building_type": "Land", "land_size": 47.33, "square_footage": null, "listed_for_sale": "No", "longstreet": "No", "lat": 34.30624, "lon": -83.817366, "service_area": "Gainesville", "grouping": "D" }, "geometry": { "type": "Point", "coordinates": [ -83.817366, 34.30624 ] } },
-{ "type": "Feature", "properties": { "parcel_id": "5df94938506ae66bd31d18fd00e4f198", "name": "New Holland Building - 1466", "address": "1466 Jesse Jewell Parkway", "ownership_type": "Owned", "building_type": "Mixed Use", "land_size": 0.22, "square_footage": 12009.0, "listed_for_sale": "No", "longstreet": "No", "lat": 34.306637, "lon": -83.807598, "service_area": "Gainesville", "grouping": null }, "geometry": { "type": "Point", "coordinates": [ -83.807598, 34.306637 ] } },
-{ "type": "Feature", "properties": { "parcel_id": "243ccd210c8ccd1c4121feefb6502659", "name": "1287 Sims Street Building", "address": "1287 Sims Street", "ownership_type": "Owned", "building_type": "Vacant Building", "land_size": 0.37, "square_footage": 6527.0, "listed_for_sale": "No", "longstreet": "No", "lat": 34.304857, "lon": -83.812587, "service_area": "Gainesville", "grouping": null }, "geometry": { "type": "Point", "coordinates": [ -83.812587, 34.304857 ] } },
-{ "type": "Feature", "properties": { "parcel_id": "701c94540ff6b798ed4c82a03fc2f985", "name": "Medical Park 1 in Gainesville", "address": "1315 Jesse Jewell Parkway", "ownership_type": "Owned", "building_type": "Medical Office Building (Multi-Tenant)", "land_size": 6.38, "square_footage": 101011.0, "listed_for_sale": "No", "longstreet": "No", "lat": 34.305317, "lon": -83.81128, "service_area": "Gainesville", "grouping": null }, "geometry": { "type": "Point", "coordinates": [ -83.81128, 34.305317 ] } },
-{ "type": "Feature", "properties": { "parcel_id": "805feb5635c9ce7adea23af09a621f83", "name": "Sherwood Plaza", "address": "601 South Enota Drive", "ownership_type": "Owned", "building_type": "Retail", "land_size": 8.49, "square_footage": 52008.0, "listed_for_sale": "No", "longstreet": "No", "lat": 34.311789, "lon": -83.815931, "service_area": "Gainesville", "grouping": null }, "geometry": { "type": "Point", "coordinates": [ -83.815931, 34.311789 ] } },
-{ "type": "Feature", "properties": { "parcel_id": "14907d31278a1dc6a996e1943da782a7", "name": "599 South Enota Drive - Dollar Tree", "address": "599 South Enota Drive", "ownership_type": "Owned", "building_type": "Retail", "land_size": 1.12, "square_footage": 9504.0, "listed_for_sale": "No", "longstreet": "No", "lat": 34.31081, "lon": -83.81523, "service_area": "Gainesville", "grouping": null }, "geometry": { "type": "Point", "coordinates": [ -83.81523, 34.31081 ] } },
-{ "type": "Feature", "properties": { "parcel_id": "4104edbe07bc971201347302505ef1d5", "name": "Hall County Health Department", "address": "1292 Athens Street", "ownership_type": "Leased", "building_type": "Medical Office Building (Multi-Tenant)", "land_size": null, "square_footage": 7632.0, "listed_for_sale": "No", "longstreet": "No", "lat": 34.288721, "lon": -83.801717, "service_area": "Gainesville", "grouping": null }, "geometry": { "type": "Point", "coordinates": [ -83.801717, 34.288721 ] } },
-{ "type": "Feature", "properties": { "parcel_id": "0451d6a03aaa2040b190cb3f3532e505", "name": "Corporate Plaza", "address": "3137 Frontage Road", "ownership_type": "Owned", "building_type": "Distribution Center", "land_size": 11.1, "square_footage": 115531.0, "listed_for_sale": "No", "longstreet": "No", "lat": 34.22893, "lon": -83.863703, "service_area": "Gainesville", "grouping": "E" }, "geometry": { "type": "Point", "coordinates": [ -83.863703, 34.22893 ] } },
-{ "type": "Feature", "properties": { "parcel_id": "0451d6a03aaa2040b190cb3f3532e505", "name": "Offsite Reprocessing Center (ORC)", "address": "3163 Frontage Road", "ownership_type": "Owned", "building_type": "Other", "land_size": 11.1, "square_footage": 7000.0, "listed_for_sale": "No", "longstreet": "No", "lat": 34.227779, "lon": -83.86425, "service_area": "Gainesville", "grouping": "E" }, "geometry": { "type": "Point", "coordinates": [ -83.86425, 34.227779 ] } },
-{ "type": "Feature", "properties": { "parcel_id": "3346069d27fa6227c418483e616bc6d5", "name": "Sherwood Park Drive Medical Office - 1223", "address": "1223 Sherwood Park Drive", "ownership_type": "Owned", "building_type": "Vacant Building", "land_size": 0.46, "square_footage": 3783.0, "listed_for_sale": "No", "longstreet": "No", "lat": 34.306918, "lon": -83.817323, "service_area": "Gainesville", "grouping": null }, "geometry": { "type": "Point", "coordinates": [ -83.817323, 34.306918 ] } },
-{ "type": "Feature", "properties": { "parcel_id": "e472430ddda9910423aff0637e683d74", "name": "Gainesville - 3739 Price Road", "address": "3739 Price Road", "ownership_type": "Owned", "building_type": "Land", "land_size": 0.33, "square_footage": null, "listed_for_sale": "No", "longstreet": "No", "lat": 34.376095, "lon": -83.875981, "service_area": "Gainesville", "grouping": null }, "geometry": { "type": "Point", "coordinates": [ -83.875981, 34.376095 ] } },
-{ "type": "Feature", "properties": { "parcel_id": "4172bb6a6b6c7a94149e7af2b351e54e", "name": "Gainesville - 3641 Thompson Bridge Rd", "address": "3641 Thompson Bridge Road (fka 3510 Southers Road)", "ownership_type": "Owned", "building_type": "Medical Office Building (Freestanding)", "land_size": 4.79, "square_footage": 13201.0, "listed_for_sale": "No", "longstreet": "No", "lat": 34.372603033415253, "lon": -83.872005804361052, "service_area": "Gainesville", "grouping": null }, "geometry": { "type": "Point", "coordinates": [ -83.872005804361052, 34.372603033415253 ] } },
-{ "type": "Feature", "properties": { "parcel_id": "22796c03dce51e7f92afe5b81df0700a", "name": "Gainestown Office Building - 465", "address": "465 EE Butler Parkway", "ownership_type": "Leased", "building_type": "Office", "land_size": null, "square_footage": 12890.0, "listed_for_sale": "No", "longstreet": "No", "lat": 34.29737, "lon": -83.820411, "service_area": "Gainesville", "grouping": null }, "geometry": { "type": "Point", "coordinates": [ -83.820411, 34.29737 ] } },
-{ "type": "Feature", "properties": { "parcel_id": "10950cdde40419c33f9dab8364eeb3a4", "name": "Gainesville - 435 Fair Street", "address": "435 Fair Street", "ownership_type": "Owned", "building_type": "Land", "land_size": 0.2, "square_footage": null, "listed_for_sale": "No", "longstreet": "No", "lat": 34.301201, "lon": -83.815975, "service_area": "Gainesville", "grouping": null }, "geometry": { "type": "Point", "coordinates": [ -83.815975, 34.301201 ] } },
-{ "type": "Feature", "properties": { "parcel_id": "787a1a4dab665f3a80dd1555a4930efb", "name": "Gainesville - 3709 Price Road", "address": "3709 Price Road", "ownership_type": "Owned", "building_type": "Land", "land_size": 3.96, "square_footage": null, "listed_for_sale": "No", "longstreet": "No", "lat": 34.375585, "lon": -83.875278, "service_area": "Gainesville", "grouping": null }, "geometry": { "type": "Point", "coordinates": [ -83.875278, 34.375585 ] } },
-{ "type": "Feature", "properties": { "parcel_id": "220434a1f9b21e0b38faad35185b7c2b", "name": "Flowery Branch Medical Office", "address": "4919 Atlanta Highway", "ownership_type": "Owned", "building_type": "Medical Office Building (Freestanding)", "land_size": 0.86, "square_footage": 6112.0, "listed_for_sale": "No", "longstreet": "No", "lat": 34.186811, "lon": -83.922524, "service_area": "Braselton", "grouping": null }, "geometry": { "type": "Point", "coordinates": [ -83.922524, 34.186811 ] } },
-{ "type": "Feature", "properties": { "parcel_id": "bcce37c99451bba7872015cc1701c231", "name": "Medical Arts - 725 Jesse Jewell Parkway SE", "address": "725 Jesse Jewell Parkway SE", "ownership_type": "Leased", "building_type": "Medical Office Building (Multi-Tenant)", "land_size": 3.74, "square_footage": 140805.0, "listed_for_sale": "No", "longstreet": "Yes", "lat": 34.301469, "lon": -83.818546, "service_area": "Gainesville", "grouping": null }, "geometry": { "type": "Point", "coordinates": [ -83.818546, 34.301469 ] } },
-{ "type": "Feature", "properties": { "parcel_id": "07eba5159d2c155739200725608431d9", "name": "Gainestown Office Building - 451", "address": "451 EE Butler Parkway", "ownership_type": "Leased", "building_type": "Office", "land_size": null, "square_footage": 2884.0, "listed_for_sale": "No", "longstreet": "No", "lat": 34.297881, "lon": -83.820639, "service_area": "Gainesville", "grouping": null }, "geometry": { "type": "Point", "coordinates": [ -83.820639, 34.297881 ] } },
-{ "type": "Feature", "properties": { "parcel_id": "6c1835bd5afc51eec687a0a62cd9183e", "name": "Limestone Office Building - 2150", "address": "2150 Limestone Parkway", "ownership_type": "Owned", "building_type": "Office", "land_size": 4.98, "square_footage": 10410.0, "listed_for_sale": "No", "longstreet": "No", "lat": 34.318789, "lon": -83.79952, "service_area": "Gainesville", "grouping": null }, "geometry": { "type": "Point", "coordinates": [ -83.79952, 34.318789 ] } },
-{ "type": "Feature", "properties": { "parcel_id": "9d9493208e9b7905af88df58cff46642", "name": "Chestnut Mountain Medical Office", "address": "4754 Martin Road", "ownership_type": "Leased", "building_type": "Medical Office Building (Multi-Tenant)", "land_size": null, "square_footage": 9675.0, "listed_for_sale": "No", "longstreet": "No", "lat": 34.192538, "lon": -83.860183, "service_area": "Braselton", "grouping": null }, "geometry": { "type": "Point", "coordinates": [ -83.860183, 34.192538 ] } },
-{ "type": "Feature", "properties": { "parcel_id": "7bacfb5ff8b0541c67595d55a8ccdf7c", "name": "New Holland Corporate Building - 1480", "address": "1480 Jesse Jewell Parkway", "ownership_type": "Owned", "building_type": "Office", "land_size": 0.26, "square_footage": 21063.0, "listed_for_sale": "No", "longstreet": "No", "lat": 34.306112, "lon": -83.807722, "service_area": "Gainesville", "grouping": null }, "geometry": { "type": "Point", "coordinates": [ -83.807722, 34.306112 ] } },
-{ "type": "Feature", "properties": { "parcel_id": "f064536706cda38bc7ec828522f3d459", "name": "Limestone Medical Office Building - 2350", "address": "2350 Limestone Parkway", "ownership_type": "Leased", "building_type": "Medical Office Building (Freestanding)", "land_size": null, "square_footage": 11545.0, "listed_for_sale": "No", "longstreet": "No", "lat": 34.324544, "lon": -83.803131, "service_area": "Gainesville", "grouping": null }, "geometry": { "type": "Point", "coordinates": [ -83.803131, 34.324544 ] } },
-{ "type": "Feature", "properties": { "parcel_id": "e6f6b44c44d9a0db6768bca437ddf077", "name": "1255 Vine Street Building", "address": "1255 Vine Street", "ownership_type": "Owned", "building_type": "Other", "land_size": 4.1, "square_footage": 13054.0, "listed_for_sale": "No", "longstreet": "No", "lat": 34.307302, "lon": -83.813365, "service_area": "Gainesville", "grouping": null }, "geometry": { "type": "Point", "coordinates": [ -83.813365, 34.307302 ] } },
-{ "type": "Feature", "properties": { "parcel_id": "33dfcea67efc22632594a412736b56e2", "name": "Medical Park 2 in Gainesville", "address": "1439 Jesse Jewell Parkway", "ownership_type": "Owned", "building_type": "Medical Office Building (Multi-Tenant)", "land_size": 17.38, "square_footage": 71888.0, "listed_for_sale": "No", "longstreet": "No", "lat": 34.306731, "lon": -83.809759, "service_area": "Gainesville", "grouping": null }, "geometry": { "type": "Point", "coordinates": [ -83.809759, 34.306731 ] } },
-{ "type": "Feature", "properties": { "parcel_id": "284426dbebc29d77ce7675fe4ee4b923", "name": "854 Washington Street", "address": "854 Washington Street", "ownership_type": "Leased", "building_type": "Mixed Use", "land_size": null, "square_footage": 6751.0, "listed_for_sale": "No", "longstreet": "No", "lat": 34.297175, "lon": -83.83655, "service_area": "Gainesville", "grouping": null }, "geometry": { "type": "Point", "coordinates": [ -83.83655, 34.297175 ] } },
-{ "type": "Feature", "properties": { "parcel_id": "e47ec2d777f0b939a24949e776ef0427", "name": "Foothills Area Health Education Center", "address": "329 Oak Street", "ownership_type": "Leased", "building_type": "Office", "land_size": null, "square_footage": 2255.0, "listed_for_sale": "No", "longstreet": "No", "lat": 34.300194, "lon": -83.83033, "service_area": "Gainesville", "grouping": null }, "geometry": { "type": "Point", "coordinates": [ -83.83033, 34.300194 ] } },
-{ "type": "Feature", "properties": { "parcel_id": "398f092bbecfa770044ae86d603d0ef9", "name": "Golden Park Pavilion Medical Office", "address": "4889 Golden Parkway", "ownership_type": "Leased", "building_type": "Medical Office Building (Multi-Tenant)", "land_size": null, "square_footage": 3170.0, "listed_for_sale": "No", "longstreet": "No", "lat": 34.144195, "lon": -83.952058, "service_area": "Braselton", "grouping": null }, "geometry": { "type": "Point", "coordinates": [ -83.952058, 34.144195 ] } },
-{ "type": "Feature", "properties": { "parcel_id": "fc632f88884d89754f62463c15f6fa1c", "name": "New Horizons - Limestone", "address": "2020 Beverly Road", "ownership_type": "Owned", "building_type": "Medical Office Building (Other)", "land_size": 3.12, "square_footage": 52875.0, "listed_for_sale": "No", "longstreet": "No", "lat": 34.319728, "lon": -83.800142, "service_area": "Gainesville", "grouping": null }, "geometry": { "type": "Point", "coordinates": [ -83.800142, 34.319728 ] } },
-{ "type": "Feature", "properties": { "parcel_id": "789a6dbecbdddc32a62bea65c0160428", "name": "Oakwood Medical Offices", "address": "3931 Mundy Mill Road", "ownership_type": "Owned", "building_type": "Medical Office Building (Multi-Tenant)", "land_size": 5.94, "square_footage": 11987.0, "listed_for_sale": "No", "longstreet": "No", "lat": 34.234457, "lon": -83.873021, "service_area": "Gainesville", "grouping": null }, "geometry": { "type": "Point", "coordinates": [ -83.873021, 34.234457 ] } },
-{ "type": "Feature", "properties": { "parcel_id": "b9879fee86ef00783f74d8b316c01b17", "name": "665 Lanier Park Drive Medical Transport", "address": "665 Lanier Park Drive", "ownership_type": "Owned", "building_type": "Office", "land_size": 0.98, "square_footage": 3972.0, "listed_for_sale": "No", "longstreet": "No", "lat": 34.31914, "lon": -83.796639, "service_area": "Gainesville", "grouping": null }, "geometry": { "type": "Point", "coordinates": [ -83.796639, 34.31914 ] } },
-{ "type": "Feature", "properties": { "parcel_id": "63c700e1adfde9952621e233ee9bc715", "name": "Oakwood Medical Office - 4019 Executive Drive", "address": "4019 Executive Drive", "ownership_type": "Leased", "building_type": "Medical Office Building (Freestanding)", "land_size": 1.04, "square_footage": 7492.0, "listed_for_sale": "No", "longstreet": "Yes", "lat": 34.240565, "lon": -83.877408, "service_area": "Gainesville", "grouping": null }, "geometry": { "type": "Point", "coordinates": [ -83.877408, 34.240565 ] } },
-{ "type": "Feature", "properties": { "parcel_id": "97f422eb12de9dbb8c7828252100d539", "name": "Medical Plaza B in Braselton", "address": "1404 River Place", "ownership_type": "Owned", "building_type": "Medical Office Building (Multi-Tenant)", "land_size": 104.18, "square_footage": null, "listed_for_sale": "No", "longstreet": "No", "lat": 34.120284, "lon": -83.837428, "service_area": "Braselton", "grouping": "F" }, "geometry": { "type": "Point", "coordinates": [ -83.837428, 34.120284 ] } },
-{ "type": "Feature", "properties": { "parcel_id": "97f422eb12de9dbb8c7828252100d539", "name": "NGMC - Braselton", "address": "1400 River Place", "ownership_type": "Owned", "building_type": "Hospital", "land_size": 104.18, "square_footage": 446617.0, "listed_for_sale": "No", "longstreet": "No", "lat": 34.12072, "lon": -83.838084, "service_area": "Braselton", "grouping": "F" }, "geometry": { "type": "Point", "coordinates": [ -83.838084, 34.12072 ] } },
-{ "type": "Feature", "properties": { "parcel_id": "9fd556cb17c0ec3167c00ff473df373e", "name": "Gainesville - 1247 Jesse Jewell Parkway", "address": "1247 Jesse Jewell Parkway NE", "ownership_type": "Owned", "building_type": "Land", "land_size": 0.23, "square_footage": null, "listed_for_sale": "No", "longstreet": "No", "lat": 34.304229, "lon": -83.812034, "service_area": "Gainesville", "grouping": null }, "geometry": { "type": "Point", "coordinates": [ -83.812034, 34.304229 ] } },
-{ "type": "Feature", "properties": { "parcel_id": "ea0799d88839e5aa93388c8a281ff0aa", "name": "Gainesville - 3675 Thompson Bridge Road", "address": "3675 Thompson Bridge Road", "ownership_type": "Owned", "building_type": "Land", "land_size": 34.81, "square_footage": null, "listed_for_sale": "No", "longstreet": "No", "lat": 34.37341321972648, "lon": -83.874628960359743, "service_area": "Gainesville", "grouping": null }, "geometry": { "type": "Point", "coordinates": [ -83.874628960359743, 34.37341321972648 ] } },
-{ "type": "Feature", "properties": { "parcel_id": "6cf7dba83289e8c4715e3ac820a89715", "name": "Gainesville - Sims Street Retention Pond", "address": "0 Sims Street NE", "ownership_type": "Owned", "building_type": "Land", "land_size": 0.09, "square_footage": null, "listed_for_sale": "No", "longstreet": "No", "lat": 34.30521, "lon": -83.813238, "service_area": "Gainesville", "grouping": null }, "geometry": { "type": "Point", "coordinates": [ -83.813238, 34.30521 ] } },
-{ "type": "Feature", "properties": { "parcel_id": "d97c2b79ee6d72313648d715561fffd3", "name": "Gainesville - 1209 Sherwood Park Drive", "address": "1209 Sherwood Park Drive", "ownership_type": "Owned", "building_type": "Land", "land_size": 0.51, "square_footage": null, "listed_for_sale": "No", "longstreet": "No", "lat": 34.307867, "lon": -83.816539, "service_area": "Gainesville", "grouping": null }, "geometry": { "type": "Point", "coordinates": [ -83.816539, 34.307867 ] } },
-{ "type": "Feature", "properties": { "parcel_id": "98972402e07eba1c1037423237ec75c5", "name": "Gainesville - 641 White Sulphur Road", "address": "641 White Sulphur Road", "ownership_type": "Owned", "building_type": "Land", "land_size": 3.04, "square_footage": null, "listed_for_sale": "No", "longstreet": "No", "lat": 34.319589, "lon": -83.794248, "service_area": "Gainesville", "grouping": null }, "geometry": { "type": "Point", "coordinates": [ -83.794248, 34.319589 ] } },
-{ "type": "Feature", "properties": { "parcel_id": "89fdfa85db495844a3d133e961d139d1", "name": "Gainesville - 1002 Jesse Jewell Parkway", "address": "1002 Jesse Jewell Parkway SE", "ownership_type": "Owned", "building_type": "Land", "land_size": 0.36, "square_footage": null, "listed_for_sale": "No", "longstreet": "No", "lat": 34.301541, "lon": -83.816121, "service_area": "Gainesville", "grouping": null }, "geometry": { "type": "Point", "coordinates": [ -83.816121, 34.301541 ] } },
-{ "type": "Feature", "properties": { "parcel_id": "611f6ece67691c1d57ee7ccefa38c579", "name": "Gainesville - 1216 Jesse Jewell Parkway", "address": "1216 Jesse Jewell Parkway", "ownership_type": "Owned", "building_type": "Land", "land_size": 0.22, "square_footage": null, "listed_for_sale": "No", "longstreet": "No", "lat": 34.303241, "lon": -83.811856, "service_area": "Gainesville", "grouping": null }, "geometry": { "type": "Point", "coordinates": [ -83.811856, 34.303241 ] } },
-{ "type": "Feature", "properties": { "parcel_id": "c00dda13cb4c504b74d075293a550251", "name": "Gainesville - Downey Blvd - 0.80 Acres", "address": "NE Downey Blvd", "ownership_type": "Owned", "building_type": "Land", "land_size": 0.8, "square_footage": null, "listed_for_sale": "No", "longstreet": "No", "lat": 34.305263, "lon": -83.813734, "service_area": "Gainesville", "grouping": null }, "geometry": { "type": "Point", "coordinates": [ -83.813734, 34.305263 ] } },
-{ "type": "Feature", "properties": { "parcel_id": "48ccdbaaa9bcb518d6fbcec818f6040b", "name": "Gainesville - 1232 Jesse Jewell Parkway", "address": "1232 Jesse Jewell Parkway", "ownership_type": "Owned", "building_type": "Land", "land_size": 0.58, "square_footage": null, "listed_for_sale": "No", "longstreet": "No", "lat": 34.303413, "lon": -83.811687, "service_area": "Gainesville", "grouping": null }, "geometry": { "type": "Point", "coordinates": [ -83.811687, 34.303413 ] } },
-{ "type": "Feature", "properties": { "parcel_id": "abacbf7bdc9aada77e3c9e91e6473c18", "name": "Medical Plaza 1 in Braselton", "address": "1515 River Place", "ownership_type": "Owned", "building_type": "Medical Office Building (Multi-Tenant)", "land_size": 15.29, "square_footage": 107567.0, "listed_for_sale": "No", "longstreet": "No", "lat": 34.117446, "lon": -83.839902, "service_area": "Braselton", "grouping": "G" }, "geometry": { "type": "Point", "coordinates": [ -83.839902, 34.117446 ] } },
-{ "type": "Feature", "properties": { "parcel_id": "abacbf7bdc9aada77e3c9e91e6473c18", "name": "Medical Plaza 2 in Braselton", "address": "1524 River Place", "ownership_type": "Owned", "building_type": "Medical Office Building (Multi-Tenant)", "land_size": 15.29, "square_footage": 100279.0, "listed_for_sale": "No", "longstreet": "No", "lat": 34.118013, "lon": -83.840992, "service_area": "Braselton", "grouping": "G" }, "geometry": { "type": "Point", "coordinates": [ -83.840992, 34.118013 ] } },
-{ "type": "Feature", "properties": { "parcel_id": "f3646bed20da77aa926732ff27177440", "name": "825 Jesse Jewell Parkway Building", "address": "825 Jesse Jewell Parkway", "ownership_type": "Owned", "building_type": "Medical Office Building (Multi-Tenant)", "land_size": 0.88, "square_footage": 6067.0, "listed_for_sale": "No", "longstreet": "No", "lat": 34.301875, "lon": -83.817178, "service_area": "Gainesville", "grouping": null }, "geometry": { "type": "Point", "coordinates": [ -83.817178, 34.301875 ] } },
-{ "type": "Feature", "properties": { "parcel_id": "5b324807d2b0f6ec862969aedbe5e4c8", "name": "Gainesville - 1227 Sherwood Park Drive", "address": "1227 Sherwood Park Drive", "ownership_type": "Owned", "building_type": "Other", "land_size": 0.94, "square_footage": 26587.0, "listed_for_sale": "No", "longstreet": "No", "lat": 34.306699, "lon": -83.817598, "service_area": "Gainesville", "grouping": null }, "geometry": { "type": "Point", "coordinates": [ -83.817598, 34.306699 ] } },
-{ "type": "Feature", "properties": { "parcel_id": "f315298603387885711ec6a30602a850", "name": "Gainesville - 466 Wall Street", "address": "466 Wall Street", "ownership_type": "Owned", "building_type": "Land", "land_size": 0.15, "square_footage": null, "listed_for_sale": "No", "longstreet": "No", "lat": 34.302214, "lon": -83.811807, "service_area": "Gainesville", "grouping": null }, "geometry": { "type": "Point", "coordinates": [ -83.811807, 34.302214 ] } },
-{ "type": "Feature", "properties": { "parcel_id": "fbe97619ca86c094d594732bd79658d4", "name": "Gainesville - Downey Blvd - 0.29 Acres", "address": "NE Downey Blvd", "ownership_type": "Owned", "building_type": "Land", "land_size": 0.29, "square_footage": null, "listed_for_sale": "No", "longstreet": "No", "lat": 34.30595, "lon": -83.814473, "service_area": "Gainesville", "grouping": null }, "geometry": { "type": "Point", "coordinates": [ -83.814473, 34.30595 ] } },
-{ "type": "Feature", "properties": { "parcel_id": "0a3ad8304580e6116498a67287dc0546", "name": "Gainesville - Downey Blvd - 0.32 Acres", "address": "0 Downey Boulevard NE", "ownership_type": "Owned", "building_type": "Land", "land_size": 0.32, "square_footage": null, "listed_for_sale": "No", "longstreet": "No", "lat": 34.305976, "lon": -83.814169, "service_area": "Gainesville", "grouping": null }, "geometry": { "type": "Point", "coordinates": [ -83.814169, 34.305976 ] } },
-{ "type": "Feature", "properties": { "parcel_id": "196050077fb65c0d6f15e2a07f44476c", "name": "Gainesville - 1235 Jesse Jewell Parkway", "address": "1235 Jesse Jewell Parkway", "ownership_type": "Owned", "building_type": "Land", "land_size": 0.36, "square_footage": null, "listed_for_sale": "No", "longstreet": "No", "lat": 34.304155, "lon": -83.812168, "service_area": "Gainesville", "grouping": null }, "geometry": { "type": "Point", "coordinates": [ -83.812168, 34.304155 ] } },
-{ "type": "Feature", "properties": { "parcel_id": "00af430480276e51a73f2f809008ab35", "name": "Operations Data Center", "address": "1405 Jesse Jewell Parkway", "ownership_type": "Owned", "building_type": "Office", "land_size": 2.79, "square_footage": 45574.0, "listed_for_sale": "No", "longstreet": "No", "lat": 34.306857, "lon": -83.811729, "service_area": "Gainesville", "grouping": null }, "geometry": { "type": "Point", "coordinates": [ -83.811729, 34.306857 ] } },
-{ "type": "Feature", "properties": { "parcel_id": "d806e2f1871469061799141fa1c1d697", "name": "Gainesville - Downey Blvd - 0.69 Acres", "address": "0 Downey Boulevard NE", "ownership_type": "Owned", "building_type": "Land", "land_size": 0.69, "square_footage": null, "listed_for_sale": "No", "longstreet": "No", "lat": 34.305635, "lon": -83.813629, "service_area": "Gainesville", "grouping": null }, "geometry": { "type": "Point", "coordinates": [ -83.813629, 34.305635 ] } },
-{ "type": "Feature", "properties": { "parcel_id": "4004c8fddb3eb5c49dd273acd7691dab", "name": "Gainesville - 1215 Jesse Jewell Parkway", "address": "1215 Jesse Jewell Parkway NE", "ownership_type": "Owned", "building_type": "Land", "land_size": 0.61, "square_footage": null, "listed_for_sale": "No", "longstreet": "No", "lat": 34.304292, "lon": -83.812956, "service_area": "Gainesville", "grouping": null }, "geometry": { "type": "Point", "coordinates": [ -83.812956, 34.304292 ] } },
-{ "type": "Feature", "properties": { "parcel_id": "f7b2905cc2c6c255b962312a6bfb0c2e", "name": "Gainesville - 1957 Beverly Road", "address": "1957 Beverly Road", "ownership_type": "Owned", "building_type": "Land", "land_size": 1.59, "square_footage": null, "listed_for_sale": "No", "longstreet": "No", "lat": 34.320396, "lon": -83.804656, "service_area": "Gainesville", "grouping": null }, "geometry": { "type": "Point", "coordinates": [ -83.804656, 34.320396 ] } },
-{ "type": "Feature", "properties": { "parcel_id": "b306443aafa60daa5ff35bc07a91b39e", "name": "Oakwood Medical Office - 4222 Fairbanks Drive", "address": "4222 Fairbanks Drive", "ownership_type": "Leased", "building_type": "Medical Office Building (Multi-Tenant)", "land_size": 3.54, "square_footage": 9359.0, "listed_for_sale": "No", "longstreet": "Yes", "lat": 34.246697, "lon": -83.882544, "service_area": "Gainesville", "grouping": null }, "geometry": { "type": "Point", "coordinates": [ -83.882544, 34.246697 ] } },
-{ "type": "Feature", "properties": { "parcel_id": "7981e971befb818d64cb4be0bb9d0e69", "name": "Bell Building - 1020 Jesse Jewell Pkwy", "address": "1020 Jesse Jewell Parkway", "ownership_type": "Owned", "building_type": "Office", "land_size": 0.95, "square_footage": 4877.0, "listed_for_sale": "No", "longstreet": "No", "lat": 34.30168, "lon": -83.81578, "service_area": "Gainesville", "grouping": null }, "geometry": { "type": "Point", "coordinates": [ -83.81578, 34.30168 ] } },
-{ "type": "Feature", "properties": { "parcel_id": "570f0f882c936756cb920c604e3474bf", "name": "Hoschton - Thompson Mill Road (Hall County)", "address": "5685 Thompson Mill Road", "ownership_type": "Owned", "building_type": "Land", "land_size": 42.93, "square_footage": null, "listed_for_sale": "No", "longstreet": "No", "lat": 34.1116, "lon": -83.849512, "service_area": "Braselton", "grouping": null }, "geometry": { "type": "Point", "coordinates": [ -83.849512, 34.1116 ] } },
-{ "type": "Feature", "properties": { "parcel_id": "87a52d51ea3f20c71bf62be661d7c460", "name": "Gainesville - 2132 Limestone Pkwy", "address": "2132 Limestone Pkwy", "ownership_type": "Owned", "building_type": "Land", "land_size": 3.38, "square_footage": null, "listed_for_sale": "No", "longstreet": "No", "lat": 34.318013, "lon": -83.799294, "service_area": "Gainesville", "grouping": null }, "geometry": { "type": "Point", "coordinates": [ -83.799294, 34.318013 ] } },
-{ "type": "Feature", "properties": { "parcel_id": "ee494428317093a497345cddb5808379", "name": "Medical Plaza 1 in Flowery Branch", "address": "5678 Phil Niekro Blvd", "ownership_type": "Owned", "building_type": "Medical Office Building (Freestanding)", "land_size": 12.88, "square_footage": 13880.0, "listed_for_sale": "No", "longstreet": "No", "lat": 34.180025, "lon": -83.918902, "service_area": "Braselton", "grouping": null }, "geometry": { "type": "Point", "coordinates": [ -83.918902, 34.180025 ] } },
-{ "type": "Feature", "properties": { "parcel_id": "c87e925014985a0511e64ec687a1f473", "name": "West Jackson Medical Office", "address": "26 West Jackson Commons Drive", "ownership_type": "Owned", "building_type": "Medical Office Building (Freestanding)", "land_size": 1.27, "square_footage": 9411.0, "listed_for_sale": "No", "longstreet": "No", "lat": 34.108285, "lon": -83.706089, "service_area": "Braselton", "grouping": null }, "geometry": { "type": "Point", "coordinates": [ -83.706089, 34.108285 ] } },
-{ "type": "Feature", "properties": { "parcel_id": "0892ab4ec57b94886c8f6edfe7e45bb5", "name": "Medical Plaza in Jefferson", "address": "1496 Winder Highway", "ownership_type": "Owned", "building_type": "Medical Office Building (Multi-Tenant)", "land_size": 1.74, "square_footage": 11120.0, "listed_for_sale": "No", "longstreet": "No", "lat": 34.105186, "lon": -83.593465, "service_area": "Braselton", "grouping": null }, "geometry": { "type": "Point", "coordinates": [ -83.593465, 34.105186 ] } },
-{ "type": "Feature", "properties": { "parcel_id": "f0148dcd069094cd17536680fd9e5a7f", "name": "Valley View Medical Center - 23 Tipton Dr", "address": "23 Tipton Drive", "ownership_type": "Leased", "building_type": "Medical Office Building (Freestanding)", "land_size": 1.0, "square_footage": 4386.0, "listed_for_sale": "No", "longstreet": "Yes", "lat": 34.523605, "lon": -83.976574, "service_area": "Lumpkin", "grouping": null }, "geometry": { "type": "Point", "coordinates": [ -83.976574, 34.523605 ] } },
-{ "type": "Feature", "properties": { "parcel_id": "86cdc8b6cbe564d964ef69dc13787d9d", "name": "Dahlonega Medical Offices - Morrison Moore Pkwy", "address": "95 Morrison Moore Parkway", "ownership_type": "Owned", "building_type": "Medical Office Building (Freestanding)", "land_size": 3.08, "square_footage": 10279.0, "listed_for_sale": "No", "longstreet": "No", "lat": 34.52515, "lon": -83.979841, "service_area": "Lumpkin", "grouping": null }, "geometry": { "type": "Point", "coordinates": [ -83.979841, 34.52515 ] } },
-{ "type": "Feature", "properties": { "parcel_id": "f6217c8473575f5e058fd07fb650a039", "name": "Dahlonega Medical Mall - Ansley Drive", "address": "134 Ansley Drive", "ownership_type": "Leased", "building_type": "Medical Office Building (Multi-Tenant)", "land_size": null, "square_footage": 3804.0, "listed_for_sale": "No", "longstreet": "No", "lat": 34.523828, "lon": -83.979112, "service_area": "Lumpkin", "grouping": null }, "geometry": { "type": "Point", "coordinates": [ -83.979112, 34.523828 ] } },
-{ "type": "Feature", "properties": { "parcel_id": "ba55cc68f795056af694aaa0feed46eb", "name": "Dahlonega Medical Office - South Chestatee", "address": "1298 South Chestatee Street", "ownership_type": "Leased", "building_type": "Medical Office Building (Freestanding)", "land_size": null, "square_footage": 4071.0, "listed_for_sale": "No", "longstreet": "No", "lat": 34.518915, "lon": -83.977134, "service_area": "Lumpkin", "grouping": null }, "geometry": { "type": "Point", "coordinates": [ -83.977134, 34.518915 ] } },
-{ "type": "Feature", "properties": { "parcel_id": "6677b9cdf90840790e7897bb1d289ed9", "name": "Dahlonega Medical Office - Maxwell Lane", "address": "73 Maxwell Lane", "ownership_type": "Leased", "building_type": "Medical Office Building (Multi-Tenant)", "land_size": null, "square_footage": 4832.0, "listed_for_sale": "No", "longstreet": "No", "lat": 34.470658, "lon": -83.968184, "service_area": "Lumpkin", "grouping": null }, "geometry": { "type": "Point", "coordinates": [ -83.968184, 34.470658 ] } },
-{ "type": "Feature", "properties": { "parcel_id": "08324c4ca29a899b8ef8b33f6e82103a", "name": "NGMC - Lumpkin", "address": "495 N. GA 400", "ownership_type": "Owned", "building_type": "Hospital", "land_size": 57.12, "square_footage": 63800.0, "listed_for_sale": "No", "longstreet": "No", "lat": 34.460488, "lon": -83.971192, "service_area": "Lumpkin", "grouping": null }, "geometry": { "type": "Point", "coordinates": [ -83.971192, 34.460488 ] } },
-{ "type": "Feature", "properties": { "parcel_id": "34db361a5ebbef8855d2cb85beb013cd", "name": "Clayton Medical Office - Highway 441", "address": "536 Highway 441 South", "ownership_type": "Leased", "building_type": "Medical Office Building (Other)", "land_size": null, "square_footage": 3905.0, "listed_for_sale": "No", "longstreet": "No", "lat": 34.870675, "lon": -83.401445, "service_area": "Habersham", "grouping": null }, "geometry": { "type": "Point", "coordinates": [ -83.401445, 34.870675 ] } },
-{ "type": "Feature", "properties": { "parcel_id": "5059fcf71c02f9330c2858a46778842c", "name": "Clayton Medical Office - Cottonwood St", "address": "30 Cottonwood Street", "ownership_type": "Leased", "building_type": "Medical Office Building (Freestanding)", "land_size": null, "square_footage": 5749.0, "listed_for_sale": "No", "longstreet": "No", "lat": 34.880386, "lon": -83.399678, "service_area": "Habersham", "grouping": null }, "geometry": { "type": "Point", "coordinates": [ -83.399678, 34.880386 ] } },
-{ "type": "Feature", "properties": { "parcel_id": "fe236142d753a100923d650d08bf3010", "name": "Toccoa Cancer Center", "address": "1640 Falls Road", "ownership_type": "Owned", "building_type": "Medical Office Building (Freestanding)", "land_size": 1.12, "square_footage": 6355.0, "listed_for_sale": "No", "longstreet": "No", "lat": 34.598669, "lon": -83.348841, "service_area": "Habersham", "grouping": null }, "geometry": { "type": "Point", "coordinates": [ -83.348841, 34.598669 ] } },
-{ "type": "Feature", "properties": { "parcel_id": "197e7bf75cc6b433904f891d918085db", "name": "Toccoa Clinic", "address": "58 Big A Road", "ownership_type": "Leased", "building_type": "Medical Office Building (Multi-Tenant)", "land_size": null, "square_footage": 47506.0, "listed_for_sale": "No", "longstreet": "No", "lat": 34.57995, "lon": -83.318269, "service_area": "Habersham", "grouping": null }, "geometry": { "type": "Point", "coordinates": [ -83.318269, 34.57995 ] } },
-{ "type": "Feature", "properties": { "parcel_id": "98b0bf4819e47629ad9e26e6e340031b", "name": "Toccoa Foothills Centre - 286-288 Big A", "address": "286-288 Big A Road Toccoa", "ownership_type": "Leased", "building_type": "Medical Office Building (Other)", "land_size": null, "square_footage": 12040.0, "listed_for_sale": "No", "longstreet": "No", "lat": 34.578067, "lon": -83.315963, "service_area": "Habersham", "grouping": "" }, "geometry": { "type": "Point", "coordinates": [ -83.315963, 34.578067 ] } },
-{ "type": "Feature", "properties": { "parcel_id": "98b0bf4819e47629ad9e26e6e340031b", "name": "Toccoa 274 Big-A Facility", "address": "274 Big A Road", "ownership_type": "Leased", "building_type": "Medical Office Building (Other)", "land_size": null, "square_footage": 19930.0, "listed_for_sale": "No", "longstreet": "No", "lat": 34.578393, "lon": -83.316289, "service_area": "Habersham", "grouping": "" }, "geometry": { "type": "Point", "coordinates": [ -83.316289, 34.578393 ] } },
-{ "type": "Feature", "properties": { "parcel_id": "68840452e12b777e6397e19dafb60b72", "name": "Blairsville Medical Office", "address": "346 Deep South Farm Road", "ownership_type": "Leased", "building_type": "Medical Office Building (Multi-Tenant)", "land_size": null, "square_footage": 7182.0, "listed_for_sale": "No", "longstreet": "No", "lat": 34.888162, "lon": -83.962478, "service_area": "Habersham", "grouping": null }, "geometry": { "type": "Point", "coordinates": [ -83.962478, 34.888162 ] } },
-{ "type": "Feature", "properties": { "parcel_id": "bffaf36a11baacf28a1cc101ebae27d9", "name": "Cleveland - 2576 Helen Hwy - 10.93 Acres", "address": "2576 Helen Highway", "ownership_type": "Owned", "building_type": "Land", "land_size": 10.93, "square_footage": null, "listed_for_sale": "No", "longstreet": "No", "lat": 34.633751, "lon": -83.744767, "service_area": "Habersham", "grouping": null }, "geometry": { "type": "Point", "coordinates": [ -83.744767, 34.633751 ] } },
-{ "type": "Feature", "properties": { "parcel_id": "1d76060c9bd698660b7a8a79dd357ed9", "name": "Cleveland Medical Offices", "address": "2578 Helen Highway", "ownership_type": "Owned", "building_type": "Medical Office Building (Freestanding)", "land_size": 4.54, "square_footage": 15015.0, "listed_for_sale": "No", "longstreet": "No", "lat": 34.634674, "lon": -83.745659, "service_area": "Habersham", "grouping": null }, "geometry": { "type": "Point", "coordinates": [ -83.745659, 34.634674 ] } },
-{ "type": "Feature", "properties": { "parcel_id": "bb4e35379a82cd80de4f5b990756f340", "name": "Cleveland Medical Office - 640 Helen Highway", "address": "640 Helen Highway", "ownership_type": "Leased", "building_type": "Medical Office Building (Other)", "land_size": null, "square_footage": 2532.0, "listed_for_sale": "No", "longstreet": "No", "lat": 34.608436, "lon": -83.757531, "service_area": "Habersham", "grouping": null }, "geometry": { "type": "Point", "coordinates": [ -83.757531, 34.608436 ] } },
-{ "type": "Feature", "properties": { "parcel_id": "ef2e2c086c8ef1e378bf6c1da662d760", "name": "Cleveland - Hwy 129", "address": "0 Highway 129 South", "ownership_type": "Owned", "building_type": "Land", "land_size": 5.83, "square_footage": null, "listed_for_sale": "Yes", "longstreet": "No", "lat": 34.562233, "lon": -83.761601, "service_area": "Habersham", "grouping": null }, "geometry": { "type": "Point", "coordinates": [ -83.761601, 34.562233 ] } },
-{ "type": "Feature", "properties": { "parcel_id": "01022 001001", "name": "Gainesville - 900 Spring Street", "address": "900 NE Spring Street,  Gainesville", "ownership_type": "Owned", "building_type": "Land", "land_size": 0.34, "square_footage": null, "listed_for_sale": "No", "longstreet": "No", "lat": 34.30193, "lon": -83.81755, "service_area": "Gainesville", "grouping": null }, "geometry": { "type": "Point", "coordinates": [ -83.817524357471513, 34.301907947669349 ] } },
-{ "type": "Feature", "properties": { "parcel_id": "01035 002038", "name": "Gainesville - 490 Wall Street", "address": "490 SE Wall Street", "ownership_type": "Owned", "building_type": "Land", "land_size": 0.11, "square_footage": null, "listed_for_sale": "No", "longstreet": "No", "lat": 34.30182, "lon": -83.81152, "service_area": "Gainesville", "grouping": null }, "geometry": { "type": "Point", "coordinates": [ -83.811555396033711, 34.301831524227985 ] } },
-{ "type": "Feature", "properties": { "parcel_id": "01035 002004", "name": "Gainesville - 1120 Jesse Jewell Pkwy", "address": "1120 SE Jesse Jewell Parkway", "ownership_type": "Owned", "building_type": "Land", "land_size": 2.6, "square_footage": null, "listed_for_sale": "No", "longstreet": "No", "lat": 34.30221, "lon": -83.81353, "service_area": "Gainesville", "grouping": null }, "geometry": { "type": "Point", "coordinates": [ -83.813665635571539, 34.302223355800237 ] } },
-{ "type": "Feature", "properties": { "parcel_id": "01035 002005", "name": "Gainesville - Lanier Terrace", "address": "1030 SE Summit Street", "ownership_type": "Owned", "building_type": "Land", "land_size": 6.47, "square_footage": null, "listed_for_sale": "No", "longstreet": "No", "lat": 34.30157, "lon": -83.81359, "service_area": "Gainesville", "grouping": null }, "geometry": { "type": "Point", "coordinates": [ -83.813563979895605, 34.301567545686076 ] } },
-{ "type": "Feature", "properties": { "parcel_id": "01061 001006E", "name": "Gainesville Urology ASC", "address": "1240 Jesse Jewell Parkway,  Suite 250", "ownership_type": "Leased", "building_type": "Medical Office", "land_size": null, "square_footage": 2500.0, "listed_for_sale": "No", "longstreet": "No", "lat": 34.30338, "lon": -83.80913, "service_area": "Gainesville", "grouping": null }, "geometry": { "type": "Point", "coordinates": [ -83.809099349816748, 34.303389525771642 ] } },
-{ "type": "Feature", "properties": { "parcel_id": "01061 001006D", "name": "Gainesville Urology Clinic", "address": "1240 Jesse Jewell Pkwy, Suite 200", "ownership_type": "Leased", "building_type": "Medical Office", "land_size": null, "square_footage": 5000.0, "listed_for_sale": "No", "longstreet": "No", "lat": 34.30354, "lon": -83.80943, "service_area": "Gainesville", "grouping": null }, "geometry": { "type": "Point", "coordinates": [ -83.80939758457869, 34.303555192768322 ] } },
-{ "type": "Feature", "properties": { "parcel_id": "01061 001006", "name": "Gainesville Urology Admin", "address": "1240 Jesse Jewell Pkwy, Suite 200A", "ownership_type": "Leased", "building_type": "Medical Office", "land_size": null, "square_footage": 2500.0, "listed_for_sale": "No", "longstreet": "No", "lat": 34.30348, "lon": -83.8099, "service_area": "Gainesville", "grouping": null }, "geometry": { "type": "Point", "coordinates": [ -83.809827681446478, 34.303497355289238 ] } }
-]
+  "type": "FeatureCollection",
+  "name": "nghs_portfolio",
+  "crs": {
+    "type": "name",
+    "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" }
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "parcel_id": "7f36da6abe9a193e1ad877b3b67664b6",
+        "name": "Auburn Medical Office",
+        "address": "12 7th Street",
+        "ownership_type": "Leased",
+        "building_type": "Medical Office Building (Freestanding)",
+        "land_size": null,
+        "square_footage": 3522.0,
+        "listed_for_sale": "No",
+        "longstreet": "No",
+        "lat": 34.010453,
+        "lon": -83.823996,
+        "service_area": "Braselton",
+        "grouping": null
+      },
+      "geometry": { "type": "Point", "coordinates": [-83.823996, 34.010453] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "parcel_id": "da71eb3549ebb12c3315867b3a7fefef",
+        "name": "Barrow Medical Office Building",
+        "address": "314 North Broad Street",
+        "ownership_type": "Owned",
+        "building_type": "Medical Office Building (Multi-Tenant)",
+        "land_size": 14.28,
+        "square_footage": 45135.0,
+        "listed_for_sale": "No",
+        "longstreet": "No",
+        "lat": 34.008227,
+        "lon": -83.707708,
+        "service_area": "Barrow",
+        "grouping": "A"
+      },
+      "geometry": { "type": "Point", "coordinates": [-83.707708, 34.008227] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "parcel_id": "da71eb3549ebb12c3315867b3a7fefef",
+        "name": "NGMC - Barrow",
+        "address": "316 North Broad Street",
+        "ownership_type": "Owned",
+        "building_type": "Hospital",
+        "land_size": 14.28,
+        "square_footage": 73973.0,
+        "listed_for_sale": "No",
+        "longstreet": "No",
+        "lat": 34.008101,
+        "lon": -83.707521,
+        "service_area": "Barrow",
+        "grouping": "A"
+      },
+      "geometry": { "type": "Point", "coordinates": [-83.707521, 34.008101] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "parcel_id": "824440b3d48beb5d43eb01d2f8bfd6d0",
+        "name": "NGPG Podiatry Winder",
+        "address": "293 North Broad Street",
+        "ownership_type": "Leased",
+        "building_type": "Medical Office Building (Freestanding)",
+        "land_size": 2.5,
+        "square_footage": 1578.0,
+        "listed_for_sale": "No",
+        "longstreet": "No",
+        "lat": 34.005322,
+        "lon": -83.706442,
+        "service_area": "Barrow",
+        "grouping": null
+      },
+      "geometry": { "type": "Point", "coordinates": [-83.706442, 34.005322] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "parcel_id": "d146b6b6d8665e492598fd21e8ff197f",
+        "name": "Winder - Gainesville Highway",
+        "address": "0 Gainesville Highway",
+        "ownership_type": "Owned",
+        "building_type": "Land",
+        "land_size": 22.68,
+        "square_footage": null,
+        "listed_for_sale": "No",
+        "longstreet": "No",
+        "lat": 34.009322,
+        "lon": -83.710288,
+        "service_area": "Barrow",
+        "grouping": null
+      },
+      "geometry": { "type": "Point", "coordinates": [-83.710288, 34.009322] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "parcel_id": "bf4af99d28843e3602ada864ee0bd3a3",
+        "name": "Bethlehem - Loganville Hwy -12.79 Acres",
+        "address": "0 Loganville Highway",
+        "ownership_type": "Owned",
+        "building_type": "Land",
+        "land_size": 12.79,
+        "square_footage": null,
+        "listed_for_sale": "No",
+        "longstreet": "No",
+        "lat": 33.939626,
+        "lon": -83.760284,
+        "service_area": "Barrow",
+        "grouping": null
+      },
+      "geometry": { "type": "Point", "coordinates": [-83.760284, 33.939626] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "parcel_id": "847b32191d0d5441e5d5f668f1c52200",
+        "name": "Bethlehem - Loganville Hwy - 18.90 Acres",
+        "address": "0 Loganville Highway",
+        "ownership_type": "Owned",
+        "building_type": "Land",
+        "land_size": 18.9,
+        "square_footage": null,
+        "listed_for_sale": "No",
+        "longstreet": "No",
+        "lat": 33.938427,
+        "lon": -83.757776,
+        "service_area": "Barrow",
+        "grouping": null
+      },
+      "geometry": { "type": "Point", "coordinates": [-83.757776, 33.938427] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "parcel_id": "aa95ec171b1f5af68c730864ded74502",
+        "name": "Bethlehem - Loganville Hwy - 2.896 Acres",
+        "address": "0 Loganville Highway (tract 9)",
+        "ownership_type": "Owned",
+        "building_type": "Land",
+        "land_size": 2.896,
+        "square_footage": null,
+        "listed_for_sale": "No",
+        "longstreet": "No",
+        "lat": 33.942319,
+        "lon": -83.758601,
+        "service_area": "Barrow",
+        "grouping": null
+      },
+      "geometry": { "type": "Point", "coordinates": [-83.758601, 33.942319] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "parcel_id": "57fe61ef5cb561c57dd338af691c1d84",
+        "name": "Medical Plaza 1 in Bethlehem",
+        "address": "990 Loganville Highway",
+        "ownership_type": "Owned",
+        "building_type": "Medical Office Building (Multi-Tenant)",
+        "land_size": 10.55,
+        "square_footage": 34000.0,
+        "listed_for_sale": "No",
+        "longstreet": "No",
+        "lat": 33.941342,
+        "lon": -83.759739,
+        "service_area": "Barrow",
+        "grouping": null
+      },
+      "geometry": { "type": "Point", "coordinates": [-83.759739, 33.941342] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "parcel_id": "1d26fb495c881bf9224736783c194868",
+        "name": "Medical Plaza 2 in Dawsonville",
+        "address": "22 Prestige Lane",
+        "ownership_type": "Owned",
+        "building_type": "Medical Office Building (Multi-Tenant)",
+        "land_size": 1.28,
+        "square_footage": 35800.0,
+        "listed_for_sale": "No",
+        "longstreet": "No",
+        "lat": 34.368166,
+        "lon": -84.033471,
+        "service_area": "Lumpkin",
+        "grouping": null
+      },
+      "geometry": { "type": "Point", "coordinates": [-84.033471, 34.368166] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "parcel_id": "3cffae08b7246e13d4c832f64ad53ba3",
+        "name": "Dawsonville - 81 Prominence Court",
+        "address": "81 Prominence Court",
+        "ownership_type": "Leased",
+        "building_type": "Medical Office Building (Multi-Tenant)",
+        "land_size": null,
+        "square_footage": 4000.0,
+        "listed_for_sale": "No",
+        "longstreet": "No",
+        "lat": 34.368717,
+        "lon": -84.034131,
+        "service_area": "Lumpkin",
+        "grouping": null
+      },
+      "geometry": { "type": "Point", "coordinates": [-84.034131, 34.368717] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "parcel_id": "c87878c5732ec27527c327344af0879a",
+        "name": "Medical Plaza 1 in Dawsonville",
+        "address": "108 Prominence Court",
+        "ownership_type": "Owned",
+        "building_type": "Medical Office Building (Multi-Tenant)",
+        "land_size": 2.96,
+        "square_footage": 26078.0,
+        "listed_for_sale": "No",
+        "longstreet": "No",
+        "lat": 34.368792,
+        "lon": -84.033016,
+        "service_area": "Lumpkin",
+        "grouping": null
+      },
+      "geometry": { "type": "Point", "coordinates": [-84.033016, 34.368792] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "parcel_id": "dadd01320defcc67e396abb93c4d0716",
+        "name": "Dawsonville Medical Office - Highway 53",
+        "address": "5959 Highway 53 East",
+        "ownership_type": "Leased",
+        "building_type": "Medical Office Building (Multi-Tenant)",
+        "land_size": null,
+        "square_footage": 2500.0,
+        "listed_for_sale": "No",
+        "longstreet": "No",
+        "lat": 34.369416,
+        "lon": -84.041399,
+        "service_area": "Lumpkin",
+        "grouping": null
+      },
+      "geometry": { "type": "Point", "coordinates": [-84.041399, 34.369416] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "parcel_id": "efe857f560dfb585beca891e1a0c40db",
+        "name": "Dawsonville Medical Office - Medical Center Drive",
+        "address": "45 Medical Center Drive",
+        "ownership_type": "Owned",
+        "building_type": "Medical Office Building (Freestanding)",
+        "land_size": 2.09,
+        "square_footage": 8109.0,
+        "listed_for_sale": "No",
+        "longstreet": "No",
+        "lat": 34.366954,
+        "lon": -84.038757,
+        "service_area": "Lumpkin",
+        "grouping": null
+      },
+      "geometry": { "type": "Point", "coordinates": [-84.038757, 34.366954] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "parcel_id": "373bf5a5f75ddd5e6022787ba63e25e7",
+        "name": "Dawsonville Medical Office - 200 Dawson Commons",
+        "address": "200 Dawson Commons Circle",
+        "ownership_type": "Leased",
+        "building_type": "Medical Office Building (Multi-Tenant)",
+        "land_size": null,
+        "square_footage": 3692.0,
+        "listed_for_sale": "No",
+        "longstreet": "No",
+        "lat": 34.368871,
+        "lon": -84.042638,
+        "service_area": "Lumpkin",
+        "grouping": null
+      },
+      "geometry": { "type": "Point", "coordinates": [-84.042638, 34.368871] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "parcel_id": "fd4adde1757f6e6745585ac4dce61681",
+        "name": "Cumming Medical Offices - Keith Bridge Road",
+        "address": "2825 Keith Bridge Road",
+        "ownership_type": "Owned",
+        "building_type": "Medical Office Building (Multi-Tenant)",
+        "land_size": 2.5,
+        "square_footage": 11497.0,
+        "listed_for_sale": "No",
+        "longstreet": "No",
+        "lat": 34.255035,
+        "lon": -84.090642,
+        "service_area": "Lumpkin",
+        "grouping": null
+      },
+      "geometry": { "type": "Point", "coordinates": [-84.090642, 34.255035] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "parcel_id": "23ee25bdfd494051a4979f368966800d",
+        "name": "Cumming Medical Offices - Sanders Road",
+        "address": "900 Sanders Road",
+        "ownership_type": "Leased",
+        "building_type": "Medical Office Building (Multi-Tenant)",
+        "land_size": null,
+        "square_footage": 7809.0,
+        "listed_for_sale": "No",
+        "longstreet": "No",
+        "lat": 34.184788,
+        "lon": -84.123806,
+        "service_area": "Lumpkin",
+        "grouping": null
+      },
+      "geometry": { "type": "Point", "coordinates": [-84.123806, 34.184788] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "parcel_id": "a88da328a1b8931be94977489c4242a7",
+        "name": "Lavonia Medical Offices",
+        "address": "12192 Augusta Road",
+        "ownership_type": "Leased",
+        "building_type": "Medical Office Building (Freestanding)",
+        "land_size": null,
+        "square_footage": 7304.0,
+        "listed_for_sale": "No",
+        "longstreet": "No",
+        "lat": 34.428454,
+        "lon": -83.105874,
+        "service_area": "Habersham",
+        "grouping": null
+      },
+      "geometry": { "type": "Point", "coordinates": [-83.105874, 34.428454] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "parcel_id": "be136bfa21c9025cde476293f632efeb",
+        "name": "Dacula Medical Offices",
+        "address": "852 Dacula Road",
+        "ownership_type": "Owned",
+        "building_type": "Medical Office Building (Freestanding)",
+        "land_size": 3.25,
+        "square_footage": 10415.0,
+        "listed_for_sale": "No",
+        "longstreet": "No",
+        "lat": 34.008817,
+        "lon": -83.916111,
+        "service_area": "Barrow",
+        "grouping": null
+      },
+      "geometry": { "type": "Point", "coordinates": [-83.916111, 34.008817] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "parcel_id": "953cc7822c407106971362fc4a5953f8",
+        "name": "Medical Plaza 1 in Buford",
+        "address": "4445 South Lee Street",
+        "ownership_type": "Owned",
+        "building_type": "Medical Office Building (Multi-Tenant)",
+        "land_size": 8.47,
+        "square_footage": 93330.0,
+        "listed_for_sale": "No",
+        "longstreet": "No",
+        "lat": 34.104531,
+        "lon": -84.001828,
+        "service_area": "Braselton",
+        "grouping": null
+      },
+      "geometry": { "type": "Point", "coordinates": [-84.001828, 34.104531] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "parcel_id": "cfe14b1baba8e1b6b943bdf1a8ea68c7",
+        "name": "Buford Professional Park - 4095 South Lee St",
+        "address": "4095 South Lee Street",
+        "ownership_type": "Leased",
+        "building_type": "Medical Office Building (Freestanding)",
+        "land_size": 1.45,
+        "square_footage": 7492.0,
+        "listed_for_sale": "No",
+        "longstreet": "Yes",
+        "lat": 34.093743,
+        "lon": -83.998164,
+        "service_area": "Braselton",
+        "grouping": null
+      },
+      "geometry": { "type": "Point", "coordinates": [-83.998164, 34.093743] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "parcel_id": "9ad7fb5a5d49d017c97166d8187c1a36",
+        "name": "Hamilton Mill Medical Office - 3625 Braselton Hwy",
+        "address": "3625 Braselton Highway",
+        "ownership_type": "Leased",
+        "building_type": "Medical Office Building (Multi-Tenant)",
+        "land_size": null,
+        "square_footage": 3645.0,
+        "listed_for_sale": "No",
+        "longstreet": "No",
+        "lat": 34.068647,
+        "lon": -83.904529,
+        "service_area": "Barrow",
+        "grouping": null
+      },
+      "geometry": { "type": "Point", "coordinates": [-83.904529, 34.068647] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "parcel_id": "5d5572a0d4ba8816a2ba885a2564d8a0",
+        "name": "Suwanee - 1120 Peachtree Industrial Boulevard",
+        "address": "1120 Peachtree Industrial Boulevard",
+        "ownership_type": "Leased",
+        "building_type": "Medical Office Building (Multi-Tenant)",
+        "land_size": 5.3,
+        "square_footage": 36841.0,
+        "listed_for_sale": "No",
+        "longstreet": "Yes",
+        "lat": 34.04725,
+        "lon": -84.091961,
+        "service_area": "Braselton",
+        "grouping": null
+      },
+      "geometry": { "type": "Point", "coordinates": [-84.091961, 34.04725] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "parcel_id": "ad11c247096a3d02efd9f633da1c634a",
+        "name": "Hoschton - Thompson Mill Road",
+        "address": "0 Thompson Mill Rd.",
+        "ownership_type": "Owned",
+        "building_type": "Land",
+        "land_size": 6.02,
+        "square_footage": null,
+        "listed_for_sale": "No",
+        "longstreet": "No",
+        "lat": 34.10929,
+        "lon": -83.848577,
+        "service_area": "Braselton",
+        "grouping": null
+      },
+      "geometry": { "type": "Point", "coordinates": [-83.848577, 34.10929] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "parcel_id": "71ef907ab921bb65ac185e65039cbe67",
+        "name": "Hamilton Mill Medical Offices - 3575 Braselton Hwy",
+        "address": "3575 Braselton Highway",
+        "ownership_type": "Owned",
+        "building_type": "Medical Office Building (Freestanding)",
+        "land_size": 1.38,
+        "square_footage": 9411.0,
+        "listed_for_sale": "No",
+        "longstreet": "No",
+        "lat": 34.068736,
+        "lon": -83.908298,
+        "service_area": "Barrow",
+        "grouping": null
+      },
+      "geometry": { "type": "Point", "coordinates": [-83.908298, 34.068736] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "parcel_id": "da5c5000953f4640f1479b4aa78c8dce",
+        "name": "Highpoint Building - 1270 Friendship Road",
+        "address": "1270 Friendship Road",
+        "ownership_type": "Leased",
+        "building_type": "Medical Office Building (Multi-Tenant)",
+        "land_size": 19.4,
+        "square_footage": 42848.0,
+        "listed_for_sale": "No",
+        "longstreet": "Yes",
+        "lat": 34.118975,
+        "lon": -83.829776,
+        "service_area": "Braselton",
+        "grouping": null
+      },
+      "geometry": { "type": "Point", "coordinates": [-83.829776, 34.118975] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "parcel_id": "b0daf9e72b57876472a107058c151eca",
+        "name": "Cornelia - Walmart Outlot #4",
+        "address": "0 Chase Road",
+        "ownership_type": "Owned",
+        "building_type": "Land",
+        "land_size": 2.16,
+        "square_footage": null,
+        "listed_for_sale": "No",
+        "longstreet": "No",
+        "lat": 34.536913,
+        "lon": -83.535388,
+        "service_area": "Habersham",
+        "grouping": null
+      },
+      "geometry": { "type": "Point", "coordinates": [-83.535388, 34.536913] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "parcel_id": "7fd683e35812b7a4cabf95dafdfa9a1d",
+        "name": "Demorest - Austin Drive - 11.71 Acres",
+        "address": "0 Austin Drive",
+        "ownership_type": "Owned",
+        "building_type": "Land",
+        "land_size": 11.71,
+        "square_footage": null,
+        "listed_for_sale": "No",
+        "longstreet": "No",
+        "lat": 34.583977,
+        "lon": -83.539136,
+        "service_area": "Habersham",
+        "grouping": null
+      },
+      "geometry": { "type": "Point", "coordinates": [-83.539136, 34.583977] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "parcel_id": "7bc5843089766620b84d4c81fbc0c496",
+        "name": "Clarkesville Office Building - Robertson Loop Road",
+        "address": "125 Robertson Loop Road",
+        "ownership_type": "Owned",
+        "building_type": "Other",
+        "land_size": 0.74,
+        "square_footage": 1500.0,
+        "listed_for_sale": "No",
+        "longstreet": "No",
+        "lat": 34.590107,
+        "lon": -83.533651,
+        "service_area": "Habersham",
+        "grouping": null
+      },
+      "geometry": { "type": "Point", "coordinates": [-83.533651, 34.590107] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "parcel_id": "f5920aa90c9d46bc1b4a0fa87f840e06",
+        "name": "Demorest Medical Office - 800 Austin Drive",
+        "address": "800 Austin Drive",
+        "ownership_type": "Leased",
+        "building_type": "Medical Office Building (Multi-Tenant)",
+        "land_size": null,
+        "square_footage": 6336.0,
+        "listed_for_sale": "No",
+        "longstreet": "No",
+        "lat": 34.585225,
+        "lon": -83.536211,
+        "service_area": "Habersham",
+        "grouping": null
+      },
+      "geometry": { "type": "Point", "coordinates": [-83.536211, 34.585225] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "parcel_id": "5c129663104aa1aecfb846b18723626f",
+        "name": "Demorest Medical Office - 157 Adams Drive",
+        "address": "157 Adams Drive",
+        "ownership_type": "Leased",
+        "building_type": "Medical Office Building (Freestanding)",
+        "land_size": null,
+        "square_footage": 3392.0,
+        "listed_for_sale": "No",
+        "longstreet": "No",
+        "lat": 34.582195,
+        "lon": -83.537148,
+        "service_area": "Habersham",
+        "grouping": null
+      },
+      "geometry": { "type": "Point", "coordinates": [-83.537148, 34.582195] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "parcel_id": "41e1678c221c074e869a4c2b837c439a",
+        "name": "New Horizons - Habersham",
+        "address": "105 Habersham Terrace Gardens",
+        "ownership_type": "Owned",
+        "building_type": "Medical Office Building (Freestanding)",
+        "land_size": 22.45,
+        "square_footage": 34902.0,
+        "listed_for_sale": "No",
+        "longstreet": "No",
+        "lat": 34.580145,
+        "lon": -83.538696,
+        "service_area": "Habersham",
+        "grouping": "B"
+      },
+      "geometry": { "type": "Point", "coordinates": [-83.538696, 34.580145] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "parcel_id": "41e1678c221c074e869a4c2b837c439a",
+        "name": "Demorest Office Building - 487 Historic Highway 441",
+        "address": "487 Historic Highway 441 N",
+        "ownership_type": "Owned",
+        "building_type": "Office",
+        "land_size": 22.45,
+        "square_footage": 9152.0,
+        "listed_for_sale": "No",
+        "longstreet": "No",
+        "lat": 34.580147,
+        "lon": -83.536951,
+        "service_area": "Habersham",
+        "grouping": "B"
+      },
+      "geometry": { "type": "Point", "coordinates": [-83.536951, 34.580147] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "parcel_id": "41e1678c221c074e869a4c2b837c439a",
+        "name": "Demorest Medical Office - 247 Adams Drive",
+        "address": "247 Adams Drive",
+        "ownership_type": "Owned",
+        "building_type": "Medical Office Building (Multi-Tenant)",
+        "land_size": 22.45,
+        "square_footage": 15824.0,
+        "listed_for_sale": "No",
+        "longstreet": "No",
+        "lat": 34.580333,
+        "lon": -83.539791,
+        "service_area": "Habersham",
+        "grouping": "B"
+      },
+      "geometry": { "type": "Point", "coordinates": [-83.539791, 34.580333] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "parcel_id": "41e1678c221c074e869a4c2b837c439a",
+        "name": "NGMC - Habersham",
+        "address": "541 Historic Highway 441 North",
+        "ownership_type": "Owned",
+        "building_type": "Hospital",
+        "land_size": 22.45,
+        "square_footage": 163879.0,
+        "listed_for_sale": "No",
+        "longstreet": "No",
+        "lat": 34.581065340296085,
+        "lon": -83.536991826359071,
+        "service_area": "Habersham",
+        "grouping": "B"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-83.536991826359071, 34.581065340296085]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "parcel_id": "41e1678c221c074e869a4c2b837c439a",
+        "name": "Demorest Office Building - 175 Adams Drive",
+        "address": "175 Adams Drive",
+        "ownership_type": "Owned",
+        "building_type": "Vacant Building",
+        "land_size": 22.45,
+        "square_footage": 3600.0,
+        "listed_for_sale": "No",
+        "longstreet": "No",
+        "lat": 34.582088,
+        "lon": -83.537564,
+        "service_area": "Habersham",
+        "grouping": "B"
+      },
+      "geometry": { "type": "Point", "coordinates": [-83.537564, 34.582088] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "parcel_id": "068d341b3cfb4aa4b28076a0081b2a2c",
+        "name": "Demorest Medical Office - 801 Austin Drive",
+        "address": "801 Austin Drive",
+        "ownership_type": "Leased",
+        "building_type": "Medical Office Building (Freestanding)",
+        "land_size": 0.78,
+        "square_footage": 4189.0,
+        "listed_for_sale": "No",
+        "longstreet": "Yes",
+        "lat": 34.586018,
+        "lon": -83.535985,
+        "service_area": "Habersham",
+        "grouping": null
+      },
+      "geometry": { "type": "Point", "coordinates": [-83.535985, 34.586018] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "parcel_id": "bd18ebe1311805ccbe0ed94e0f28c893",
+        "name": "Demorest Medical Office - 835 Austin Drive",
+        "address": "835 Austin Drive",
+        "ownership_type": "Leased",
+        "building_type": "Medical Office Building (Multi-Tenant)",
+        "land_size": 1.07,
+        "square_footage": 6344.0,
+        "listed_for_sale": "No",
+        "longstreet": "Yes",
+        "lat": 34.58603,
+        "lon": -83.537175,
+        "service_area": "Habersham",
+        "grouping": null
+      },
+      "geometry": { "type": "Point", "coordinates": [-83.537175, 34.58603] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "parcel_id": "89eb5e0cd13780a633a5f7986c860999",
+        "name": "Demorest - 550 N. Historic Hwy 441",
+        "address": "550 North Historic Highway 441",
+        "ownership_type": "Owned",
+        "building_type": "Land",
+        "land_size": 6.74,
+        "square_footage": null,
+        "listed_for_sale": "No",
+        "longstreet": "No",
+        "lat": 34.581537,
+        "lon": -83.535232,
+        "service_area": "Habersham",
+        "grouping": null
+      },
+      "geometry": { "type": "Point", "coordinates": [-83.535232, 34.581537] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "parcel_id": "bef55588e46eb6c16acedd1be3929abe",
+        "name": "Demorest Medical Office - 870 Austin Drive",
+        "address": "870 Austin Drive",
+        "ownership_type": "Leased",
+        "building_type": "Medical Office Building (Multi-Tenant)",
+        "land_size": null,
+        "square_footage": 10000.0,
+        "listed_for_sale": "No",
+        "longstreet": "No",
+        "lat": 34.584697,
+        "lon": -83.537626,
+        "service_area": "Habersham",
+        "grouping": null
+      },
+      "geometry": { "type": "Point", "coordinates": [-83.537626, 34.584697] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "parcel_id": "0abe8b2942c24fe5dade147aa142aa5d",
+        "name": "Habersham Professional Park - 155 Professional Dr",
+        "address": "155 Professional Drive",
+        "ownership_type": "Leased",
+        "building_type": "Medical Office Building (Freestanding)",
+        "land_size": 1.49,
+        "square_footage": 6468.0,
+        "listed_for_sale": "No",
+        "longstreet": "Yes",
+        "lat": 34.504399,
+        "lon": -83.54427,
+        "service_area": "Habersham",
+        "grouping": null
+      },
+      "geometry": { "type": "Point", "coordinates": [-83.54427, 34.504399] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "parcel_id": "da7c9597cd3991f25e984270390b608f",
+        "name": "Habersham Professional Park - 104 Professional Dr",
+        "address": "104 Professional Drive",
+        "ownership_type": "Leased",
+        "building_type": "Medical Office Building (Multi-Tenant)",
+        "land_size": 1.57,
+        "square_footage": 6270.0,
+        "listed_for_sale": "No",
+        "longstreet": "Yes",
+        "lat": 34.504168,
+        "lon": -83.544677,
+        "service_area": "Habersham",
+        "grouping": null
+      },
+      "geometry": { "type": "Point", "coordinates": [-83.544677, 34.504168] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "parcel_id": "832491ba4d585453a7376c4d9f8951fe",
+        "name": "Demorest - 340 N. Historic Hwy 441",
+        "address": "340 North Historic Highway 441",
+        "ownership_type": "Owned",
+        "building_type": "Land",
+        "land_size": 9.46,
+        "square_footage": null,
+        "listed_for_sale": "No",
+        "longstreet": "No",
+        "lat": 34.577592,
+        "lon": -83.536188,
+        "service_area": "Habersham",
+        "grouping": null
+      },
+      "geometry": { "type": "Point", "coordinates": [-83.536188, 34.577592] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "parcel_id": "e3ba829b660bb07e3a44b7920f95f193",
+        "name": "Demorest - 445 Grandis Heights Circle",
+        "address": "445 Grandis Heights Circle",
+        "ownership_type": "Owned",
+        "building_type": "Land",
+        "land_size": 1.65,
+        "square_footage": null,
+        "listed_for_sale": "No",
+        "longstreet": "No",
+        "lat": 34.658003,
+        "lon": -83.434751,
+        "service_area": "Habersham",
+        "grouping": null
+      },
+      "geometry": { "type": "Point", "coordinates": [-83.434751, 34.658003] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "parcel_id": null,
+        "name": "Demorest - 638 N Historic 441",
+        "address": "638 N Historic Hwy 441, Suite B, Demorest",
+        "ownership_type": "Leased",
+        "building_type": "Medical Office Building (Multi-Tenant)",
+        "land_size": null,
+        "square_footage": 3500.0,
+        "listed_for_sale": "No",
+        "longstreet": "No",
+        "lat": 34.5827852676208,
+        "lon": -83.53568097497188,
+        "service_area": "Habersham",
+        "grouping": null
+      },
+      "geometry": { "type": "Point", "coordinates": [-83.53568097497188, 34.5827852676208] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "parcel_id": "772ad21b7c674646d854d22119bf2f1b",
+        "name": "Sims Street Medical Office",
+        "address": "1285 Sims Street",
+        "ownership_type": "Owned",
+        "building_type": "Medical Office Building (Freestanding)",
+        "land_size": 0.71,
+        "square_footage": 7012.0,
+        "listed_for_sale": "No",
+        "longstreet": "No",
+        "lat": 34.304563,
+        "lon": -83.812205,
+        "service_area": "Gainesville",
+        "grouping": null
+      },
+      "geometry": { "type": "Point", "coordinates": [-83.812205, 34.304563] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "parcel_id": "f7436e0a781c696ca371036d1f6f9c96",
+        "name": "Gainesville - 3719 Price Road",
+        "address": "3719 Price Road",
+        "ownership_type": "Owned",
+        "building_type": "Land",
+        "land_size": 0.92,
+        "square_footage": null,
+        "listed_for_sale": "No",
+        "longstreet": "No",
+        "lat": 34.375696,
+        "lon": -83.875774,
+        "service_area": "Gainesville",
+        "grouping": null
+      },
+      "geometry": { "type": "Point", "coordinates": [-83.875774, 34.375696] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "parcel_id": "f544522bb1b8b218fd05a2308b65be1f",
+        "name": "Gainesville - 439 Fair Street",
+        "address": "439 Fair Street",
+        "ownership_type": "Owned",
+        "building_type": "Land",
+        "land_size": 0.18,
+        "square_footage": null,
+        "listed_for_sale": "No",
+        "longstreet": "No",
+        "lat": 34.300957,
+        "lon": -83.815865,
+        "service_area": "Gainesville",
+        "grouping": null
+      },
+      "geometry": { "type": "Point", "coordinates": [-83.815865, 34.300957] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "parcel_id": "66746fea27bcc76323d43636de71653e",
+        "name": "Gainesville - 412 Osborne Street",
+        "address": "412 Osborne Street",
+        "ownership_type": "Owned",
+        "building_type": "Land",
+        "land_size": 0.82,
+        "square_footage": null,
+        "listed_for_sale": "No",
+        "longstreet": "No",
+        "lat": 34.303084,
+        "lon": -83.811111,
+        "service_area": "Gainesville",
+        "grouping": null
+      },
+      "geometry": { "type": "Point", "coordinates": [-83.811111, 34.303084] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "parcel_id": "335384276ab5391b0075faec24264f27",
+        "name": "Medical Arts - 655 Jesse Jewell Parkway SE",
+        "address": "655 Jesse Jewell Parkway SE",
+        "ownership_type": "Leased",
+        "building_type": "Medical Office Building (Multi-Tenant)",
+        "land_size": 1.88,
+        "square_footage": 18441.0,
+        "listed_for_sale": "No",
+        "longstreet": "Yes",
+        "lat": 34.300841,
+        "lon": -83.819739,
+        "service_area": "Gainesville",
+        "grouping": null
+      },
+      "geometry": { "type": "Point", "coordinates": [-83.819739, 34.300841] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "parcel_id": "3db31e78fed59f239790f56bf2f24b3b",
+        "name": "Lanier Park Gainesville",
+        "address": "675 White Sulphur Road",
+        "ownership_type": "Owned",
+        "building_type": "Medical Office Building (Multi-Tenant)",
+        "land_size": 14.48,
+        "square_footage": 149130.0,
+        "listed_for_sale": "No",
+        "longstreet": "No",
+        "lat": 34.320711,
+        "lon": -83.795665,
+        "service_area": "Gainesville",
+        "grouping": null
+      },
+      "geometry": { "type": "Point", "coordinates": [-83.795665, 34.320711] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "parcel_id": "b33aea3dbab4a9c8ad83bb4e2f62582a",
+        "name": "Gainesville - 627 White Sulphur Road",
+        "address": "627 White Sulphur Road",
+        "ownership_type": "Owned",
+        "building_type": "Land",
+        "land_size": 2.24,
+        "square_footage": null,
+        "listed_for_sale": "No",
+        "longstreet": "No",
+        "lat": 34.318857,
+        "lon": -83.793612,
+        "service_area": "Gainesville",
+        "grouping": null
+      },
+      "geometry": { "type": "Point", "coordinates": [-83.793612, 34.318857] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "parcel_id": "c5b4afb2d52c7a66ca0754f4693fc3fe",
+        "name": "Gainesville - 1040 Jesse Jewell Parkway",
+        "address": "1040 Jesse Jewell Parkway",
+        "ownership_type": "Owned",
+        "building_type": "Storage",
+        "land_size": 1.22,
+        "square_footage": 5131.0,
+        "listed_for_sale": "No",
+        "longstreet": "No",
+        "lat": 34.301819,
+        "lon": -83.815402,
+        "service_area": "Gainesville",
+        "grouping": null
+      },
+      "geometry": { "type": "Point", "coordinates": [-83.815402, 34.301819] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "parcel_id": "9939c076d0d6ca8c648cdc2f1f0cfe69",
+        "name": "Limestone Medical Office Building - 2510",
+        "address": "2510 Limestone Parkway",
+        "ownership_type": "Leased",
+        "building_type": "Medical Office Building (Freestanding)",
+        "land_size": null,
+        "square_footage": 5000.0,
+        "listed_for_sale": "No",
+        "longstreet": "No",
+        "lat": 34.330582,
+        "lon": -83.807148,
+        "service_area": "Gainesville",
+        "grouping": null
+      },
+      "geometry": { "type": "Point", "coordinates": [-83.807148, 34.330582] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "parcel_id": "08a54fafeb62263313abe8f0b66ee1a5",
+        "name": "2500 Limestone Parkway Building",
+        "address": "2500 Limestone Parkway",
+        "ownership_type": "Owned",
+        "building_type": "Hospital",
+        "land_size": 7.93,
+        "square_footage": 61000.0,
+        "listed_for_sale": "No",
+        "longstreet": "No",
+        "lat": 34.330486,
+        "lon": -83.805942,
+        "service_area": "Gainesville",
+        "grouping": null
+      },
+      "geometry": { "type": "Point", "coordinates": [-83.805942, 34.330486] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "parcel_id": "8a9a70e6b84adefe7d1bf3a6c3762185",
+        "name": "Thompson Mill Medical Offices",
+        "address": "1574 Friendship Road",
+        "ownership_type": "Owned",
+        "building_type": "Medical Office Building (Multi-Tenant)",
+        "land_size": 5.4,
+        "square_footage": 10965.0,
+        "listed_for_sale": "No",
+        "longstreet": "No",
+        "lat": 34.113215,
+        "lon": -83.848014,
+        "service_area": "Braselton",
+        "grouping": null
+      },
+      "geometry": { "type": "Point", "coordinates": [-83.848014, 34.113215] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "parcel_id": "693441c6bc3bedb7a8fe4efc8c8cfd8e",
+        "name": "Interstate Ridge Business Park - 930",
+        "address": "930 Interstate Ridge Drive",
+        "ownership_type": "Leased",
+        "building_type": "Mixed Use",
+        "land_size": null,
+        "square_footage": 7254.0,
+        "listed_for_sale": "No",
+        "longstreet": "No",
+        "lat": 34.284339,
+        "lon": -83.810601,
+        "service_area": "Gainesville",
+        "grouping": "C"
+      },
+      "geometry": { "type": "Point", "coordinates": [-83.810601, 34.284339] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "parcel_id": "693441c6bc3bedb7a8fe4efc8c8cfd8e",
+        "name": "Interstate Ridge Business Park - 935",
+        "address": "935 Interstate Ridge Drive, Suites F-M",
+        "ownership_type": "Leased",
+        "building_type": "Mixed Use",
+        "land_size": null,
+        "square_footage": 15427.0,
+        "listed_for_sale": "No",
+        "longstreet": "No",
+        "lat": 34.284698,
+        "lon": -83.809908,
+        "service_area": "Gainesville",
+        "grouping": "C"
+      },
+      "geometry": { "type": "Point", "coordinates": [-83.809908, 34.284698] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "parcel_id": "88a970bbe78262c07ffd4e8a7bacb46f",
+        "name": "668 Lanier Park Drive Building",
+        "address": "668 Lanier Park Drive",
+        "ownership_type": "Owned",
+        "building_type": "Office",
+        "land_size": 0.91,
+        "square_footage": 8639.0,
+        "listed_for_sale": "No",
+        "longstreet": "No",
+        "lat": 34.319742,
+        "lon": -83.797862,
+        "service_area": "Gainesville",
+        "grouping": null
+      },
+      "geometry": { "type": "Point", "coordinates": [-83.797862, 34.319742] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "parcel_id": "df00290f20cb9a3fb68b3b782e9252fd",
+        "name": "Sherwood Park Drive Building - 1215",
+        "address": "1215 Sherwood Park Drive",
+        "ownership_type": "Owned",
+        "building_type": "Office",
+        "land_size": 4.02,
+        "square_footage": 3757.0,
+        "listed_for_sale": "No",
+        "longstreet": "No",
+        "lat": 34.307372,
+        "lon": -83.816909,
+        "service_area": "Gainesville",
+        "grouping": null
+      },
+      "geometry": { "type": "Point", "coordinates": [-83.816909, 34.307372] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "parcel_id": "7bdb15dea3922741f71cd30c258e5278",
+        "name": "687 Lanier Park Drive",
+        "address": "687 Lanier Park Drive",
+        "ownership_type": "Owned",
+        "building_type": "Vacant Building",
+        "land_size": 0.53,
+        "square_footage": 2416.0,
+        "listed_for_sale": "No",
+        "longstreet": "No",
+        "lat": 34.321075,
+        "lon": -83.797302,
+        "service_area": "Gainesville",
+        "grouping": null
+      },
+      "geometry": { "type": "Point", "coordinates": [-83.797302, 34.321075] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "parcel_id": "48a63e7f44168a8c766bbafe1c104e2f",
+        "name": "White Sulphur Medical Office Building",
+        "address": "675 White Sulphur Road",
+        "ownership_type": "Owned",
+        "building_type": "Medical Office Building (Freestanding)",
+        "land_size": 0.8,
+        "square_footage": 27122.0,
+        "listed_for_sale": "No",
+        "longstreet": "No",
+        "lat": 34.320784,
+        "lon": -83.794963,
+        "service_area": "Gainesville",
+        "grouping": null
+      },
+      "geometry": { "type": "Point", "coordinates": [-83.794963, 34.320784] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "parcel_id": "a8414f580351cb95aaef74b4ed03dbc0",
+        "name": "Gainesville - 478 Wall Street",
+        "address": "478 Wall Street",
+        "ownership_type": "Owned",
+        "building_type": "Land",
+        "land_size": 0.19,
+        "square_footage": null,
+        "listed_for_sale": "No",
+        "longstreet": "No",
+        "lat": 34.301992,
+        "lon": -83.81167,
+        "service_area": "Gainesville",
+        "grouping": null
+      },
+      "geometry": { "type": "Point", "coordinates": [-83.81167, 34.301992] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "parcel_id": "df3be9bca017412883eb82ca9b3cf7f9",
+        "name": "Sherwood Park Medical Office - 1211",
+        "address": "1211 Sherwood Park Drive",
+        "ownership_type": "Owned",
+        "building_type": "Medical Office Building (Freestanding)",
+        "land_size": 0.6,
+        "square_footage": 9307.0,
+        "listed_for_sale": "No",
+        "longstreet": "No",
+        "lat": 34.307642,
+        "lon": -83.816681,
+        "service_area": "Gainesville",
+        "grouping": null
+      },
+      "geometry": { "type": "Point", "coordinates": [-83.816681, 34.307642] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "parcel_id": "52775f9847b993d078beed49cd592f8e",
+        "name": "Sherwood Park Medical Office - 1221",
+        "address": "1221 Sherwood Park Drive",
+        "ownership_type": "Owned",
+        "building_type": "Medical Office Building (Multi-Tenant)",
+        "land_size": null,
+        "square_footage": 2300.0,
+        "listed_for_sale": "No",
+        "longstreet": "No",
+        "lat": 34.307123,
+        "lon": -83.817102,
+        "service_area": "Gainesville",
+        "grouping": null
+      },
+      "geometry": { "type": "Point", "coordinates": [-83.817102, 34.307123] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "parcel_id": "8e9b818af7c60d2b073a66f405b2f652",
+        "name": "Gainesville - 1007 Summit Street",
+        "address": "1007 Summit Street",
+        "ownership_type": "Owned",
+        "building_type": "Land",
+        "land_size": 0.13,
+        "square_footage": null,
+        "listed_for_sale": "No",
+        "longstreet": "No",
+        "lat": 34.300647,
+        "lon": -83.815541,
+        "service_area": "Gainesville",
+        "grouping": null
+      },
+      "geometry": { "type": "Point", "coordinates": [-83.815541, 34.300647] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "parcel_id": "153d807251d704d68a7979f824d5cc18",
+        "name": "597 South Enota Drive",
+        "address": "597 South Enota Drive",
+        "ownership_type": "Owned",
+        "building_type": "Medical Office Building (Multi-Tenant)",
+        "land_size": 5.4,
+        "square_footage": 30913.0,
+        "listed_for_sale": "No",
+        "longstreet": "No",
+        "lat": 34.310721,
+        "lon": -83.816888,
+        "service_area": "Gainesville",
+        "grouping": null
+      },
+      "geometry": { "type": "Point", "coordinates": [-83.816888, 34.310721] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "parcel_id": "0a08efaec91647be0cc4f72932fe6993",
+        "name": "1075 Jesse Jewell Building",
+        "address": "1075 Jesse Jewell Parkway, SE",
+        "ownership_type": "Owned",
+        "building_type": "Medical Office Building (Multi-Tenant)",
+        "land_size": 47.33,
+        "square_footage": 14258.0,
+        "listed_for_sale": "No",
+        "longstreet": "No",
+        "lat": 34.30257,
+        "lon": -83.81552,
+        "service_area": "Gainesville",
+        "grouping": "D"
+      },
+      "geometry": { "type": "Point", "coordinates": [-83.81552, 34.30257] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "parcel_id": "0a08efaec91647be0cc4f72932fe6993",
+        "name": "Wisteria Medical Offices",
+        "address": "200 South Enota Drive",
+        "ownership_type": "Owned",
+        "building_type": "Medical Office Building (Multi-Tenant)",
+        "land_size": 47.33,
+        "square_footage": 66976.0,
+        "listed_for_sale": "No",
+        "longstreet": "No",
+        "lat": 34.303533,
+        "lon": -83.815769,
+        "service_area": "Gainesville",
+        "grouping": "D"
+      },
+      "geometry": { "type": "Point", "coordinates": [-83.815769, 34.303533] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "parcel_id": "0a08efaec91647be0cc4f72932fe6993",
+        "name": "Laurelwood Medical Offices",
+        "address": "200 Wisteria Drive",
+        "ownership_type": "Owned",
+        "building_type": "Office",
+        "land_size": 47.33,
+        "square_footage": 50884.0,
+        "listed_for_sale": "No",
+        "longstreet": "No",
+        "lat": 34.30368,
+        "lon": -83.814402,
+        "service_area": "Gainesville",
+        "grouping": "D"
+      },
+      "geometry": { "type": "Point", "coordinates": [-83.814402, 34.30368] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "parcel_id": "0a08efaec91647be0cc4f72932fe6993",
+        "name": "Women and Children Pavilion",
+        "address": "743 Spring Street",
+        "ownership_type": "Owned",
+        "building_type": "Hospital",
+        "land_size": 47.33,
+        "square_footage": null,
+        "listed_for_sale": "No",
+        "longstreet": "No",
+        "lat": 34.303331799959253,
+        "lon": -83.818001561253794,
+        "service_area": "Gainesville",
+        "grouping": "D"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-83.818001561253794, 34.303331799959253]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "parcel_id": "0a08efaec91647be0cc4f72932fe6993",
+        "name": "Outpatient Building",
+        "address": "743 Spring Street",
+        "ownership_type": "Owned",
+        "building_type": "Hospital",
+        "land_size": 47.33,
+        "square_footage": null,
+        "listed_for_sale": "No",
+        "longstreet": "No",
+        "lat": 34.303419066266933,
+        "lon": -83.816468852982041,
+        "service_area": "Gainesville",
+        "grouping": "D"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-83.816468852982041, 34.303419066266933]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "parcel_id": "0a08efaec91647be0cc4f72932fe6993",
+        "name": "NGMC - Gainesville",
+        "address": "743 Spring Street",
+        "ownership_type": "Owned",
+        "building_type": "Hospital",
+        "land_size": 47.33,
+        "square_footage": 1900800.0,
+        "listed_for_sale": "No",
+        "longstreet": "No",
+        "lat": 34.304322,
+        "lon": -83.81698,
+        "service_area": "Gainesville",
+        "grouping": "D"
+      },
+      "geometry": { "type": "Point", "coordinates": [-83.81698, 34.304322] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "parcel_id": "0a08efaec91647be0cc4f72932fe6993",
+        "name": "Gainesville - South Enota Sherwood Park ROW",
+        "address": "0 South Enota Drive",
+        "ownership_type": "Owned",
+        "building_type": "Land",
+        "land_size": 47.33,
+        "square_footage": null,
+        "listed_for_sale": "No",
+        "longstreet": "No",
+        "lat": 34.30624,
+        "lon": -83.817366,
+        "service_area": "Gainesville",
+        "grouping": "D"
+      },
+      "geometry": { "type": "Point", "coordinates": [-83.817366, 34.30624] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "parcel_id": "5df94938506ae66bd31d18fd00e4f198",
+        "name": "New Holland Building - 1466",
+        "address": "1466 Jesse Jewell Parkway",
+        "ownership_type": "Owned",
+        "building_type": "Mixed Use",
+        "land_size": 0.22,
+        "square_footage": 12009.0,
+        "listed_for_sale": "No",
+        "longstreet": "No",
+        "lat": 34.306637,
+        "lon": -83.807598,
+        "service_area": "Gainesville",
+        "grouping": null
+      },
+      "geometry": { "type": "Point", "coordinates": [-83.807598, 34.306637] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "parcel_id": "243ccd210c8ccd1c4121feefb6502659",
+        "name": "1287 Sims Street Building",
+        "address": "1287 Sims Street",
+        "ownership_type": "Owned",
+        "building_type": "Vacant Building",
+        "land_size": 0.37,
+        "square_footage": 6527.0,
+        "listed_for_sale": "No",
+        "longstreet": "No",
+        "lat": 34.304857,
+        "lon": -83.812587,
+        "service_area": "Gainesville",
+        "grouping": null
+      },
+      "geometry": { "type": "Point", "coordinates": [-83.812587, 34.304857] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "parcel_id": "701c94540ff6b798ed4c82a03fc2f985",
+        "name": "Medical Park 1 in Gainesville",
+        "address": "1315 Jesse Jewell Parkway",
+        "ownership_type": "Owned",
+        "building_type": "Medical Office Building (Multi-Tenant)",
+        "land_size": 6.38,
+        "square_footage": 101011.0,
+        "listed_for_sale": "No",
+        "longstreet": "No",
+        "lat": 34.305317,
+        "lon": -83.81128,
+        "service_area": "Gainesville",
+        "grouping": null
+      },
+      "geometry": { "type": "Point", "coordinates": [-83.81128, 34.305317] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "parcel_id": "805feb5635c9ce7adea23af09a621f83",
+        "name": "Sherwood Plaza",
+        "address": "601 South Enota Drive",
+        "ownership_type": "Owned",
+        "building_type": "Retail",
+        "land_size": 8.49,
+        "square_footage": 52008.0,
+        "listed_for_sale": "No",
+        "longstreet": "No",
+        "lat": 34.311789,
+        "lon": -83.815931,
+        "service_area": "Gainesville",
+        "grouping": null
+      },
+      "geometry": { "type": "Point", "coordinates": [-83.815931, 34.311789] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "parcel_id": "14907d31278a1dc6a996e1943da782a7",
+        "name": "599 South Enota Drive - Dollar Tree",
+        "address": "599 South Enota Drive",
+        "ownership_type": "Owned",
+        "building_type": "Retail",
+        "land_size": 1.12,
+        "square_footage": 9504.0,
+        "listed_for_sale": "No",
+        "longstreet": "No",
+        "lat": 34.31081,
+        "lon": -83.81523,
+        "service_area": "Gainesville",
+        "grouping": null
+      },
+      "geometry": { "type": "Point", "coordinates": [-83.81523, 34.31081] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "parcel_id": "4104edbe07bc971201347302505ef1d5",
+        "name": "Hall County Health Department",
+        "address": "1292 Athens Street",
+        "ownership_type": "Leased",
+        "building_type": "Medical Office Building (Multi-Tenant)",
+        "land_size": null,
+        "square_footage": 7632.0,
+        "listed_for_sale": "No",
+        "longstreet": "No",
+        "lat": 34.288721,
+        "lon": -83.801717,
+        "service_area": "Gainesville",
+        "grouping": null
+      },
+      "geometry": { "type": "Point", "coordinates": [-83.801717, 34.288721] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "parcel_id": "0451d6a03aaa2040b190cb3f3532e505",
+        "name": "Corporate Plaza",
+        "address": "3137 Frontage Road",
+        "ownership_type": "Owned",
+        "building_type": "Distribution Center",
+        "land_size": 11.1,
+        "square_footage": 115531.0,
+        "listed_for_sale": "No",
+        "longstreet": "No",
+        "lat": 34.22893,
+        "lon": -83.863703,
+        "service_area": "Gainesville",
+        "grouping": "E"
+      },
+      "geometry": { "type": "Point", "coordinates": [-83.863703, 34.22893] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "parcel_id": "0451d6a03aaa2040b190cb3f3532e505",
+        "name": "Offsite Reprocessing Center (ORC)",
+        "address": "3163 Frontage Road",
+        "ownership_type": "Owned",
+        "building_type": "Other",
+        "land_size": 11.1,
+        "square_footage": 7000.0,
+        "listed_for_sale": "No",
+        "longstreet": "No",
+        "lat": 34.227779,
+        "lon": -83.86425,
+        "service_area": "Gainesville",
+        "grouping": "E"
+      },
+      "geometry": { "type": "Point", "coordinates": [-83.86425, 34.227779] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "parcel_id": "3346069d27fa6227c418483e616bc6d5",
+        "name": "Sherwood Park Drive Medical Office - 1223",
+        "address": "1223 Sherwood Park Drive",
+        "ownership_type": "Owned",
+        "building_type": "Vacant Building",
+        "land_size": 0.46,
+        "square_footage": 3783.0,
+        "listed_for_sale": "No",
+        "longstreet": "No",
+        "lat": 34.306918,
+        "lon": -83.817323,
+        "service_area": "Gainesville",
+        "grouping": null
+      },
+      "geometry": { "type": "Point", "coordinates": [-83.817323, 34.306918] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "parcel_id": "e472430ddda9910423aff0637e683d74",
+        "name": "Gainesville - 3739 Price Road",
+        "address": "3739 Price Road",
+        "ownership_type": "Owned",
+        "building_type": "Land",
+        "land_size": 0.33,
+        "square_footage": null,
+        "listed_for_sale": "No",
+        "longstreet": "No",
+        "lat": 34.376095,
+        "lon": -83.875981,
+        "service_area": "Gainesville",
+        "grouping": null
+      },
+      "geometry": { "type": "Point", "coordinates": [-83.875981, 34.376095] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "parcel_id": "4172bb6a6b6c7a94149e7af2b351e54e",
+        "name": "Gainesville - 3641 Thompson Bridge Rd",
+        "address": "3641 Thompson Bridge Road (fka 3510 Southers Road)",
+        "ownership_type": "Owned",
+        "building_type": "Medical Office Building (Freestanding)",
+        "land_size": 4.79,
+        "square_footage": 13201.0,
+        "listed_for_sale": "No",
+        "longstreet": "No",
+        "lat": 34.372603033415253,
+        "lon": -83.872005804361052,
+        "service_area": "Gainesville",
+        "grouping": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-83.872005804361052, 34.372603033415253]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "parcel_id": "22796c03dce51e7f92afe5b81df0700a",
+        "name": "Gainestown Office Building - 465",
+        "address": "465 EE Butler Parkway",
+        "ownership_type": "Leased",
+        "building_type": "Office",
+        "land_size": null,
+        "square_footage": 12890.0,
+        "listed_for_sale": "No",
+        "longstreet": "No",
+        "lat": 34.29737,
+        "lon": -83.820411,
+        "service_area": "Gainesville",
+        "grouping": null
+      },
+      "geometry": { "type": "Point", "coordinates": [-83.820411, 34.29737] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "parcel_id": "10950cdde40419c33f9dab8364eeb3a4",
+        "name": "Gainesville - 435 Fair Street",
+        "address": "435 Fair Street",
+        "ownership_type": "Owned",
+        "building_type": "Land",
+        "land_size": 0.2,
+        "square_footage": null,
+        "listed_for_sale": "No",
+        "longstreet": "No",
+        "lat": 34.301201,
+        "lon": -83.815975,
+        "service_area": "Gainesville",
+        "grouping": null
+      },
+      "geometry": { "type": "Point", "coordinates": [-83.815975, 34.301201] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "parcel_id": "787a1a4dab665f3a80dd1555a4930efb",
+        "name": "Gainesville - 3709 Price Road",
+        "address": "3709 Price Road",
+        "ownership_type": "Owned",
+        "building_type": "Land",
+        "land_size": 3.96,
+        "square_footage": null,
+        "listed_for_sale": "No",
+        "longstreet": "No",
+        "lat": 34.375585,
+        "lon": -83.875278,
+        "service_area": "Gainesville",
+        "grouping": null
+      },
+      "geometry": { "type": "Point", "coordinates": [-83.875278, 34.375585] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "parcel_id": "220434a1f9b21e0b38faad35185b7c2b",
+        "name": "Flowery Branch Medical Office",
+        "address": "4919 Atlanta Highway",
+        "ownership_type": "Owned",
+        "building_type": "Medical Office Building (Freestanding)",
+        "land_size": 0.86,
+        "square_footage": 6112.0,
+        "listed_for_sale": "No",
+        "longstreet": "No",
+        "lat": 34.186811,
+        "lon": -83.922524,
+        "service_area": "Braselton",
+        "grouping": null
+      },
+      "geometry": { "type": "Point", "coordinates": [-83.922524, 34.186811] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "parcel_id": "bcce37c99451bba7872015cc1701c231",
+        "name": "Medical Arts - 725 Jesse Jewell Parkway SE",
+        "address": "725 Jesse Jewell Parkway SE",
+        "ownership_type": "Leased",
+        "building_type": "Medical Office Building (Multi-Tenant)",
+        "land_size": 3.74,
+        "square_footage": 140805.0,
+        "listed_for_sale": "No",
+        "longstreet": "Yes",
+        "lat": 34.301469,
+        "lon": -83.818546,
+        "service_area": "Gainesville",
+        "grouping": null
+      },
+      "geometry": { "type": "Point", "coordinates": [-83.818546, 34.301469] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "parcel_id": "07eba5159d2c155739200725608431d9",
+        "name": "Gainestown Office Building - 451",
+        "address": "451 EE Butler Parkway",
+        "ownership_type": "Leased",
+        "building_type": "Office",
+        "land_size": null,
+        "square_footage": 2884.0,
+        "listed_for_sale": "No",
+        "longstreet": "No",
+        "lat": 34.297881,
+        "lon": -83.820639,
+        "service_area": "Gainesville",
+        "grouping": null
+      },
+      "geometry": { "type": "Point", "coordinates": [-83.820639, 34.297881] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "parcel_id": "6c1835bd5afc51eec687a0a62cd9183e",
+        "name": "Limestone Office Building - 2150",
+        "address": "2150 Limestone Parkway",
+        "ownership_type": "Owned",
+        "building_type": "Office",
+        "land_size": 4.98,
+        "square_footage": 10410.0,
+        "listed_for_sale": "No",
+        "longstreet": "No",
+        "lat": 34.318789,
+        "lon": -83.79952,
+        "service_area": "Gainesville",
+        "grouping": null
+      },
+      "geometry": { "type": "Point", "coordinates": [-83.79952, 34.318789] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "parcel_id": "9d9493208e9b7905af88df58cff46642",
+        "name": "Chestnut Mountain Medical Office",
+        "address": "4754 Martin Road",
+        "ownership_type": "Leased",
+        "building_type": "Medical Office Building (Multi-Tenant)",
+        "land_size": null,
+        "square_footage": 9675.0,
+        "listed_for_sale": "No",
+        "longstreet": "No",
+        "lat": 34.192538,
+        "lon": -83.860183,
+        "service_area": "Braselton",
+        "grouping": null
+      },
+      "geometry": { "type": "Point", "coordinates": [-83.860183, 34.192538] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "parcel_id": "7bacfb5ff8b0541c67595d55a8ccdf7c",
+        "name": "New Holland Corporate Building - 1480",
+        "address": "1480 Jesse Jewell Parkway",
+        "ownership_type": "Owned",
+        "building_type": "Office",
+        "land_size": 0.26,
+        "square_footage": 21063.0,
+        "listed_for_sale": "No",
+        "longstreet": "No",
+        "lat": 34.306112,
+        "lon": -83.807722,
+        "service_area": "Gainesville",
+        "grouping": null
+      },
+      "geometry": { "type": "Point", "coordinates": [-83.807722, 34.306112] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "parcel_id": "f064536706cda38bc7ec828522f3d459",
+        "name": "Limestone Medical Office Building - 2350",
+        "address": "2350 Limestone Parkway",
+        "ownership_type": "Leased",
+        "building_type": "Medical Office Building (Freestanding)",
+        "land_size": null,
+        "square_footage": 11545.0,
+        "listed_for_sale": "No",
+        "longstreet": "No",
+        "lat": 34.324544,
+        "lon": -83.803131,
+        "service_area": "Gainesville",
+        "grouping": null
+      },
+      "geometry": { "type": "Point", "coordinates": [-83.803131, 34.324544] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "parcel_id": "e6f6b44c44d9a0db6768bca437ddf077",
+        "name": "1255 Vine Street Building",
+        "address": "1255 Vine Street",
+        "ownership_type": "Owned",
+        "building_type": "Other",
+        "land_size": 4.1,
+        "square_footage": 13054.0,
+        "listed_for_sale": "No",
+        "longstreet": "No",
+        "lat": 34.307302,
+        "lon": -83.813365,
+        "service_area": "Gainesville",
+        "grouping": null
+      },
+      "geometry": { "type": "Point", "coordinates": [-83.813365, 34.307302] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "parcel_id": "33dfcea67efc22632594a412736b56e2",
+        "name": "Medical Park 2 in Gainesville",
+        "address": "1439 Jesse Jewell Parkway",
+        "ownership_type": "Owned",
+        "building_type": "Medical Office Building (Multi-Tenant)",
+        "land_size": 17.38,
+        "square_footage": 71888.0,
+        "listed_for_sale": "No",
+        "longstreet": "No",
+        "lat": 34.306731,
+        "lon": -83.809759,
+        "service_area": "Gainesville",
+        "grouping": null
+      },
+      "geometry": { "type": "Point", "coordinates": [-83.809759, 34.306731] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "parcel_id": "284426dbebc29d77ce7675fe4ee4b923",
+        "name": "854 Washington Street",
+        "address": "854 Washington Street",
+        "ownership_type": "Leased",
+        "building_type": "Mixed Use",
+        "land_size": null,
+        "square_footage": 6751.0,
+        "listed_for_sale": "No",
+        "longstreet": "No",
+        "lat": 34.297175,
+        "lon": -83.83655,
+        "service_area": "Gainesville",
+        "grouping": null
+      },
+      "geometry": { "type": "Point", "coordinates": [-83.83655, 34.297175] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "parcel_id": "e47ec2d777f0b939a24949e776ef0427",
+        "name": "Foothills Area Health Education Center",
+        "address": "329 Oak Street",
+        "ownership_type": "Leased",
+        "building_type": "Office",
+        "land_size": null,
+        "square_footage": 2255.0,
+        "listed_for_sale": "No",
+        "longstreet": "No",
+        "lat": 34.300194,
+        "lon": -83.83033,
+        "service_area": "Gainesville",
+        "grouping": null
+      },
+      "geometry": { "type": "Point", "coordinates": [-83.83033, 34.300194] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "parcel_id": "398f092bbecfa770044ae86d603d0ef9",
+        "name": "Golden Park Pavilion Medical Office",
+        "address": "4889 Golden Parkway",
+        "ownership_type": "Leased",
+        "building_type": "Medical Office Building (Multi-Tenant)",
+        "land_size": null,
+        "square_footage": 3170.0,
+        "listed_for_sale": "No",
+        "longstreet": "No",
+        "lat": 34.144195,
+        "lon": -83.952058,
+        "service_area": "Braselton",
+        "grouping": null
+      },
+      "geometry": { "type": "Point", "coordinates": [-83.952058, 34.144195] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "parcel_id": "fc632f88884d89754f62463c15f6fa1c",
+        "name": "New Horizons - Limestone",
+        "address": "2020 Beverly Road",
+        "ownership_type": "Owned",
+        "building_type": "Medical Office Building (Other)",
+        "land_size": 3.12,
+        "square_footage": 52875.0,
+        "listed_for_sale": "No",
+        "longstreet": "No",
+        "lat": 34.319728,
+        "lon": -83.800142,
+        "service_area": "Gainesville",
+        "grouping": null
+      },
+      "geometry": { "type": "Point", "coordinates": [-83.800142, 34.319728] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "parcel_id": "789a6dbecbdddc32a62bea65c0160428",
+        "name": "Oakwood Medical Offices",
+        "address": "3931 Mundy Mill Road",
+        "ownership_type": "Owned",
+        "building_type": "Medical Office Building (Multi-Tenant)",
+        "land_size": 5.94,
+        "square_footage": 11987.0,
+        "listed_for_sale": "No",
+        "longstreet": "No",
+        "lat": 34.234457,
+        "lon": -83.873021,
+        "service_area": "Gainesville",
+        "grouping": null
+      },
+      "geometry": { "type": "Point", "coordinates": [-83.873021, 34.234457] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "parcel_id": "b9879fee86ef00783f74d8b316c01b17",
+        "name": "665 Lanier Park Drive Medical Transport",
+        "address": "665 Lanier Park Drive",
+        "ownership_type": "Owned",
+        "building_type": "Office",
+        "land_size": 0.98,
+        "square_footage": 3972.0,
+        "listed_for_sale": "No",
+        "longstreet": "No",
+        "lat": 34.31914,
+        "lon": -83.796639,
+        "service_area": "Gainesville",
+        "grouping": null
+      },
+      "geometry": { "type": "Point", "coordinates": [-83.796639, 34.31914] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "parcel_id": "63c700e1adfde9952621e233ee9bc715",
+        "name": "Oakwood Medical Office - 4019 Executive Drive",
+        "address": "4019 Executive Drive",
+        "ownership_type": "Leased",
+        "building_type": "Medical Office Building (Freestanding)",
+        "land_size": 1.04,
+        "square_footage": 7492.0,
+        "listed_for_sale": "No",
+        "longstreet": "Yes",
+        "lat": 34.240565,
+        "lon": -83.877408,
+        "service_area": "Gainesville",
+        "grouping": null
+      },
+      "geometry": { "type": "Point", "coordinates": [-83.877408, 34.240565] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "parcel_id": "97f422eb12de9dbb8c7828252100d539",
+        "name": "Medical Plaza B in Braselton",
+        "address": "1404 River Place",
+        "ownership_type": "Owned",
+        "building_type": "Medical Office Building (Multi-Tenant)",
+        "land_size": 104.18,
+        "square_footage": null,
+        "listed_for_sale": "No",
+        "longstreet": "No",
+        "lat": 34.120284,
+        "lon": -83.837428,
+        "service_area": "Braselton",
+        "grouping": "F"
+      },
+      "geometry": { "type": "Point", "coordinates": [-83.837428, 34.120284] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "parcel_id": "97f422eb12de9dbb8c7828252100d539",
+        "name": "NGMC - Braselton",
+        "address": "1400 River Place",
+        "ownership_type": "Owned",
+        "building_type": "Hospital",
+        "land_size": 104.18,
+        "square_footage": 446617.0,
+        "listed_for_sale": "No",
+        "longstreet": "No",
+        "lat": 34.12072,
+        "lon": -83.838084,
+        "service_area": "Braselton",
+        "grouping": "F"
+      },
+      "geometry": { "type": "Point", "coordinates": [-83.838084, 34.12072] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "parcel_id": "9fd556cb17c0ec3167c00ff473df373e",
+        "name": "Gainesville - 1247 Jesse Jewell Parkway",
+        "address": "1247 Jesse Jewell Parkway NE",
+        "ownership_type": "Owned",
+        "building_type": "Land",
+        "land_size": 0.23,
+        "square_footage": null,
+        "listed_for_sale": "No",
+        "longstreet": "No",
+        "lat": 34.304229,
+        "lon": -83.812034,
+        "service_area": "Gainesville",
+        "grouping": null
+      },
+      "geometry": { "type": "Point", "coordinates": [-83.812034, 34.304229] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "parcel_id": "ea0799d88839e5aa93388c8a281ff0aa",
+        "name": "Gainesville - 3675 Thompson Bridge Road",
+        "address": "3675 Thompson Bridge Road",
+        "ownership_type": "Owned",
+        "building_type": "Land",
+        "land_size": 34.81,
+        "square_footage": null,
+        "listed_for_sale": "No",
+        "longstreet": "No",
+        "lat": 34.37341321972648,
+        "lon": -83.874628960359743,
+        "service_area": "Gainesville",
+        "grouping": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-83.874628960359743, 34.37341321972648]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "parcel_id": "6cf7dba83289e8c4715e3ac820a89715",
+        "name": "Gainesville - Sims Street Retention Pond",
+        "address": "0 Sims Street NE",
+        "ownership_type": "Owned",
+        "building_type": "Land",
+        "land_size": 0.09,
+        "square_footage": null,
+        "listed_for_sale": "No",
+        "longstreet": "No",
+        "lat": 34.30521,
+        "lon": -83.813238,
+        "service_area": "Gainesville",
+        "grouping": null
+      },
+      "geometry": { "type": "Point", "coordinates": [-83.813238, 34.30521] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "parcel_id": "d97c2b79ee6d72313648d715561fffd3",
+        "name": "Gainesville - 1209 Sherwood Park Drive",
+        "address": "1209 Sherwood Park Drive",
+        "ownership_type": "Owned",
+        "building_type": "Land",
+        "land_size": 0.51,
+        "square_footage": null,
+        "listed_for_sale": "No",
+        "longstreet": "No",
+        "lat": 34.307867,
+        "lon": -83.816539,
+        "service_area": "Gainesville",
+        "grouping": null
+      },
+      "geometry": { "type": "Point", "coordinates": [-83.816539, 34.307867] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "parcel_id": "98972402e07eba1c1037423237ec75c5",
+        "name": "Gainesville - 641 White Sulphur Road",
+        "address": "641 White Sulphur Road",
+        "ownership_type": "Owned",
+        "building_type": "Land",
+        "land_size": 3.04,
+        "square_footage": null,
+        "listed_for_sale": "No",
+        "longstreet": "No",
+        "lat": 34.319589,
+        "lon": -83.794248,
+        "service_area": "Gainesville",
+        "grouping": null
+      },
+      "geometry": { "type": "Point", "coordinates": [-83.794248, 34.319589] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "parcel_id": "89fdfa85db495844a3d133e961d139d1",
+        "name": "Gainesville - 1002 Jesse Jewell Parkway",
+        "address": "1002 Jesse Jewell Parkway SE",
+        "ownership_type": "Owned",
+        "building_type": "Land",
+        "land_size": 0.36,
+        "square_footage": null,
+        "listed_for_sale": "No",
+        "longstreet": "No",
+        "lat": 34.301541,
+        "lon": -83.816121,
+        "service_area": "Gainesville",
+        "grouping": null
+      },
+      "geometry": { "type": "Point", "coordinates": [-83.816121, 34.301541] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "parcel_id": "611f6ece67691c1d57ee7ccefa38c579",
+        "name": "Gainesville - 1216 Jesse Jewell Parkway",
+        "address": "1216 Jesse Jewell Parkway",
+        "ownership_type": "Owned",
+        "building_type": "Land",
+        "land_size": 0.22,
+        "square_footage": null,
+        "listed_for_sale": "No",
+        "longstreet": "No",
+        "lat": 34.303241,
+        "lon": -83.811856,
+        "service_area": "Gainesville",
+        "grouping": null
+      },
+      "geometry": { "type": "Point", "coordinates": [-83.811856, 34.303241] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "parcel_id": "c00dda13cb4c504b74d075293a550251",
+        "name": "Gainesville - Downey Blvd - 0.80 Acres",
+        "address": "NE Downey Blvd",
+        "ownership_type": "Owned",
+        "building_type": "Land",
+        "land_size": 0.8,
+        "square_footage": null,
+        "listed_for_sale": "No",
+        "longstreet": "No",
+        "lat": 34.305263,
+        "lon": -83.813734,
+        "service_area": "Gainesville",
+        "grouping": null
+      },
+      "geometry": { "type": "Point", "coordinates": [-83.813734, 34.305263] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "parcel_id": "48ccdbaaa9bcb518d6fbcec818f6040b",
+        "name": "Gainesville - 1232 Jesse Jewell Parkway",
+        "address": "1232 Jesse Jewell Parkway",
+        "ownership_type": "Owned",
+        "building_type": "Land",
+        "land_size": 0.58,
+        "square_footage": null,
+        "listed_for_sale": "No",
+        "longstreet": "No",
+        "lat": 34.303413,
+        "lon": -83.811687,
+        "service_area": "Gainesville",
+        "grouping": null
+      },
+      "geometry": { "type": "Point", "coordinates": [-83.811687, 34.303413] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "parcel_id": "abacbf7bdc9aada77e3c9e91e6473c18",
+        "name": "Medical Plaza 1 in Braselton",
+        "address": "1515 River Place",
+        "ownership_type": "Owned",
+        "building_type": "Medical Office Building (Multi-Tenant)",
+        "land_size": 15.29,
+        "square_footage": 107567.0,
+        "listed_for_sale": "No",
+        "longstreet": "No",
+        "lat": 34.117446,
+        "lon": -83.839902,
+        "service_area": "Braselton",
+        "grouping": "G"
+      },
+      "geometry": { "type": "Point", "coordinates": [-83.839902, 34.117446] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "parcel_id": "abacbf7bdc9aada77e3c9e91e6473c18",
+        "name": "Medical Plaza 2 in Braselton",
+        "address": "1524 River Place",
+        "ownership_type": "Owned",
+        "building_type": "Medical Office Building (Multi-Tenant)",
+        "land_size": 15.29,
+        "square_footage": 100279.0,
+        "listed_for_sale": "No",
+        "longstreet": "No",
+        "lat": 34.118013,
+        "lon": -83.840992,
+        "service_area": "Braselton",
+        "grouping": "G"
+      },
+      "geometry": { "type": "Point", "coordinates": [-83.840992, 34.118013] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "parcel_id": "f3646bed20da77aa926732ff27177440",
+        "name": "825 Jesse Jewell Parkway Building",
+        "address": "825 Jesse Jewell Parkway",
+        "ownership_type": "Owned",
+        "building_type": "Medical Office Building (Multi-Tenant)",
+        "land_size": 0.88,
+        "square_footage": 6067.0,
+        "listed_for_sale": "No",
+        "longstreet": "No",
+        "lat": 34.301875,
+        "lon": -83.817178,
+        "service_area": "Gainesville",
+        "grouping": null
+      },
+      "geometry": { "type": "Point", "coordinates": [-83.817178, 34.301875] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "parcel_id": "5b324807d2b0f6ec862969aedbe5e4c8",
+        "name": "Gainesville - 1227 Sherwood Park Drive",
+        "address": "1227 Sherwood Park Drive",
+        "ownership_type": "Owned",
+        "building_type": "Other",
+        "land_size": 0.94,
+        "square_footage": 26587.0,
+        "listed_for_sale": "No",
+        "longstreet": "No",
+        "lat": 34.306699,
+        "lon": -83.817598,
+        "service_area": "Gainesville",
+        "grouping": null
+      },
+      "geometry": { "type": "Point", "coordinates": [-83.817598, 34.306699] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "parcel_id": "f315298603387885711ec6a30602a850",
+        "name": "Gainesville - 466 Wall Street",
+        "address": "466 Wall Street",
+        "ownership_type": "Owned",
+        "building_type": "Land",
+        "land_size": 0.15,
+        "square_footage": null,
+        "listed_for_sale": "No",
+        "longstreet": "No",
+        "lat": 34.302214,
+        "lon": -83.811807,
+        "service_area": "Gainesville",
+        "grouping": null
+      },
+      "geometry": { "type": "Point", "coordinates": [-83.811807, 34.302214] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "parcel_id": "fbe97619ca86c094d594732bd79658d4",
+        "name": "Gainesville - Downey Blvd - 0.29 Acres",
+        "address": "NE Downey Blvd",
+        "ownership_type": "Owned",
+        "building_type": "Land",
+        "land_size": 0.29,
+        "square_footage": null,
+        "listed_for_sale": "No",
+        "longstreet": "No",
+        "lat": 34.30595,
+        "lon": -83.814473,
+        "service_area": "Gainesville",
+        "grouping": null
+      },
+      "geometry": { "type": "Point", "coordinates": [-83.814473, 34.30595] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "parcel_id": "0a3ad8304580e6116498a67287dc0546",
+        "name": "Gainesville - Downey Blvd - 0.32 Acres",
+        "address": "0 Downey Boulevard NE",
+        "ownership_type": "Owned",
+        "building_type": "Land",
+        "land_size": 0.32,
+        "square_footage": null,
+        "listed_for_sale": "No",
+        "longstreet": "No",
+        "lat": 34.305976,
+        "lon": -83.814169,
+        "service_area": "Gainesville",
+        "grouping": null
+      },
+      "geometry": { "type": "Point", "coordinates": [-83.814169, 34.305976] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "parcel_id": "196050077fb65c0d6f15e2a07f44476c",
+        "name": "Gainesville - 1235 Jesse Jewell Parkway",
+        "address": "1235 Jesse Jewell Parkway",
+        "ownership_type": "Owned",
+        "building_type": "Land",
+        "land_size": 0.36,
+        "square_footage": null,
+        "listed_for_sale": "No",
+        "longstreet": "No",
+        "lat": 34.304155,
+        "lon": -83.812168,
+        "service_area": "Gainesville",
+        "grouping": null
+      },
+      "geometry": { "type": "Point", "coordinates": [-83.812168, 34.304155] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "parcel_id": "00af430480276e51a73f2f809008ab35",
+        "name": "Operations Data Center",
+        "address": "1405 Jesse Jewell Parkway",
+        "ownership_type": "Owned",
+        "building_type": "Office",
+        "land_size": 2.79,
+        "square_footage": 45574.0,
+        "listed_for_sale": "No",
+        "longstreet": "No",
+        "lat": 34.306857,
+        "lon": -83.811729,
+        "service_area": "Gainesville",
+        "grouping": null
+      },
+      "geometry": { "type": "Point", "coordinates": [-83.811729, 34.306857] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "parcel_id": "d806e2f1871469061799141fa1c1d697",
+        "name": "Gainesville - Downey Blvd - 0.69 Acres",
+        "address": "0 Downey Boulevard NE",
+        "ownership_type": "Owned",
+        "building_type": "Land",
+        "land_size": 0.69,
+        "square_footage": null,
+        "listed_for_sale": "No",
+        "longstreet": "No",
+        "lat": 34.305635,
+        "lon": -83.813629,
+        "service_area": "Gainesville",
+        "grouping": null
+      },
+      "geometry": { "type": "Point", "coordinates": [-83.813629, 34.305635] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "parcel_id": "4004c8fddb3eb5c49dd273acd7691dab",
+        "name": "Gainesville - 1215 Jesse Jewell Parkway",
+        "address": "1215 Jesse Jewell Parkway NE",
+        "ownership_type": "Owned",
+        "building_type": "Land",
+        "land_size": 0.61,
+        "square_footage": null,
+        "listed_for_sale": "No",
+        "longstreet": "No",
+        "lat": 34.304292,
+        "lon": -83.812956,
+        "service_area": "Gainesville",
+        "grouping": null
+      },
+      "geometry": { "type": "Point", "coordinates": [-83.812956, 34.304292] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "parcel_id": "f7b2905cc2c6c255b962312a6bfb0c2e",
+        "name": "Gainesville - 1957 Beverly Road",
+        "address": "1957 Beverly Road",
+        "ownership_type": "Owned",
+        "building_type": "Land",
+        "land_size": 1.59,
+        "square_footage": null,
+        "listed_for_sale": "No",
+        "longstreet": "No",
+        "lat": 34.320396,
+        "lon": -83.804656,
+        "service_area": "Gainesville",
+        "grouping": null
+      },
+      "geometry": { "type": "Point", "coordinates": [-83.804656, 34.320396] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "parcel_id": "b306443aafa60daa5ff35bc07a91b39e",
+        "name": "Oakwood Medical Office - 4222 Fairbanks Drive",
+        "address": "4222 Fairbanks Drive",
+        "ownership_type": "Leased",
+        "building_type": "Medical Office Building (Multi-Tenant)",
+        "land_size": 3.54,
+        "square_footage": 9359.0,
+        "listed_for_sale": "No",
+        "longstreet": "Yes",
+        "lat": 34.246697,
+        "lon": -83.882544,
+        "service_area": "Gainesville",
+        "grouping": null
+      },
+      "geometry": { "type": "Point", "coordinates": [-83.882544, 34.246697] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "parcel_id": "7981e971befb818d64cb4be0bb9d0e69",
+        "name": "Bell Building - 1020 Jesse Jewell Pkwy",
+        "address": "1020 Jesse Jewell Parkway",
+        "ownership_type": "Owned",
+        "building_type": "Office",
+        "land_size": 0.95,
+        "square_footage": 4877.0,
+        "listed_for_sale": "No",
+        "longstreet": "No",
+        "lat": 34.30168,
+        "lon": -83.81578,
+        "service_area": "Gainesville",
+        "grouping": null
+      },
+      "geometry": { "type": "Point", "coordinates": [-83.81578, 34.30168] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "parcel_id": "570f0f882c936756cb920c604e3474bf",
+        "name": "Hoschton - Thompson Mill Road (Hall County)",
+        "address": "5685 Thompson Mill Road",
+        "ownership_type": "Owned",
+        "building_type": "Land",
+        "land_size": 42.93,
+        "square_footage": null,
+        "listed_for_sale": "No",
+        "longstreet": "No",
+        "lat": 34.1116,
+        "lon": -83.849512,
+        "service_area": "Braselton",
+        "grouping": null
+      },
+      "geometry": { "type": "Point", "coordinates": [-83.849512, 34.1116] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "parcel_id": "87a52d51ea3f20c71bf62be661d7c460",
+        "name": "Gainesville - 2132 Limestone Pkwy",
+        "address": "2132 Limestone Pkwy",
+        "ownership_type": "Owned",
+        "building_type": "Land",
+        "land_size": 3.38,
+        "square_footage": null,
+        "listed_for_sale": "No",
+        "longstreet": "No",
+        "lat": 34.318013,
+        "lon": -83.799294,
+        "service_area": "Gainesville",
+        "grouping": null
+      },
+      "geometry": { "type": "Point", "coordinates": [-83.799294, 34.318013] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "parcel_id": "ee494428317093a497345cddb5808379",
+        "name": "Medical Plaza 1 in Flowery Branch",
+        "address": "5678 Phil Niekro Blvd",
+        "ownership_type": "Owned",
+        "building_type": "Medical Office Building (Freestanding)",
+        "land_size": 12.88,
+        "square_footage": 13880.0,
+        "listed_for_sale": "No",
+        "longstreet": "No",
+        "lat": 34.180025,
+        "lon": -83.918902,
+        "service_area": "Braselton",
+        "grouping": null
+      },
+      "geometry": { "type": "Point", "coordinates": [-83.918902, 34.180025] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "parcel_id": "c87e925014985a0511e64ec687a1f473",
+        "name": "West Jackson Medical Office",
+        "address": "26 West Jackson Commons Drive",
+        "ownership_type": "Owned",
+        "building_type": "Medical Office Building (Freestanding)",
+        "land_size": 1.27,
+        "square_footage": 9411.0,
+        "listed_for_sale": "No",
+        "longstreet": "No",
+        "lat": 34.108285,
+        "lon": -83.706089,
+        "service_area": "Braselton",
+        "grouping": null
+      },
+      "geometry": { "type": "Point", "coordinates": [-83.706089, 34.108285] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "parcel_id": "0892ab4ec57b94886c8f6edfe7e45bb5",
+        "name": "Medical Plaza in Jefferson",
+        "address": "1496 Winder Highway",
+        "ownership_type": "Owned",
+        "building_type": "Medical Office Building (Multi-Tenant)",
+        "land_size": 1.74,
+        "square_footage": 11120.0,
+        "listed_for_sale": "No",
+        "longstreet": "No",
+        "lat": 34.105186,
+        "lon": -83.593465,
+        "service_area": "Braselton",
+        "grouping": null
+      },
+      "geometry": { "type": "Point", "coordinates": [-83.593465, 34.105186] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "parcel_id": "f0148dcd069094cd17536680fd9e5a7f",
+        "name": "Valley View Medical Center - 23 Tipton Dr",
+        "address": "23 Tipton Drive",
+        "ownership_type": "Leased",
+        "building_type": "Medical Office Building (Freestanding)",
+        "land_size": 1.0,
+        "square_footage": 4386.0,
+        "listed_for_sale": "No",
+        "longstreet": "Yes",
+        "lat": 34.523605,
+        "lon": -83.976574,
+        "service_area": "Lumpkin",
+        "grouping": null
+      },
+      "geometry": { "type": "Point", "coordinates": [-83.976574, 34.523605] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "parcel_id": "86cdc8b6cbe564d964ef69dc13787d9d",
+        "name": "Dahlonega Medical Offices - Morrison Moore Pkwy",
+        "address": "95 Morrison Moore Parkway",
+        "ownership_type": "Owned",
+        "building_type": "Medical Office Building (Freestanding)",
+        "land_size": 3.08,
+        "square_footage": 10279.0,
+        "listed_for_sale": "No",
+        "longstreet": "No",
+        "lat": 34.52515,
+        "lon": -83.979841,
+        "service_area": "Lumpkin",
+        "grouping": null
+      },
+      "geometry": { "type": "Point", "coordinates": [-83.979841, 34.52515] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "parcel_id": "f6217c8473575f5e058fd07fb650a039",
+        "name": "Dahlonega Medical Mall - Ansley Drive",
+        "address": "134 Ansley Drive",
+        "ownership_type": "Leased",
+        "building_type": "Medical Office Building (Multi-Tenant)",
+        "land_size": null,
+        "square_footage": 3804.0,
+        "listed_for_sale": "No",
+        "longstreet": "No",
+        "lat": 34.523828,
+        "lon": -83.979112,
+        "service_area": "Lumpkin",
+        "grouping": null
+      },
+      "geometry": { "type": "Point", "coordinates": [-83.979112, 34.523828] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "parcel_id": "ba55cc68f795056af694aaa0feed46eb",
+        "name": "Dahlonega Medical Office - South Chestatee",
+        "address": "1298 South Chestatee Street",
+        "ownership_type": "Leased",
+        "building_type": "Medical Office Building (Freestanding)",
+        "land_size": null,
+        "square_footage": 4071.0,
+        "listed_for_sale": "No",
+        "longstreet": "No",
+        "lat": 34.518915,
+        "lon": -83.977134,
+        "service_area": "Lumpkin",
+        "grouping": null
+      },
+      "geometry": { "type": "Point", "coordinates": [-83.977134, 34.518915] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "parcel_id": "6677b9cdf90840790e7897bb1d289ed9",
+        "name": "Dahlonega Medical Office - Maxwell Lane",
+        "address": "73 Maxwell Lane",
+        "ownership_type": "Leased",
+        "building_type": "Medical Office Building (Multi-Tenant)",
+        "land_size": null,
+        "square_footage": 4832.0,
+        "listed_for_sale": "No",
+        "longstreet": "No",
+        "lat": 34.470658,
+        "lon": -83.968184,
+        "service_area": "Lumpkin",
+        "grouping": null
+      },
+      "geometry": { "type": "Point", "coordinates": [-83.968184, 34.470658] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "parcel_id": "08324c4ca29a899b8ef8b33f6e82103a",
+        "name": "NGMC - Lumpkin",
+        "address": "495 N. GA 400",
+        "ownership_type": "Owned",
+        "building_type": "Hospital",
+        "land_size": 57.12,
+        "square_footage": 63800.0,
+        "listed_for_sale": "No",
+        "longstreet": "No",
+        "lat": 34.460488,
+        "lon": -83.971192,
+        "service_area": "Lumpkin",
+        "grouping": null
+      },
+      "geometry": { "type": "Point", "coordinates": [-83.971192, 34.460488] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "parcel_id": "34db361a5ebbef8855d2cb85beb013cd",
+        "name": "Clayton Medical Office - Highway 441",
+        "address": "536 Highway 441 South",
+        "ownership_type": "Leased",
+        "building_type": "Medical Office Building (Other)",
+        "land_size": null,
+        "square_footage": 3905.0,
+        "listed_for_sale": "No",
+        "longstreet": "No",
+        "lat": 34.870675,
+        "lon": -83.401445,
+        "service_area": "Habersham",
+        "grouping": null
+      },
+      "geometry": { "type": "Point", "coordinates": [-83.401445, 34.870675] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "parcel_id": "5059fcf71c02f9330c2858a46778842c",
+        "name": "Clayton Medical Office - Cottonwood St",
+        "address": "30 Cottonwood Street",
+        "ownership_type": "Leased",
+        "building_type": "Medical Office Building (Freestanding)",
+        "land_size": null,
+        "square_footage": 5749.0,
+        "listed_for_sale": "No",
+        "longstreet": "No",
+        "lat": 34.880386,
+        "lon": -83.399678,
+        "service_area": "Habersham",
+        "grouping": null
+      },
+      "geometry": { "type": "Point", "coordinates": [-83.399678, 34.880386] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "parcel_id": "fe236142d753a100923d650d08bf3010",
+        "name": "Toccoa Cancer Center",
+        "address": "1640 Falls Road",
+        "ownership_type": "Owned",
+        "building_type": "Medical Office Building (Freestanding)",
+        "land_size": 1.12,
+        "square_footage": 6355.0,
+        "listed_for_sale": "No",
+        "longstreet": "No",
+        "lat": 34.598669,
+        "lon": -83.348841,
+        "service_area": "Habersham",
+        "grouping": null
+      },
+      "geometry": { "type": "Point", "coordinates": [-83.348841, 34.598669] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "parcel_id": "197e7bf75cc6b433904f891d918085db",
+        "name": "Toccoa Clinic",
+        "address": "58 Big A Road",
+        "ownership_type": "Leased",
+        "building_type": "Medical Office Building (Multi-Tenant)",
+        "land_size": null,
+        "square_footage": 47506.0,
+        "listed_for_sale": "No",
+        "longstreet": "No",
+        "lat": 34.57995,
+        "lon": -83.318269,
+        "service_area": "Habersham",
+        "grouping": null
+      },
+      "geometry": { "type": "Point", "coordinates": [-83.318269, 34.57995] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "parcel_id": "98b0bf4819e47629ad9e26e6e340031b",
+        "name": "Toccoa Foothills Centre - 286-288 Big A",
+        "address": "286-288 Big A Road Toccoa",
+        "ownership_type": "Leased",
+        "building_type": "Medical Office Building (Other)",
+        "land_size": null,
+        "square_footage": 12040.0,
+        "listed_for_sale": "No",
+        "longstreet": "No",
+        "lat": 34.578067,
+        "lon": -83.315963,
+        "service_area": "Habersham",
+        "grouping": ""
+      },
+      "geometry": { "type": "Point", "coordinates": [-83.315963, 34.578067] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "parcel_id": "98b0bf4819e47629ad9e26e6e340031b",
+        "name": "Toccoa 274 Big-A Facility",
+        "address": "274 Big A Road",
+        "ownership_type": "Leased",
+        "building_type": "Medical Office Building (Other)",
+        "land_size": null,
+        "square_footage": 19930.0,
+        "listed_for_sale": "No",
+        "longstreet": "No",
+        "lat": 34.578393,
+        "lon": -83.316289,
+        "service_area": "Habersham",
+        "grouping": ""
+      },
+      "geometry": { "type": "Point", "coordinates": [-83.316289, 34.578393] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "parcel_id": "68840452e12b777e6397e19dafb60b72",
+        "name": "Blairsville Medical Office",
+        "address": "346 Deep South Farm Road",
+        "ownership_type": "Leased",
+        "building_type": "Medical Office Building (Multi-Tenant)",
+        "land_size": null,
+        "square_footage": 7182.0,
+        "listed_for_sale": "No",
+        "longstreet": "No",
+        "lat": 34.888162,
+        "lon": -83.962478,
+        "service_area": "Habersham",
+        "grouping": null
+      },
+      "geometry": { "type": "Point", "coordinates": [-83.962478, 34.888162] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "parcel_id": "bffaf36a11baacf28a1cc101ebae27d9",
+        "name": "Cleveland - 2576 Helen Hwy - 10.93 Acres",
+        "address": "2576 Helen Highway",
+        "ownership_type": "Owned",
+        "building_type": "Land",
+        "land_size": 10.93,
+        "square_footage": null,
+        "listed_for_sale": "No",
+        "longstreet": "No",
+        "lat": 34.633751,
+        "lon": -83.744767,
+        "service_area": "Habersham",
+        "grouping": null
+      },
+      "geometry": { "type": "Point", "coordinates": [-83.744767, 34.633751] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "parcel_id": "1d76060c9bd698660b7a8a79dd357ed9",
+        "name": "Cleveland Medical Offices",
+        "address": "2578 Helen Highway",
+        "ownership_type": "Owned",
+        "building_type": "Medical Office Building (Freestanding)",
+        "land_size": 4.54,
+        "square_footage": 15015.0,
+        "listed_for_sale": "No",
+        "longstreet": "No",
+        "lat": 34.634674,
+        "lon": -83.745659,
+        "service_area": "Habersham",
+        "grouping": null
+      },
+      "geometry": { "type": "Point", "coordinates": [-83.745659, 34.634674] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "parcel_id": "bb4e35379a82cd80de4f5b990756f340",
+        "name": "Cleveland Medical Office - 640 Helen Highway",
+        "address": "640 Helen Highway",
+        "ownership_type": "Leased",
+        "building_type": "Medical Office Building (Other)",
+        "land_size": null,
+        "square_footage": 2532.0,
+        "listed_for_sale": "No",
+        "longstreet": "No",
+        "lat": 34.608436,
+        "lon": -83.757531,
+        "service_area": "Habersham",
+        "grouping": null
+      },
+      "geometry": { "type": "Point", "coordinates": [-83.757531, 34.608436] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "parcel_id": "ef2e2c086c8ef1e378bf6c1da662d760",
+        "name": "Cleveland - Hwy 129",
+        "address": "0 Highway 129 South",
+        "ownership_type": "Owned",
+        "building_type": "Land",
+        "land_size": 5.83,
+        "square_footage": null,
+        "listed_for_sale": "Yes",
+        "longstreet": "No",
+        "lat": 34.562233,
+        "lon": -83.761601,
+        "service_area": "Habersham",
+        "grouping": null
+      },
+      "geometry": { "type": "Point", "coordinates": [-83.761601, 34.562233] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "parcel_id": "01022 001001",
+        "name": "Gainesville - 900 Spring Street",
+        "address": "900 NE Spring Street,  Gainesville",
+        "ownership_type": "Owned",
+        "building_type": "Land",
+        "land_size": 0.34,
+        "square_footage": null,
+        "listed_for_sale": "No",
+        "longstreet": "No",
+        "lat": 34.30193,
+        "lon": -83.81755,
+        "service_area": "Gainesville",
+        "grouping": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-83.817524357471513, 34.301907947669349]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "parcel_id": "01035 002038",
+        "name": "Gainesville - 490 Wall Street",
+        "address": "490 SE Wall Street",
+        "ownership_type": "Owned",
+        "building_type": "Land",
+        "land_size": 0.11,
+        "square_footage": null,
+        "listed_for_sale": "No",
+        "longstreet": "No",
+        "lat": 34.30182,
+        "lon": -83.81152,
+        "service_area": "Gainesville",
+        "grouping": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-83.811555396033711, 34.301831524227985]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "parcel_id": "01035 002004",
+        "name": "Gainesville - 1120 Jesse Jewell Pkwy",
+        "address": "1120 SE Jesse Jewell Parkway",
+        "ownership_type": "Owned",
+        "building_type": "Land",
+        "land_size": 2.6,
+        "square_footage": null,
+        "listed_for_sale": "No",
+        "longstreet": "No",
+        "lat": 34.30221,
+        "lon": -83.81353,
+        "service_area": "Gainesville",
+        "grouping": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-83.813665635571539, 34.302223355800237]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "parcel_id": "01035 002005",
+        "name": "Gainesville - Lanier Terrace",
+        "address": "1030 SE Summit Street",
+        "ownership_type": "Owned",
+        "building_type": "Land",
+        "land_size": 6.47,
+        "square_footage": null,
+        "listed_for_sale": "No",
+        "longstreet": "No",
+        "lat": 34.30157,
+        "lon": -83.81359,
+        "service_area": "Gainesville",
+        "grouping": "H"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-83.813563979895605, 34.301567545686076]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "parcel_id": "01035 002005",
+        "name": "Lanier Terrace",
+        "address": "1030 Summit St SE, Gainesville GA",
+        "ownership_type": "Leased",
+        "building_type": "Multi-Family",
+        "land_size": null,
+        "square_footage": 79279.0,
+        "listed_for_sale": "No",
+        "longstreet": "No",
+        "lat": 34.301720663570336,
+        "lon": -83.8127616632742,
+        "service_area": "Gainesville",
+        "grouping": "H"
+      },
+      "geometry": { "type": "Point", "coordinates": [-83.8127616632742, 34.301720663570336] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "parcel_id": "01061 001006E",
+        "name": "Gainesville Urology ASC",
+        "address": "1240 Jesse Jewell Parkway, Suite 250",
+        "ownership_type": "Leased",
+        "building_type": "Medical Office",
+        "land_size": null,
+        "square_footage": 4668.0,
+        "listed_for_sale": "No",
+        "longstreet": "No",
+        "lat": 34.30338,
+        "lon": -83.80913,
+        "service_area": "Gainesville",
+        "grouping": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-83.809099349816748, 34.303389525771642]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "parcel_id": "01061 001006D",
+        "name": "Gainesville Urology Clinic",
+        "address": "1240 Jesse Jewell Pkwy, Suite 200",
+        "ownership_type": "Leased",
+        "building_type": "Medical Office",
+        "land_size": null,
+        "square_footage": 9778.0,
+        "listed_for_sale": "No",
+        "longstreet": "No",
+        "lat": 34.30354,
+        "lon": -83.80943,
+        "service_area": "Gainesville",
+        "grouping": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-83.80939758457869, 34.303555192768322]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "parcel_id": "01061 001006",
+        "name": "Gainesville Urology Admin",
+        "address": "1240 Jesse Jewell Pkwy, Suite 200A",
+        "ownership_type": "Leased",
+        "building_type": "Medical Office",
+        "land_size": null,
+        "square_footage": 632.0,
+        "listed_for_sale": "No",
+        "longstreet": "No",
+        "lat": 34.30348,
+        "lon": -83.8099,
+        "service_area": "Gainesville",
+        "grouping": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-83.809827681446478, 34.303497355289238]
+      }
+    }
+  ]
 }

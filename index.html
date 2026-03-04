@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <title>NGHS Portfolio</title>
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/pin-drop.png">
+    <link rel="icon" type="image/svg+xml" href="assets/hospital-regular-full.svg">
     <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
 
     <!-- mapbox -->
@@ -76,26 +76,30 @@
             label=""
             hint=""
             id="property-type-filter"
-            value="All"
+            multiple
+            with-clear
+            placeholder="All"
+            max-options-visible=2
         >
-            <wa-option value="All">All</wa-option>
             <wa-option value="Medical Office">Medical Office</wa-option>
             <wa-option value="Hospital">Hospital</wa-option>
             <wa-option value="Land">Land</wa-option>
             <wa-option value="Office">Office</wa-option>
             <wa-option value="Vacant Building">Vacant Building</wa-option>
+            <wa-option value="Multi-Family">Multi-Family</wa-option>
             <wa-option value="Other">Other</wa-option>
         </wa-select>
 
         <!-- Service Area Filter -->
         <br/>
         <span style="font-size: 15px; color: #737373;">Service Area:</span>
-        <wa-select 
-            label="" 
+        <wa-select
+            label=""
             id="service-area-filter"
             max-options-visible=2
-            multiple 
+            multiple
             with-clear
+            placeholder="All"
         >
             <wa-option value="Habersham">Habersham</wa-option>
             <wa-option value="Lumpkin">Lumpkin</wa-option>

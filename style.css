@@ -123,6 +123,7 @@ wa-button.openDrawerBtn::part(base):hover {
     background-color: #d3d3d3;
     opacity: 1;
     padding: 10px 28px 10px 10px;
+    width: 220px;
 }
 
 .mapboxgl-popup.custom-popup h3 {
@@ -131,7 +132,26 @@ wa-button.openDrawerBtn::part(base):hover {
 }
 
 .mapboxgl-popup-anchor-bottom .mapboxgl-popup-tip {
-    display: none;
+    border: none;
+    width: 20px;
+    height: 10px;
+    overflow: hidden;
+    align-self: center;
+    position: relative;
+    margin-top: -2px;
+}
+
+.mapboxgl-popup-anchor-bottom .mapboxgl-popup-tip::after {
+    content: '';
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    background-color: #d3d3d3;
+    border-right: 2px solid #343a40;
+    border-bottom: 2px solid #343a40;
+    transform: rotate(45deg);
+    top: -7px;
+    left: 3px;
 }
 
 .mapboxgl-popup-close-button {
@@ -155,7 +175,11 @@ wa-button.openDrawerBtn::part(base):hover {
     color: #343a40;
 }
 .custom-popup .popup-subtitle {
-    font-size: 13px;
+    font-size: 15px;
+    color: #4d4d4d;
+}
+.custom-popup .popup-detail {
+    font-size: 15px;
     color: #4d4d4d;
 }
 

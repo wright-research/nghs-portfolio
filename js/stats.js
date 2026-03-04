@@ -109,14 +109,18 @@ export function updateStatsPanel(portfolioData, selections) {
     if (!panelEl) initStatsPanel();
     if (!portfolioData || !portfolioData.features) return;
 
-    const { selectedOwnership, selectedPropertyType, selectedServiceAreas, showLongstreet = true } = selections || {};
+    const { selectedOwnership, selectedPropertyTypes, selectedServiceAreas, showLongstreet = true } = selections || {};
+    const allPropertyTypesCount = 7; // Medical Office, Hospital, Land, Office, Vacant Building, Multi-Family, Other
 
     // Update main heading based on selected property type
     try {
         const titleEl = panelEl.querySelector('#stats-main-title');
         if (titleEl) {
-            const isAll = !selectedPropertyType || selectedPropertyType === 'All';
-            const heading = isAll ? 'All Properties' : `${selectedPropertyType} Properties`;
+            const isAll = Array.isArray(selectedPropertyTypes) && selectedPropertyTypes.length === allPropertyTypesCount;
+            const heading = isAll ? 'All Properties'
+                : !selectedPropertyTypes || selectedPropertyTypes.length === 0 ? 'No Type Selected'
+                : selectedPropertyTypes.length === 1 ? `${selectedPropertyTypes[0]} Properties`
+                : 'Selected Properties';
             titleEl.textContent = heading;
         }
     } catch (_) {
@@ -124,9 +128,9 @@ export function updateStatsPanel(portfolioData, selections) {
     }
 
     // Show/hide sections based on selected property type
-    updateSectionVisibility(selectedPropertyType);
+    updateSectionVisibility(selectedPropertyTypes, allPropertyTypesCount);
 
-    const features = portfolioData.features.filter(f => filterFeature(f, selectedOwnership, selectedPropertyType, selectedServiceAreas, showLongstreet));
+    const features = portfolioData.features.filter(f => filterFeature(f, selectedOwnership, selectedPropertyTypes, selectedServiceAreas, showLongstreet));
 
     // Build counts per selected service area (preserve selection order)
     const rows = (selectedServiceAreas || []).map(area => {
@@ -198,7 +202,7 @@ export function updateStatsPanel(portfolioData, selections) {
         const secondaryTitleEl = document.getElementById('kpi-secondary-title');
         const secondaryValueEl = document.getElementById('kpi-secondary-value');
         if (secondaryTitleEl && secondaryValueEl) {
-            if (selectedPropertyType === 'Land') {
+            if (Array.isArray(selectedPropertyTypes) && selectedPropertyTypes.length === 1 && selectedPropertyTypes[0] === 'Land') {
                 // Compute acreage without double counting grouped properties
                 const standaloneAcres = features.reduce((sum, f) => {
                     const p = f && f.properties ? f.properties : {};
@@ -244,11 +248,11 @@ export function updateStatsPanel(portfolioData, selections) {
     }
 }
 
-function updateSectionVisibility(selectedPropertyType) {
-    const isLand = selectedPropertyType === 'Land';
-    const isAll = selectedPropertyType === 'All' || !selectedPropertyType;
-    const hideSize = isLand; // Hide size sections for Land
-    const hideAcres = !isLand && !isAll; // Hide acres for anything except Land or All
+function updateSectionVisibility(selectedPropertyTypes, allPropertyTypesCount) {
+    const isLandOnly = Array.isArray(selectedPropertyTypes) && selectedPropertyTypes.length === 1 && selectedPropertyTypes[0] === 'Land';
+    const isAll = Array.isArray(selectedPropertyTypes) && selectedPropertyTypes.length === allPropertyTypesCount;
+    const hideSize = isLandOnly;
+    const hideAcres = !isLandOnly && !isAll;
 
     const sizeTotalTable = panelEl.querySelector('#table-size-total');
     const sizeTotalDivider = panelEl.querySelector('#divider-size-total');
@@ -276,7 +280,7 @@ function getServiceArea(feature) {
     return feature && feature.properties ? (feature.properties.service_area || feature.properties.label || '') : '';
 }
 
-function filterFeature(feature, selectedOwnership, selectedPropertyType, selectedServiceAreas, showLongstreet) {
+function filterFeature(feature, selectedOwnership, selectedPropertyTypes, selectedServiceAreas, showLongstreet) {
     if (!feature || !feature.properties) return false;
     const p = feature.properties;
 
@@ -286,20 +290,17 @@ function filterFeature(feature, selectedOwnership, selectedPropertyType, selecte
     }
 
     // Property type filter
-    if (selectedPropertyType && selectedPropertyType !== 'All') {
-        if (selectedPropertyType === 'Medical Office') {
-            // Prefix match
-            const bt = String(p.building_type || '');
-            if (!bt.startsWith('Medical Office')) return false;
-        } else if (selectedPropertyType === 'Other') {
-            const bt = String(p.building_type || '');
-            const explicitCategories = new Set(['Hospital', 'Land', 'Office', 'Vacant Building']);
-            const isExplicit = explicitCategories.has(bt);
-            const isMedicalPrefix = bt.startsWith('Medical Office');
-            if (isExplicit || isMedicalPrefix) return false;
-        } else if (p.building_type !== selectedPropertyType) {
-            return false;
-        }
+    const allPropertyTypesCount = 7;
+    if (!selectedPropertyTypes || selectedPropertyTypes.length === 0) return false;
+    if (selectedPropertyTypes.length < allPropertyTypesCount) {
+        const bt = String(p.building_type || '');
+        const explicitCategories = ['Hospital', 'Land', 'Office', 'Vacant Building', 'Multi-Family'];
+        const matches = selectedPropertyTypes.some(type => {
+            if (type === 'Medical Office') return bt.startsWith('Medical Office');
+            if (type === 'Other') return !explicitCategories.includes(bt) && !bt.startsWith('Medical Office');
+            return bt === type;
+        });
+        if (!matches) return false;
     }
 
     // Service area filter
