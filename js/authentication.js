@@ -127,6 +127,9 @@ class AuthenticationManager {
             .auth-eye-toggle:hover svg { stroke: #000; }
             /* Ensure the progress ring matches our RAF updates exactly */
             wa-progress-ring::part(indicator) { transition: stroke-dashoffset 0s linear !important; }
+            /* Logout button: outlined by default, filled on hover */
+            #auth-logout-button::part(base) { background-color: transparent; border-color: #343a40; color: #343a40; transition: background-color 0.15s, color 0.15s; }
+            #auth-logout-button::part(base):hover { background-color: #343a40; color: #ffffff; }
         `;
         document.head.appendChild(style);
     }
@@ -449,7 +452,7 @@ class AuthenticationManager {
             logoutBtn.setAttribute('size', 'medium');
             logoutBtn.setAttribute('slot', 'footer');
             logoutBtn.style.marginTop = '0';
-            logoutBtn.textContent = 'Log out';
+            logoutBtn.innerHTML = `<wa-icon slot="end" name="arrow-up-right-from-square"></wa-icon> Log out`;
             drawer.appendChild(logoutBtn);
             console.log('[Auth] added Logout button to drawer footer');
             logoutBtn.addEventListener('click', () => this.logout());

@@ -476,7 +476,6 @@ function initializeServiceAreaFillToggle() {
 function initializeDrawer() {
     const drawer = document.querySelector('wa-drawer');
     const openButton = document.querySelector('.openDrawerBtn');
-    const closeButton = document.querySelector('.close-button');
 
     // Function to toggle button visibility based on drawer state
     function updateButtonVisibility() {
@@ -494,13 +493,6 @@ function initializeDrawer() {
         // Open drawer and update button visibility
         openButton.addEventListener('click', () => {
             drawer.open = true;
-            updateButtonVisibility();
-        });
-    }
-
-    if (closeButton && drawer) {
-        closeButton.addEventListener('click', () => {
-            drawer.open = false;
             updateButtonVisibility();
         });
     }
