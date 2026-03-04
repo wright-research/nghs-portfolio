@@ -29,6 +29,12 @@ export async function initializeMap(containerId) {
                 bearing: mapConfig.bearing
             });
 
+            // disable map rotation using right click + drag
+            map.dragRotate.disable();
+
+            // disable map rotation using touch rotation gesture
+            map.touchZoomRotate.disableRotation();
+
             // Wait for map to load before resolving
             map.on('load', async () => {
                 console.log('Map loaded successfully');
